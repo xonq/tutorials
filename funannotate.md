@@ -1,12 +1,12 @@
-#Funannotate de novo annotation software setup and use
+# Funannotate de novo annotation software setup and use
 
-##NOTE 
+## NOTE 
 More information: https://funannotate.readthedocs.io/en/latest/install.html. 
 Underlined code should be specified by the user.
 Step 3+ require the `funannotate` environment is active - `source activate funannotate`.
 
-##INSTALL
-###1. Install miniconda and setup download channels. 
+## INSTALL
+### 1. Install miniconda and setup download channels. 
 Miniconda is an *environment manager*, which keeps software in isolated environments so they don’t interfere. Additionally, Miniconda uses software *channels* with prepackaged software - this makes the installation of complex programs as simple as `conda install X`. Alas, it is not always this easy.
 
 ```
