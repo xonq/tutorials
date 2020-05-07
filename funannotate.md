@@ -2,7 +2,6 @@
 
 ## NOTE 
 More information: https://funannotate.readthedocs.io/en/latest/install.html. 
-Underlined code should be specified by the user.
 Step 3+ require the `funannotate` environment is active - `source activate funannotate`.
 
 ## INSTALL
@@ -22,8 +21,10 @@ conda config --add channels conda-forge
 ### 2. Create and downoad Funannotate environment. 
 Create a new environment, `funannotate`, and download all software in the package list `funannotate`. Once downloaded, if you wish to interface with these software you must activate the environment.
 
-`conda create -n funannotate python=2.7 funannotate`
-`source activate funannotate`
+```
+conda create -n funannotate python=2.7 funannotate
+source activate funannotate
+```
 
 ### 3. Install external software. 
 Note that when you install software with an environment activated, you may be creating a dependency on your environment – in other words, you may have to activate the environment to use the new software. If you wish to deactivate your environment or activate another, run `conda deactivate` beforehand.
