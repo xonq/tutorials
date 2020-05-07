@@ -1,4 +1,4 @@
-# Funannotate de novo annotation software setup and use
+# Funannotate *de novo* annotation software setup and use
 
 ## NOTE 
 More information: https://funannotate.readthedocs.io/en/latest/install.html. 
