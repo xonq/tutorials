@@ -8,12 +8,12 @@ Keep in mind the `+` needs to be appended to the line you are adding the command
 ### melt - `reshape2` package
 `melted = melt($COLUMN, id.vars = "$COLUMN" )`
 #### subset melted df
-`submelted = melted[melted$COLUMn %in% c('$LABEL1', '$LABELn', ...), ]
+`submelted = melted[melted$COLUMn %in% c('$LABEL1', '$LABELn', ...), ]`
 
 
 ## Label additions
 ### label points as text
-`+	geom_text( aes( label = ifelse( index == '$SUBPHYLUM', as.character( $NAME ), '')), hjust=0, vjust=0 )
+`+	geom_text( aes( label = ifelse( index == '$SUBPHYLUM', as.character( $NAME ), '')), hjust=0, vjust=0 )`
 ### vertical axis label
 `+	theme( axis.text.x = element_text( angle = 90, hjust = 1, vjust = 0.5 ))`
 ### trendlines
