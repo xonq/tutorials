@@ -57,3 +57,21 @@ heatmap(as.matrix(data), scale="none")
 `heatmap(as.matrix(data), Colv = NA, Rowv = NA, scale="none")` # can specify `column` in scale to make relative to column
 ### colors
 `heatmap(as.matrix(data1), scale="none", Colv=NA, Rowv=NA, col= colorRampPalette(brewer.pal(9, "Reds"))(256))`
+
+
+## NMDS
+### preparing data
+```
+library(vegan)
+com = metabolicCounts[,2:20] # range of columns that have values
+m_com = as.matrix(com)
+nmds = metaMDS(m_com, distance="euclidean") # distance can be changed to your use case
+data.scores = as.data.frame(scores(nmds))
+data.scores$INDEX = metabolicCounts$INDEX
+```
+### plotting the data
+```
+library(ggplot2)
+colors = c(brewer.pal(name="Dark2", n = 8), brewer.pal(name="Paired", n = 6))
+xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as.character( ome ), colour = sphy)) + scale_color_manual(values = colors)
+```
