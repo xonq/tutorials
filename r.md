@@ -6,7 +6,7 @@ Keep in mind the `+` needs to be appended to the line you are adding the command
 
 
 <br/><br/><br/>
-## Installing packages
+## INSTALLING PACKAGES
 ### ggplot2 example
 `install.packages('ggplot2')`
 ### gg3d (github) example - allows 3D ggplot2 extension
@@ -17,14 +17,14 @@ devtools::install_github('AckerDWM/gg3D')
 ```
 
 <br/><br/>
-## dataframe transformations
+## TRANSFORMATIONS
 ### melt - `reshape2` package
 `melted = melt($COLUMN, id.vars = "$COLUMN" )`
 #### subset melted df
 `submelted = melted[melted$COLUMn %in% c('$LABEL1', '$LABELn', ...), ]`
 
 <br/><br/>
-## Label additions
+## LABEL ADDITIONS
 ### label points as text
 `+	geom_text( aes( label = ifelse( index == '$SUBPHYLUM', as.character( $NAME ), '')), hjust=0, vjust=0 )`
 ### vertical axis label
@@ -33,7 +33,7 @@ devtools::install_github('AckerDWM/gg3D')
 `+	geom_smooth( method = lm, se = FALSE, fullrange = TRUE )`
 
 <br/><br/>
-## scatter plots
+## SCATTER PLOTS
 ### basic scatter plot
 `ggplot($DATA, aes( x = $X, y = $Y, color = $COLOR )) + geom_point()`
 #### trendlines
@@ -42,7 +42,7 @@ devtools::install_github('AckerDWM/gg3D')
 `+	geom_smooth( method = lm, se = TRUE, fullrange = TRUE )`
 
 <br/><br/>
-## bar plots
+## BAR PLOTS
 Bar plots often have to use a "melted" dataset. This requires `reshape2` package installed and loaded.
 ### basic bar plot
 `ggplot( melted, aes( $COLUMN, value, fill = variable )) + geom_bar( position = "fill", stat = "identity")`
@@ -54,12 +54,12 @@ Bar plots often have to use a "melted" dataset. This requires `reshape2` package
 `+	geom_bar(position = "dodge", stat = "identity" )`
 
 <br/><br/>
-## violin plot
+## VIOLIN PLOTS
 `ggplot( df, aes( x = $X, y = $Y )) + geom_violin( width = $WIDTH )`
 
 
 <br/><br/><br/>
-## heatmap
+## HEATMAP
 There is some finessing involved with specifying column names etc. The dataframe here has row names in the first column and column names as the column names in the dataframe.
 ### preparing data and plotting
 ```
