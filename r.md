@@ -1,8 +1,18 @@
-# A compilation of ggplot2 commands and usage info
+# A compilation of R/ggplot2/gg3d commands and usage info
 
 ## NOTE
 I attempted to keep optional additions in the `Label additions` section. Required additions are included w/the command.
 Keep in mind the `+` needs to be appended to the line you are adding the command to.
+
+## Installing packages
+### ggplot2 example
+`install.packages('ggplot2')`
+### gg3d (github) example - allows 3D ggplot2 extension
+```
+install.packages('devtools')
+library('devtools')
+devtools::install_github('AckerDWM/gg3D')
+```
 
 ## dataframe transformations
 ### melt - `reshape2` package
@@ -65,7 +75,7 @@ heatmap(as.matrix(data), scale="none")
 library(vegan)
 com = metabolicCounts[,2:20] # range of columns that have values
 m_com = as.matrix(com)
-nmds = metaMDS(m_com, distance="euclidean") # distance can be changed to your use case
+nmds = metaMDS(m_com, distance="euclidean", k=2) # distance can be changed to your use case, k = dimensions
 data.scores = as.data.frame(scores(nmds))
 data.scores$INDEX = metabolicCounts$INDEX
 ```
@@ -85,3 +95,6 @@ xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as
 ```
 xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as.character( ome ), colour = sphy)) + scale_color_manual(values = colors) + geom_segment(aes(x = 0, y= 0, xend = NMDS1, yend = NMDS2), data = mds_coord_cat, size =1, alpha = 0.5, colour = "grey30") + geom_text(data = mds_coord_cat, aes( x = NMDS1, y = NMDS2), label = row.names(mds_coord_cat), colour = "grey10", fontface = "bold")
 ```
+
+
+
