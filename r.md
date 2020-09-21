@@ -69,9 +69,19 @@ nmds = metaMDS(m_com, distance="euclidean") # distance can be changed to your us
 data.scores = as.data.frame(scores(nmds))
 data.scores$INDEX = metabolicCounts$INDEX
 ```
+### optional: adding the fit
+#### if it is a categorical variable, plot as points and substitute 'vectors' for 'factors'
+```
+mds.fit = envfit( nmds, com, permutations = 999, na.rm = TRUE )
+mds_coord_cont = as.data.frame(scores(mds.fit, "vectors") * ordiArrowMul(mds.fit))
+```
 ### plotting the data
 ```
 library(ggplot2)
 colors = c(brewer.pal(name="Dark2", n = 8), brewer.pal(name="Paired", n = 6))
 xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as.character( ome ), colour = sphy)) + scale_color_manual(values = colors)
+```
+#### with the fit
+```
+xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as.character( ome ), colour = sphy)) + scale_color_manual(values = colors) + geom_segment(aes(x = 0, y= 0, xend = NMDS1, yend = NMDS2), data = mds_coord_cat, size =1, alpha = 0.5, colour = "grey30") + geom_text(data = mds_coord_cat, aes( x = NMDS1, y = NMDS2), label = row.names(mds_coord_cat), colour = "grey10", fontface = "bold")
 ```
