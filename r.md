@@ -113,4 +113,6 @@ data.scores$INDEX = metabolicCounts$INDEX
 ```
 <br/>
 #### plotting (3D - fit not available yet)
-`plot_ly( x = data.scores$NMDS1, y = data.scores$NMDS2, z = data.scores$NMDS3, color = data.scores$sphy, colors = colors )`
+```
+plot_ly( x = data.scores$NMDS1, y = data.scores$NMDS2, z = data.scores$NMDS3, color = data.scores$sphy, colors = colors )
+```
