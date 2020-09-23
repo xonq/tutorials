@@ -76,7 +76,7 @@ heatmap(as.matrix(data), scale="none")
 <br/><br/><br/>
 ## ORDINATIONS
 ### NMDS
-#### preparing data
+#### preparing data (2D)
 ```
 library(vegan)
 com = metabolicCounts[,2:20] # range of columns that have values
@@ -101,3 +101,16 @@ xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as
 ```
 xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as.character( ome ), colour = sphy)) + scale_color_manual(values = colors) + geom_segment(aes(x = 0, y= 0, xend = NMDS1, yend = NMDS2), data = mds_coord_cat, size =1, alpha = 0.5, colour = "grey30") + geom_text(data = mds_coord_cat, aes( x = NMDS1, y = NMDS2), label = row.names(mds_coord_cat), colour = "grey10", fontface = "bold")
 ```
+<br/>
+#### preparing (3D)
+```
+library('vegan3d')
+com = metabolicCounts[,2:20]
+m_com = as.matrix(com)
+nmds3 = metaMDS(m_com, distance='euclidean', k=3)
+data.scores = as.data.frame(scores(nmds3))
+data.scores$INDEX = metabolicCounts$INDEX
+```
+<br/>
+#### plotting (3D - fit not available yet)
+`plot_ly( x = data.scores$NMDS1, y = data.scores$NMDS2, z = data.scores$NMDS3, color = data.scores$sphy, colors = colors )`
