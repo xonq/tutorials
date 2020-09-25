@@ -117,10 +117,10 @@ funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATM
 <br />
 
 ### 2. Gene prediction. 
-You will have to download/compile a few pieces of data and information:
+You will have to download/compile a few pieces of data and information. When entering the command, separate the files by spaces, e.g. `--transcript_evidence ~/transcripts/fibsp.1.fa ~/transcripts/pilcro1.fa etc etc`:
 - find transcript/EST evidence from organisms in the same genus
 - find protein evidence from at least 10 closely related organisms (more increases computation time)
-- find the most closely related BUSCO database to your species by searching `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species`. To use a lab BUSCO database you must copy it to the above directory. Cite the exact name of the species parameter folder, *not the full directory`* in the use command below
+- find the most closely related BUSCO database to your species by examining the databases stored in `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species`. To use a lab BUSCO database you must copy it to the above directory. In the command below, cite the exact name of the species parameter folder, *not the full directory*
 
 ##### - Edit the command below and submit the annotation job to OSC:
 ```
