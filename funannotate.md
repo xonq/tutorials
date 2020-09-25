@@ -21,7 +21,7 @@ conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
 ```
-<br/>
+ adsf
 ### 2. Create and downoad Funannotate environment. 
 Create a new environment, `funannotate`, and download all software in the package list `funannotate`. Once downloaded, if you wish to interface with these software you must activate the environment.
 
