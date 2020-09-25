@@ -127,7 +127,6 @@ You will have to download/compile a few pieces of data and information:
 - find protein evidence from at least 10 closely related organisms (more increases computation time)
 - find the most closely related BUSCO database to your species by searching `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species`. To use a lab BUSCO database you must copy it to the above directory. Cite the exact name of the species parameter folder, *not the full directory`* in the use command below
 
-<br />
 ##### - Edit the command below and submit the annotation job to OSC:
 ```
 echo -e ‘source activate funannotate && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” \
