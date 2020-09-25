@@ -56,7 +56,7 @@ cp /users/PAS1046/osu10393/.gm_key ~/
 
 ##### - add installed GeneMark to your funannotate conda environment:
 ```
-echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> \ /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
+echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
 ```
 
 
@@ -71,8 +71,7 @@ cd gmap-2020-03-12
 ```
 ##### - install the new gmap to your funannotate conda environment:
 ```
-./configure –-prefix /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate --exec-prefix \
-/CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate
+./configure –-prefix /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate --exec-prefix /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate
 make check
 make install
 ```
