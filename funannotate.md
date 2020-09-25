@@ -99,9 +99,11 @@ echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funan
 ### 5. Check installation. 
 *It’s okay* if `emapper.py`, `ete3`, and `signalp` are not installed/cause errors as we don’t need them now.
 
-- check your installation
-`funannotate check --show-versions`
-`funannotate test -t all --cpus 8`
+#### - check your installation:
+```
+funannotate check --show-versions
+funannotate test -t all --cpus 8
+```
 
 <br /><br />
 
