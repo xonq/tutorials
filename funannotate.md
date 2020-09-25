@@ -9,13 +9,13 @@ Step 3+ require the `funannotate` environment is active - `source activate funan
 ### 1. Install miniconda and setup download channels. 
 Miniconda is an *environment manager*, which keeps software in isolated environments. Miniconda uses software *channels* with prepackaged software - this makes the installation of complex programs as simple as `conda install X`. Alas, it is not always this easy.
 
-	#### a) Here we install miniconda3 and make our profile aware of its executable files:
+#### a) Here we install miniconda3 and make our profile aware of its executable files:
 ```
 wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p /CONDA/INSTALLATION/PATH/miniconda3
 echo -e 'export PATH="/CONDA/INSTALLATION/PATH/miniconda3/bin:$PATH"' >> ~/.bash_profile
 ```
-	#### b) We then add the package channels that contain software *in this order*
+#### b) We then add the package channels that contain software *in this order*
 ```
 conda config --add channels defaults
 conda config --add channels bioconda
