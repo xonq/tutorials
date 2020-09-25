@@ -32,6 +32,8 @@ conda create -n funannotate python=2.7 funannotate
 source activate funannotate
 ```
 
+<br />
+
 ### 3. Install external software. 
 Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on your environment, so it needs to be active to use the new software. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
 
@@ -61,6 +63,8 @@ make install
 #### RepeatModeler and RepeatMasker
 Installing RepeatModeler/RepeatMasker requires a tutorial of their own. For solid repeat masking, these software will need to be installed beforehand.
 
+<br />
+
 ### 4. Install databases. 
 Funannotate relies on a variety of databases. We need to download them and set our environment up to use them.
 
@@ -71,20 +75,28 @@ echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/miniconda3/databases” >
 echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/deactivate.d/funannotate.sh
 ```
 
+<br />
+
 ### 5. Check installation. 
 Funannotate provides tools to check installation software and test the installation. *It’s okay* if `emapper.py`, `ete3`, and `signalp` are not installed as we don’t need them now.
 
 `funannotate check --show-versions`
 `funannotate test -t all --cpus 8`
 
+<br /><br />
+
 ## USE
 ### 0. Beforehand. 
 You will need an assembly via SPAdes, or Funannotate’s assembly pipeline as well as a RepeatModeler library for your organism - `$OME-families.fa`
+
+<br />
 
 ### 1. Soft-mask assembly. 
 This will create a new assembly with repeat nucleotides lower-cased.
 
 `funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATMODELER/$OME-families.fa`
+
+<br />
 
 ### 2. Gene prediction. 
 Congratulations on making it this far. Here is where we run the annotation. Use the most closely related BUSCO species. Options can be found in `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species`. If you want to use a species parameter file the lab generated previously, you must copy it to the above directory. Cite the exact name of the species parameter folder below
