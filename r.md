@@ -23,6 +23,8 @@ devtools::install_github('AckerDWM/gg3D')
 `melted = melt($COLUMN, id.vars = "$COLUMN" )`
 #### subset melted df
 `submelted = melted[melted$COLUMn %in% c('$LABEL1', '$LABELn', ...), ]`
+#### matrix conversion
+`m_com = as.matrix(com)`
 
 <br/><br/>
 ## LABEL ADDITIONS
