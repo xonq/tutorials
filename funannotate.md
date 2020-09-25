@@ -5,18 +5,21 @@
 - Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
 - Step 3+ require the `funannotate` environment is active - `source activate funannotate`. 
 
+Miniconda is an *environment manager*, which keeps software in isolated environments. Miniconda uses software *channels* with prepackaged software - this makes the installation of complex programs as simple as `conda install X`. Alas, sometimes - as evidenced here - the installation requires some minor adjustments. RepeatMasker, for example, cannot be installed by miniconda due to licensing and will need to be installed independently. Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on your environment, so it needs to be active to use the new software. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
+
+
+
 <br /><br />
 ## INSTALL
 ### 1. Install miniconda and setup download channels. 
-Miniconda is an *environment manager*, which keeps software in isolated environments. Miniconda uses software *channels* with prepackaged software - this makes the installation of complex programs as simple as `conda install X`. Alas, it is not always this easy.
 
-##### - Here we install miniconda3 and make our profile aware of its executable files:
+##### - install miniconda3 and make your profile aware of its executable files:
 ```
 wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p /CONDA/INSTALLATION/PATH/miniconda3
 echo -e 'export PATH="/CONDA/INSTALLATION/PATH/miniconda3/bin:$PATH"' >> ~/.bash_profile
 ```
-##### - We then add the package channels that contain software *in this order*:
+##### - add the package channels that contain software *in this order*:
 ```
 conda config --add channels defaults
 conda config --add channels bioconda
@@ -26,11 +29,11 @@ conda config --add channels conda-forge
 <br />
 
 ### 2. Create and downoad Funannotate environment. 
-##### - Create a new environment, `funannotate`, and download all software in the package list `funannotate`:
+##### - create a new environment, `funannotate`, and download all software from the channels:
 ```
 conda create -n funannotate python=2.7 funannotate
 ```
-##### - *IF this does not complete*, submit it as a job to OSC following the 1st command (EDIT The PAS#### with the real number):
+##### - *IF this does not complete*, create an empty environment and download software by submitting to OSC (EDIT The PAS#### with the project number):
 ```
 conda create -n funannotate
 echo -e 'source activate funannotate && conda install -y python=2.7 funannotate' | qsub -l walltime=10:00:00 -l nodes=1:ppn=1 -A PAS####
@@ -43,24 +46,23 @@ source activate funannotate
 <br />
 
 ### 3. Install external software. 
-Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on your environment, so it needs to be active to use the new software. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
 
 #### GeneMark
 I recommend using someone else’s installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website.
 
-##### - copy a key
+##### - copy a permissions key:
 ```
 cp /users/PAS1046/osu10393/.gm_key ~/
 ```
 
-##### - add installed GeneMark to your funannotate conda environment
+##### - add installed GeneMark to your funannotate conda environment:
 ```
 echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> \ /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
 ```
 
 
 #### gmap
-As of April 2020, the conda packaged gmap does not work, so you will have to install it manually and overwrite the existing version.
+As of April 2020, the conda packaged gmap does not work, so we download it here
 
 ##### - download, extract, and navigate into the gmap folder:
 ```
@@ -75,9 +77,6 @@ cd gmap-2020-03-12
 make check
 make install
 ```
-
-#### RepeatModeler and RepeatMasker
-Installing RepeatModeler/RepeatMasker requires a tutorial of their own. For solid repeat masking, these software will need to be installed beforehand.
 
 <br />
 
