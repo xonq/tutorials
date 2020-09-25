@@ -1,8 +1,8 @@
 # Funannotate *de novo* annotation software setup and use
 
 ## NOTE 
-More information: https://funannotate.readthedocs.io/en/latest/install.html. 
-Step 3+ require the `funannotate` environment is active - `source activate funannotate`.
+More information: https://funannotate.readthedocs.io/en/latest/install.html. Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
+Step 3+ require the `funannotate` environment is active - `source activate funannotate`. 
 
 ## INSTALL
 ### 1. Install miniconda and setup download channels. 
@@ -10,8 +10,8 @@ Miniconda is an *environment manager*, which keeps software in isolated environm
 
 ```
 wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b -p /CONDA/INSTALLATION/PATH
-echo -e 'export PATH="/CONDA/INSTALLATION/PATH/bin:$PATH"' >> ~/.bash_profile
+bash ~/miniconda.sh -b -p /CONDA/INSTALLATION/PATH/miniconda3
+echo -e 'export PATH="/CONDA/INSTALLATION/PATH/miniconda3/bin:$PATH"' >> ~/.bash_profile
 ```
 ```
 conda config --add channels defaults
@@ -35,7 +35,7 @@ I recommend using someone else’s installation. You need to accept the licensin
 
 `cp /users/PAS1046/osu10393/.gm_key ~/`
 
-`echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> \ /CONDA/INSTALLATION/PATH/envs/funannotate/etc/conda/activate.d/funannotate.sh`
+`echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> \ /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh`
 
 
 #### gmap
@@ -47,8 +47,8 @@ tar -xzf gmap-gsnap-2020-03-12.tar.gz
 cd gmap-2020-03-12
 ```
 ```
-./configure –-prefix /CONDA/INSTALLATION/PATH/envs/funannotate --exec-prefix \
-/CONDA/INSTALLATION/PATH/envs/funannotate
+./configure –-prefix /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate --exec-prefix \
+/CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate
 make check
 make install
 ```
@@ -59,11 +59,11 @@ Installing RepeatModeler/RepeatMasker requires a tutorial of their own. Funannot
 ### 4. Install databases. 
 Funannotate relies on a variety of databases. We need to download them and set our environment up to use them.
 
-`funannotate setup -d /CONDA/INSTALLATION/PATH/databases`
+`funannotate setup -d /CONDA/INSTALLATION/PATH/miniconda3/databases`
 ```
-echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/databases” >> \
-/CONDA/INSTALLATION/PATH/envs/funannotate/etc/conda/activate.d/funannotate.sh
-echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/envs/funannotate/deactivate.d/funannotate.sh
+echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/miniconda3/databases” >> \
+/CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
+echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/deactivate.d/funannotate.sh
 ```
 
 ### 5. Check installation. 
@@ -87,7 +87,7 @@ Congratulations on making it this far. Here is where we run the annotation. Use 
 ```
 echo -e ‘source activate funannotate && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” \
 --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE \
-MORE/PROTEIN_EVIDENCE /CONDA/INSTALLATION/PATH/envs/funannotate/databases/uniprot_sprot.fasta –cpus 6 \
+MORE/PROTEIN_EVIDENCE /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/databases/uniprot_sprot.fasta –cpus 6 \
 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER | qsub -l walltime=72:00:00 \
 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
 ```
