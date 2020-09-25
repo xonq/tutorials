@@ -1,5 +1,6 @@
 # A compilation of R/ggplot2/gg3d commands and usage info
 <br/>
+
 ## NOTE
 I attempted to keep optional additions in the `Label additions` section. Required additions are included w/the command.
 Keep in mind the `+` needs to be appended to the line you are adding the command to.
@@ -102,6 +103,7 @@ xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as
 xx = ggplot(data.scores, aes(x = NMDS1, y = NMDS2)) + geom_text( aes( label = as.character( ome ), colour = sphy)) + scale_color_manual(values = colors) + geom_segment(aes(x = 0, y= 0, xend = NMDS1, yend = NMDS2), data = mds_coord_cat, size =1, alpha = 0.5, colour = "grey30") + geom_text(data = mds_coord_cat, aes( x = NMDS1, y = NMDS2), label = row.names(mds_coord_cat), colour = "grey10", fontface = "bold")
 ```
 <br/>
+
 #### preparing (3D)
 ```
 library('vegan3d')
