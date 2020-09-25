@@ -85,7 +85,7 @@ make install
 ```
 funannotate setup -d /CONDA/INSTALLATION/PATH/miniconda3/databases
 ```
-##### - add databases to funannotate conda environment configuration:
+##### - add databases to the environment configuration:
 ```
 echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/miniconda3/databases” >> \
 /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
