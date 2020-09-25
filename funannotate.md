@@ -1,8 +1,9 @@
 # Funannotate *de novo* annotation software setup and use
 
 ## NOTE 
-More information: https://funannotate.readthedocs.io/en/latest/install.html. Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
-Step 3+ require the `funannotate` environment is active - `source activate funannotate`. 
+- More information: https://funannotate.readthedocs.io/en/latest/install.html. 
+- Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
+- Step 3+ require the `funannotate` environment is active - `source activate funannotate`. 
 
 <br /><br />
 ## INSTALL
