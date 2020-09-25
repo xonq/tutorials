@@ -8,11 +8,13 @@ Step 3+ require the `funannotate` environment is active - `source activate funan
 ### 1. Install miniconda and setup download channels. 
 Miniconda is an *environment manager*, which keeps software in isolated environments. Miniconda uses software *channels* with prepackaged software - this makes the installation of complex programs as simple as `conda install X`. Alas, it is not always this easy.
 
+Here we install miniconda3 and make our profile aware of its executable files:
 ```
 wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p /CONDA/INSTALLATION/PATH/miniconda3
 echo -e 'export PATH="/CONDA/INSTALLATION/PATH/miniconda3/bin:$PATH"' >> ~/.bash_profile
 ```
+We then add the package channels that contain software *in this order*
 ```
 conda config --add channels defaults
 conda config --add channels bioconda
@@ -28,7 +30,7 @@ source activate funannotate
 ```
 
 ### 3. Install external software. 
-Note that when you install software with an environment activated, you may be creating a dependency on your environment – in other words, you may have to activate the environment to use the new software. If you wish to deactivate your environment or activate another, run `conda deactivate` beforehand.
+Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on your environment, so it needs to be active to use the new software. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
 
 #### GeneMark
 I recommend using someone else’s installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website.
@@ -54,7 +56,7 @@ make install
 ```
 
 #### RepeatModeler and RepeatMasker
-Installing RepeatModeler/RepeatMasker requires a tutorial of their own. Funannotate decoupled RepeatMasker from itself due to its complexity. For solid repeat masking, these software will need to be installed beforehand.
+Installing RepeatModeler/RepeatMasker requires a tutorial of their own. For solid repeat masking, these software will need to be installed beforehand.
 
 ### 4. Install databases. 
 Funannotate relies on a variety of databases. We need to download them and set our environment up to use them.
@@ -67,7 +69,7 @@ echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funan
 ```
 
 ### 5. Check installation. 
-Funannotate provides tools to check installation software and test the installation. It’s okay if `emapper.py`, `ete3`, and `signalp` are not installed as we don’t need them now. I did not encounter any other erros, so they may indicate a problem.
+Funannotate provides tools to check installation software and test the installation. *It’s okay* if `emapper.py`, `ete3`, and `signalp` are not installed as we don’t need them now.
 
 `funannotate check --show-versions`
 `funannotate test -t all --cpus 8`
