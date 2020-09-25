@@ -46,7 +46,6 @@ source activate funannotate
 <br />
 
 ### 3. Install external software. 
-
 #### GeneMark
 I recommend using someone else’s installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website.
 
@@ -104,12 +103,9 @@ funannotate check --show-versions
 funannotate test -t all --cpus 8
 ```
 
-<br /><br />
-
-## USE
-
 <br />
 
+## USING FUNANNOTATE
 ### 1. Soft-mask assembly. 
 You will need an assembly as well as a RepeatModeler library for your organism - `$OME-families.fa`
 
