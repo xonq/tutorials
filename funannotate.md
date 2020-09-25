@@ -26,10 +26,17 @@ conda config --add channels conda-forge
 <br />
 
 ### 2. Create and downoad Funannotate environment. 
-- Create a new environment, `funannotate`, and download all software in the package list `funannotate`. Once downloaded, if you wish to interface with these software you must activate the environment.
-
+- Create a new environment, `funannotate`, and download all software in the package list `funannotate`:
 ```
 conda create -n funannotate python=2.7 funannotate
+```
+- *IF this does not complete*, submit it as a job to OSC following the 1st command (EDIT The PAS#### with the real number):
+```
+conda create -n funannotate
+echo -e 'source activate funannotate && conda install -y python=2.7 funannotate' | qsub -l walltime=10:00:00 -l nodes=1:ppn=1 -A PAS####
+```
+- Once installed, activate the environment
+```
 source activate funannotate
 ```
 
@@ -42,10 +49,14 @@ Note that when you install software with an environment activated, you may creat
 I recommend using someone else’s installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website.
 
 - copy a key
-`cp /users/PAS1046/osu10393/.gm_key ~/`
+```
+cp /users/PAS1046/osu10393/.gm_key ~/
+```
 
 - add installed GeneMark to your funannotate conda environment
-`echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> \ /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh`
+```
+echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> \ /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
+```
 
 
 #### gmap
@@ -73,7 +84,9 @@ Installing RepeatModeler/RepeatMasker requires a tutorial of their own. For soli
 ### 4. Install databases. 
 
 - install databases
-`funannotate setup -d /CONDA/INSTALLATION/PATH/miniconda3/databases`
+```
+funannotate setup -d /CONDA/INSTALLATION/PATH/miniconda3/databases
+```
 - add databases to funannotate conda environment configuration
 ```
 echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/miniconda3/databases” >> \
