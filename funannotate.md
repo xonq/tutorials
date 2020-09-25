@@ -83,11 +83,11 @@ Installing RepeatModeler/RepeatMasker requires a tutorial of their own. For soli
 
 ### 4. Install databases. 
 
-##### - install databases
+##### - install databases:
 ```
 funannotate setup -d /CONDA/INSTALLATION/PATH/miniconda3/databases
 ```
-##### - add databases to funannotate conda environment configuration
+##### - add databases to funannotate conda environment configuration:
 ```
 echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/miniconda3/databases” >> \
 /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
@@ -108,13 +108,13 @@ funannotate test -t all --cpus 8
 <br /><br />
 
 ## USE
-### 0. Beforehand. 
-You will need an assembly as well as a RepeatModeler library for your organism - `$OME-families.fa`
 
 <br />
 
 ### 1. Soft-mask assembly. 
-##### - This takes your repeat library and soft masks the assembly by lowercasing masked nucleotides
+You will need an assembly as well as a RepeatModeler library for your organism - `$OME-families.fa`
+
+##### - We take the repeat library and soft mask the assembly by lowercasing masked nucleotides:
 ```
 funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATMODELER/$OME-families.fa
 ```
@@ -128,7 +128,7 @@ You will have to download/compile a few pieces of data and information:
 - find the most closely related BUSCO database to your species by searching `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species`. To use a lab BUSCO database you must copy it to the above directory. Cite the exact name of the species parameter folder, *not the full directory`* in the use command below
 
 <br />
-##### - Edit the command below and submit to OSC
+##### - Edit the command below and submit the annotation job to OSC:
 ```
 echo -e ‘source activate funannotate && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” \
 --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE \
