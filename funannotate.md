@@ -4,23 +4,25 @@
 More information: https://funannotate.readthedocs.io/en/latest/install.html. Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
 Step 3+ require the `funannotate` environment is active - `source activate funannotate`. 
 
+<br/><br/>
 ## INSTALL
 ### 1. Install miniconda and setup download channels. 
 Miniconda is an *environment manager*, which keeps software in isolated environments. Miniconda uses software *channels* with prepackaged software - this makes the installation of complex programs as simple as `conda install X`. Alas, it is not always this easy.
 
-Here we install miniconda3 and make our profile aware of its executable files:
+#### \ta) Here we install miniconda3 and make our profile aware of its executable files:
 ```
 wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
 bash ~/miniconda.sh -b -p /CONDA/INSTALLATION/PATH/miniconda3
 echo -e 'export PATH="/CONDA/INSTALLATION/PATH/miniconda3/bin:$PATH"' >> ~/.bash_profile
 ```
-We then add the package channels that contain software *in this order*
+#### \tb) We then add the package channels that contain software *in this order*
 ```
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
 ```
 
+<br/>
 ### 2. Create and downoad Funannotate environment. 
 Create a new environment, `funannotate`, and download all software in the package list `funannotate`. Once downloaded, if you wish to interface with these software you must activate the environment.
 
