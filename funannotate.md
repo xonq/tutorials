@@ -101,30 +101,6 @@ NOTE - remember to activate the singularity container
 
 NOTE - Errors for `emapper.py`, `ete3`, and `signalp` are okay for *de novo* annotation.
 
-<br />
-
-## USING FUNANNOTATE
-### 1. Soft-mask assembly. 
-You will need an assembly as well as a RepeatModeler library for your organism - `$OME-families.fa`
-
-##### - We take the repeat library and soft mask the assembly by lowercasing masked nucleotides:
-```
-funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATMODELER/$OME-families.fa
-```
-
-<br />
-
-### 2. Gene prediction. 
-You will have to download/compile a few pieces of data and information:
-- find transcript/EST evidence from organism(s) in the same genus
-- find protein evidence from at least 10 closely related organisms (more increases computation time)
-- find the most closely related BUSCO database to your species by examining the databases stored in `/usr/local/config/species` in the singularity container or `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species` in the miniconda environment. In the command below, cite the exact name of the species parameter folder, *not the full directory*
-
-##### - Edit the command and submit the annotation job to OSC:
-```
-echo -e 'singularity run ~/software/funannotate/funannotate_1.7.4.sif && source ~/software/funannotate/funannotate.sh && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER' | qsub -l walltime=72:00:00 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
-```
-
 <br /><br />
 
 ### INSTALL OPTION 1B. miniconda (ERRORS: 09/24/2020)
