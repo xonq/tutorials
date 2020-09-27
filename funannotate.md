@@ -4,6 +4,7 @@
 - More information: https://funannotate.readthedocs.io/en/latest/install.html. 
 - Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
 
+If you are accessing via OSC and have access to PAS1046, you should be able to run Funannotate out of the box.
 To cleanly install Funannotate, we use a *Singularity container* (recommended) or an *environment manager*, Miniconda. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles - cutting out the time spent finding & installing the right program versions. Nevertheless, these processes often require some adjustment.
 
 <br />
