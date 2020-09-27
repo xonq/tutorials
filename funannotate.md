@@ -129,6 +129,7 @@ echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funan
 ```
 
 <br />
+
 ### USING VIA MINICONDA
 ##### - follow the USE instructions above with the following command:
 ```
