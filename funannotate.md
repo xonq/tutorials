@@ -12,7 +12,6 @@ To cleanly install Funannotate, we use a *Singularity container* (recommended) o
 #### Accessing GeneMark
 Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and transfer in your home directory as `~/.gm_key`
 
-<br />
 
 #### Accessing Funannotate
 Whenever you want to use Funannotate run the following. Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. To submit an OSC job you will have to create a `.sh` to run within the container. See 2. Gene Prediction.
