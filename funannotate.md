@@ -8,9 +8,20 @@ To cleanly install Funannotate, we use a *Singularity container* (recommended) o
 
 ## OSC USE
 #### Access to GeneMark
-We are using a local installation. Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and then run the code below.
+Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and then run the code below.
 
 ##### - copy a permissions key / download your own and place in home directory: `~/.gm_key`
+
+#### Accessing Funannotate software
+Whenever you want to use Funannotate run the following. Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`.
+
+##### - activate singularity container and setup environment
+```
+singularity run /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif
+source /fs/project/PAS1046/software/funannotate_1.7.4/source.sh
+```
+
+<br />
 
 ### 1. Soft-mask assembly. 
 You will need an assembly as well as a RepeatModeler library for your organism - `$OME-families.fa`
@@ -31,7 +42,7 @@ You will have to download/compile a few pieces of data and information:
 ##### - Edit the command and submit the annotation job to OSC:
 ```
 echo -e 'singularity run /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif && source /fs/project/PAS1046/software/funannotate_1.7.4/source.sh && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER' | qsub -l walltime=72:00:00 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
-`
+```
 
 <br /><br /><br />
 
