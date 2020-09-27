@@ -22,7 +22,7 @@ source /fs/project/PAS1046/software/funannotate_1.7.4/source.sh
 ```
 NOTE - Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. 
 
-NOTE -To submit an OSC job you will have to create a `.sh` to run within the container. See 2. Gene Prediction.
+NOTE - To submit an OSC job you will have to create a `.sh` to run within the container. See 2. Gene Prediction.
 
 
 <br />
