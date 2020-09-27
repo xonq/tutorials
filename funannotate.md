@@ -61,7 +61,6 @@ echo -e 'singularity exec /fs/project/PAS1046/software/funannotate_1.7.4/funanno
 <br /><br /><br />
 
 ## IF INSTALLING ON YOUR OWN:
-<br /><br />
 ### INSTALL OPTION 1A. *singularity* - recommended
 ##### - make folder and pull funannotate singularity container:
 ```
