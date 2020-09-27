@@ -42,7 +42,7 @@ NOTE - access the container to run the command; you will not need to submit an O
 Download/compile necessary data and information:
 - transcript/EST evidence from organism(s) in the same genus
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
-- find the most closely related BUSCO species database stored in `/usr/local/config/species` in the singularity container (REMEMBER: activate to use). Replace `BUSCO_SPECIES` with the BUSCO species parameter folder, *not the full directory*
+- find the most closely related BUSCO species database stored in `/usr/local/config/species` *in the singularity container.* Replace `BUSCO_SPECIES` with the name of the BUSCO species parameter folder
 
 ##### - create a text file with the following info, name it with `.sh`, and transfer to OSC:
 ```
