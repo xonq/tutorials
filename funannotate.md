@@ -42,13 +42,13 @@ NOTE - you cannot interact with other user folders when singularity is active, s
 <br />
 
 ### 3A. Check installation. 
-NOTE - Errors for `emapper.py`, `ete3`, and `signalp` are okay for *de novo* annotation.
 
 ##### - check your installation:
 ```
 funannotate check --show-versions
 ```
 NOTE - remember to activate the singularity container
+NOTE - Errors for `emapper.py`, `ete3`, and `signalp` are okay for *de novo* annotation.
 
 <br />
 
