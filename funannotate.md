@@ -28,9 +28,9 @@ NOTE - To submit an OSC job you will have to create a `.sh` to run within the co
 <br />
 
 ### 1. Soft-mask assembly. 
-You will need an assembly as well as a RepeatModeler library for your organism - `$OME-families.fa`
+Compile an assembly and RepeatModeler library fasta - `$OME-families.fa`
 
-##### - We take the repeat library and soft mask the assembly by lowercasing masked nucleotides:
+##### - Soft mask the assembly by lowercasing masked nucleotides from the repeat library:
 ```
 funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATMODELER/$OME-families.fa
 ```
@@ -39,10 +39,10 @@ NOTE - access the container to run the command; you will not need to submit an O
 <br />
 
 ### 2. Gene prediction. 
-You will have to download/compile a few pieces of data and information:
-- find transcript/EST evidence from organism(s) in the same genus
-- find protein evidence from at least 10 closely related organisms (separate by spaces in command)
-- find the most closely related BUSCO database to your species by examining the databases stored in `/usr/local/config/species` in the singularity container (REMEMBER: activate to use).  In the command below, cite the exact name of the BUSCO species parameter folder, *not the full directory*
+Download/compile necessary data and information:
+- transcript/EST evidence from organism(s) in the same genus
+- protein evidence from at least 10 closely related organisms (separate by spaces in command)
+- find the most closely related BUSCO species database stored in `/usr/local/config/species` in the singularity container (REMEMBER: activate to use). Replace `BUSCO_SPECIES` with the BUSCO species parameter folder, *not the full directory*
 
 ##### - create a text file with the following info, name it with `.sh`, and transfer to OSC:
 ```
