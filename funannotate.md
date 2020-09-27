@@ -49,6 +49,7 @@ funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evi
 --protein_evidence YOUR/PROTEIN_EVIDENCE PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species \
 MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER
 ```
+NOTE - the source command exports the environment variables necessary for funannotate
 
 #### - submit a job to Torque to run that file in the funannotate container
 ```
