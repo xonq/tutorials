@@ -10,7 +10,7 @@ To cleanly install Funannotate, we use a *Singularity container* (recommended) o
 
 ## OSC USE
 #### Accessing GeneMark
-Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and transfer in your home directory as `~/.gm_key`. These expire every 400 days.
+Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and transfer in your home directory as `~/.gm_key`. These expire every 400 days and will cause GeneMark errors.
 
 
 #### Accessing Funannotate
