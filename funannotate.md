@@ -53,7 +53,7 @@ PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species \
 MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER
 ```
 
-#### - submit a job to Torque to run that file the funannotate container
+#### - submit a job to Torque to run that file in the funannotate container
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
 ```
