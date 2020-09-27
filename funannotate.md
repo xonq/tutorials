@@ -35,7 +35,7 @@ We are using a local installation. Accept the licensing at http://topaz.gatech.e
 ##### - copy a permissions key / download your own and place in home then copy GeneMark:
 ```
 cp /users/PAS1046/osu10393/.gm_key ~/
-cp /user/PAS1046/osu10393/program/gmes_petap ~/software/gmes_petap
+cp /users/PAS1046/osu10393/program/gmes_petap ~/software/gmes_petap
 ```
 NOTE - you cannot interact with other user folders when singularity is active, so remember to exit
 
