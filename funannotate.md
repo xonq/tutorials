@@ -41,7 +41,7 @@ funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATM
 You will have to download/compile a few pieces of data and information:
 - find transcript/EST evidence from organism(s) in the same genus
 - find protein evidence from at least 10 closely related organisms (more increases computation time)
-- find the most closely related BUSCO database to your species by examining the databases stored in `/usr/local/config/species` in the singularity container or `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species` in the miniconda environment. In the command below, cite the exact name of the species parameter folder, *not the full directory*
+- find the most closely related BUSCO database to your species by examining the databases stored in `/usr/local/config/species` in the singularity container (REMEMBER: activate to use).  In the command below, cite the exact name of the species parameter folder, *not the full directory*
 
 ##### - create a text file with the following info, name it with `.sh`, and transfer to OSC:
 ```
