@@ -28,10 +28,11 @@ source ~/software/funannotate/fuannotate.sh
 ```
 NOTE - You should only use the singularity container to run funannotate commands - to deactivate, simply press CTRL + D or execute `exit`. 
 
+<br /> 
 
 ### 2A. Install external software. 
 #### GeneMark
-I recommend using someone else’s installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website.
+We are using an existing installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website, and edit the genemark paths in `funannotate.sh`.
 
 ##### - copy a permissions key or download your own and place in home:
 ```
