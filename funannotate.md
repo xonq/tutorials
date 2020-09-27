@@ -47,8 +47,8 @@ You will have to download/compile a few pieces of data and information:
 source /fs/project/PAS1046/software/funannotate_1.7.4/source.sh
 
 funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE \
---protein_evidence YOUR/PROTEIN_EVIDENCE /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta –cpus 6 --busco_seed_species \
-BUSCO_SPECIES -o OUTPUT/FOLDER
+--protein_evidence YOUR/PROTEIN_EVIDENCE /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
+–cpus 6 --busco_seed_species BUSCO_SPECIES -o OUTPUT/FOLDER
 ```
 NOTE - the source command exports the environment variables necessary for funannotate
 
