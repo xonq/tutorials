@@ -38,6 +38,7 @@ We are using an existing installation. You need to accept the licensing at http:
 ```
 cp /users/PAS1046/osu10393/.gm_key ~/
 ```
+NOTE - you cannot interact with other user folders when singularity is active, so remember to exit
 
 <br />
 
@@ -47,9 +48,8 @@ cp /users/PAS1046/osu10393/.gm_key ~/
 ##### - check your installation:
 ```
 funannotate check --show-versions
-funannotate test -t all --cpus 8
 ```
-NOTE - remember to activate the singularity container
+NOTE - remember to activate the singularity container to run this command
 
 <br />
 
@@ -131,8 +131,8 @@ echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funan
 ```
 
 <br />
-
-##### Using via miniconda:
+### USING VIA MINICONDA
+##### - follow the USE instructions above with the following command:
 ```
 echo -e 'source activate funannotate && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/databases/uniprot_sprot.fasta –cpus 6 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER' | qsub -l walltime=72:00:00 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
 ```
