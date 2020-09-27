@@ -76,7 +76,7 @@ echo -e 'singularity run YOUR/FUNANNOTATE.sif && source YOUR/FUNANNOTATE_SETUP.s
 
 <br /><br />
 
-### INSTAL OPTION 1B. miniconda (ERRORS: 09/24/2020)
+### INSTALL OPTION 1B. miniconda (ERRORS: 09/24/2020)
 
 ##### - install miniconda3 and make your profile aware of its executable files:
 ```
