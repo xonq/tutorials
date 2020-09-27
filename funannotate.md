@@ -6,6 +6,8 @@
 
 To cleanly install Funannotate, we use a *Singularity container* (recommended) or an *environment manager*, Miniconda. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles - cutting out the time spent finding & installing the right program versions. Nevertheless, these processes often require some adjustment.
 
+<br />
+
 ## OSC USE
 #### Access to GeneMark
 Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and then run the code below.
@@ -15,7 +17,7 @@ Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, d
 <br /><br />
 
 #### Accessing Funannotate software
-Whenever you want to use Funannotate run the following. Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`.
+Whenever you want to use Funannotate run the following. Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. To submit an OSC job you will have to create a `.sh` to run within the container. See 2. Gene Prediction.
 
 ##### - activate singularity container and setup environment
 ```
@@ -53,7 +55,7 @@ MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER
 
 #### - submit a job to Torque to run that file the funannotate container
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
+echo -e 'singularity exec /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
 ```
 
 <br /><br /><br />
