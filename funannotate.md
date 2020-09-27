@@ -4,7 +4,7 @@
 - More information: https://funannotate.readthedocs.io/en/latest/install.html. 
 - Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
 
-To cleanly install Funannotate, we use a *Singularity container* (recommended) or an *environment manager*, Miniconda. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles - cutting out the time spent finding & installing the right program versions. Nevertheless, these processes often require some adjustment. Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on the environment being active. You can see which environment is active by looking at the `($ENVIRONMENT)` that precedes your `bash` header in your terminal window. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
+To cleanly install Funannotate, we use a *Singularity container* (recommended) or an *environment manager*, Miniconda. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles - cutting out the time spent finding & installing the right program versions. Nevertheless, these processes often require some adjustment.
 
 
 
@@ -19,20 +19,20 @@ singularity pull --name ~/software/funannotate/funannotate_1.7.4.sif docker://qu
 ```
 cp /users/PAS1046/osu10393/program/singularity/funannotate/funannotate.sh ~/software/funannotate
 ```
-##### - to activate and interact with the funannotate container:
+##### - activate and interact with the funannotate container:
 ```
 singularity run ~/software/funannotate/funannotate_1.7.4.sif 
 source ~/software/funannotate/fuannotate.sh
 ```
-NOTE - You should only use the singularity container to run funannotate commands - to deactivate, simply press CTRL + D or execute `exit`. 
+NOTE - Only use the singularity container to run funannotate commands - to deactivate, simply press CTRL + D or use `exit`. 
 
 <br /> 
 
 ### 2A. Install external software. 
 #### GeneMark
-We are using an existing installation. You need to accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website, and edit the genemark paths in `funannotate.sh`.
+We are using a local installation. Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi and then run the code below. If you wish to install your own, you must follow the instructions on the website, and edit the genemark paths in `funannotate.sh`.
 
-##### - copy a permissions key or download your own and place in home:
+##### - copy a permissions key / download your own and place in home then copy GeneMark:
 ```
 cp /users/PAS1046/osu10393/.gm_key ~/
 cp /user/PAS1046/osu10393/program/gmes_petap ~/software/gmes_petap
@@ -42,13 +42,13 @@ NOTE - you cannot interact with other user folders when singularity is active, s
 <br />
 
 ### 3A. Check installation. 
-*It’s okay* if `emapper.py`, `ete3`, and `signalp` are not installed/cause errors as we don’t need them now.
+NOTE - Errors for `emapper.py`, `ete3`, and `signalp` are okay for *de novo* annotation.
 
 ##### - check your installation:
 ```
 funannotate check --show-versions
 ```
-NOTE - remember to activate the singularity container to run this command
+NOTE - remember to activate the singularity container
 
 <br />
 
@@ -76,7 +76,7 @@ echo -e 'singularity run YOUR/FUNANNOTATE.sif && source YOUR/FUNANNOTATE_SETUP.s
 
 <br /><br />
 
-### INSTAL OPTION 1B. miniconda 
+### INSTAL OPTION 1B. miniconda (ERRORS: 09/24/2020)
 
 ##### - install miniconda3 and make your profile aware of its executable files:
 ```
