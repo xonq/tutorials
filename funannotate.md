@@ -27,6 +27,8 @@ source PATH/TO/fuannotate.sh
 ```
 NOTE - you should only use the singularity container to run funannotate commands as you will have limited functionality. to deactivate, simply press CTRL + D
 
+<br />
+
 ### OPTION 2. Install miniconda and setup download channels. 
 
 ##### - install miniconda3 and make your profile aware of its executable files:
@@ -67,6 +69,7 @@ cp /users/PAS1046/osu10393/.gm_key ~/
 ```
 cp -r /users/PAS1046/osu9696/Software/gm_et_linux-64/gmes_petap /YOUR/SOFTWAREFOLDER
 ```
+
 #### - IF INSTALLING VIA MINICONDA - add genemark to your environment path
 ```
 echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
@@ -80,6 +83,7 @@ echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes
 ```
 funannotate setup -d /CONDA/INSTALLATION/PATH/miniconda3/databases
 ```
+
 ##### - add databases to the environment configuration:
 ```
 echo “export FUNANNOTATE_DB=/CONDA/INSTALLATION/PATH/miniconda3/databases” >> /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
