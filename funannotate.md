@@ -100,6 +100,7 @@ echo “unset FUNANNOTATE_DB” > /CONDA/INSTALLATION/PATH/miniconda3/envs/funan
 funannotate check --show-versions
 funannotate test -t all --cpus 8
 ```
+remember to run `singularity run PATH/TO/funannotate.sif` to activate the singularity container
 
 <br />
 
