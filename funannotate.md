@@ -32,6 +32,7 @@ You will need an assembly as well as a RepeatModeler library for your organism -
 ```
 funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATMODELER/$OME-families.fa
 ```
+NOTE - access the container to run the command; you will not need to submit an OSC job
 
 <br />
 
