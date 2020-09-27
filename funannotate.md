@@ -69,7 +69,6 @@ You will have to download/compile a few pieces of data and information:
 - find the most closely related BUSCO database to your species by examining the databases stored in `/usr/local/config/species` in the singularity container or `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species` in the miniconda environment. In the command below, cite the exact name of the species parameter folder, *not the full directory*
 
 ##### - Edit the command and submit the annotation job to OSC:
-##### for singularity:
 ```
 echo -e 'singularity run YOUR/FUNANNOTATE.sif && source YOUR/FUNANNOTATE_SETUP.sh -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER' | qsub -l walltime=72:00:00 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
 ```
