@@ -35,6 +35,7 @@ We are using an existing installation. You need to accept the licensing at http:
 ##### - copy a permissions key or download your own and place in home:
 ```
 cp /users/PAS1046/osu10393/.gm_key ~/
+cp /user/PAS1046/osu10393/program/gmes_petap ~/software/gmes_petap
 ```
 NOTE - you cannot interact with other user folders when singularity is active, so remember to exit
 
@@ -70,7 +71,7 @@ You will have to download/compile a few pieces of data and information:
 
 ##### - Edit the command and submit the annotation job to OSC:
 ```
-echo -e 'singularity run YOUR/FUNANNOTATE.sif && source YOUR/FUNANNOTATE_SETUP.sh -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER' | qsub -l walltime=72:00:00 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
+echo -e 'singularity run YOUR/FUNANNOTATE.sif && source YOUR/FUNANNOTATE_SETUP.sh && funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE --protein_evidence YOUR/PROTEIN_EVIDENCE PATH/TO/uniprot_sprot.fasta –cpus 6 --busco_seed_species MOST_CLOSELY_RELATED_BUSCO_SPECIES -o OUTPUT/FOLDER' | qsub -l walltime=72:00:00 -l nodes=1:ppn=6 -o OUTPUT/FOLDER -N LOG_FILE_NAME -A PAS####
 ```
 
 <br /><br />
