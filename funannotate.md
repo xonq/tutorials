@@ -3,15 +3,13 @@
 ## NOTE 
 - More information: https://funannotate.readthedocs.io/en/latest/install.html. 
 - Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
-- Step 3+ require the `funannotate` environment is active - `source activate funannotate`. 
 
-To cleanly install Funannotate, we use a *Singularity container* or an *environment manager*, Miniconda. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles - cutting out the time spent finding & installing the right program versions. Nevertheless, these processes often require some adjustment. Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on the environment being active. You can see which environment is active by looking at the `($ENVIRONMENT)` that precedes your `bash` header in your terminal window. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
+To cleanly install Funannotate, we use a *Singularity container* (recommended) or an *environment manager*, Miniconda. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles - cutting out the time spent finding & installing the right program versions. Nevertheless, these processes often require some adjustment. Note that when you install software with an environment activated, you may create a dependency on your environment – in other words, the new software may rely on the environment being active. You can see which environment is active by looking at the `($ENVIRONMENT)` that precedes your `bash` header in your terminal window. If you wish to deactivate your environment or activate another, run `conda deactivate`. 
 
 
 
 <br /><br />
-## INSTALL
-### OPTION 1A. Install via *singularity* - recommended
+### INSTALL OPTION 1A. *singularity* - recommended
 ##### - make folder and pull funannotate singularity container:
 ```
 mkdir -p ~/software/funannotate
@@ -68,7 +66,7 @@ funannotate mask -i YOUR/ASSEMBLY -o OUTPUT/MASKED_ASSEMBLY_NAME -l YOUR/REPEATM
 You will have to download/compile a few pieces of data and information:
 - find transcript/EST evidence from organisms in the same genus
 - find protein evidence from at least 10 closely related organisms (more increases computation time)
-- find the most closely related BUSCO database to your species by examining the databases stored in `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species` or `/usr/local/config/species` in the singularity container. To use a lab BUSCO database you must copy it to the above directory. In the command below, cite the exact name of the species parameter folder, *not the full directory*
+- find the most closely related BUSCO database to your species by examining the databases stored in `/usr/local/config/species` in the singularity container or `/CONDA/INSTALLATION/PATH/envs/funannotate/config/species` in the miniconda environment. In the command below, cite the exact name of the species parameter folder, *not the full directory*
 
 ##### - Edit the command and submit the annotation job to OSC:
 ##### for singularity:
@@ -78,7 +76,7 @@ echo -e 'singularity run YOUR/FUNANNOTATE.sif && source YOUR/FUNANNOTATE_SETUP.s
 
 <br /><br />
 
-### INSTALLATION OPTION 1B. Install miniconda and setup download channels. 
+### INSTAL OPTION 1B. miniconda 
 
 ##### - install miniconda3 and make your profile aware of its executable files:
 ```
