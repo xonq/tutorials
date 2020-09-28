@@ -20,11 +20,14 @@ Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, d
 singularity run /fs/project/PAS1046/software/singularity/funannotate/funannotate_1.7.4.sif
 source /fs/project/PAS1046/software/singularity/funannotate/source.sh
 ```
-NOTE - Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. 
-
-NOTE - To submit an OSC job you will have to create a `.sh` to run within the container. See 2. Gene Prediction.
+NOTE - Use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. For job submission see 2. Gene Prediction.
 
 
+##### - check the first time
+```
+funannotate check
+```
+NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine for annotation; `genemark` is not
 <br />
 
 ### 1. Soft-mask assembly. 
@@ -59,7 +62,7 @@ NOTE - the source command exports the environment variables necessary for funann
 echo -e 'singularity exec /fs/project/PAS1046/software/singularity/funannotate/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
 ```
 
-<br /><br /><br />
+<br /><br /><br /><br /><br />
 
 ## IF INSTALLING ON YOUR OWN:
 ### INSTALL OPTION 1A. *singularity* - recommended
