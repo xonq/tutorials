@@ -21,15 +21,16 @@ Compile an assembly
 
 ##### - build an NCBI database for `RepeatModeler` to reference
 ```
-BuildDatabase -name $OME -engine ncbi YOUR/ASSEMBLY.fasta
+BuildDatabase -name OME -engine ncbi YOUR/ASSEMBLY.fasta
 ```
 
 ##### - create a text file with the following command, save it as an `.sh` file, and transfer to OSC:
 
 ```
 cd YOUR/SCRATCH/FOLDER
-RepeatModeler -pa 8 -database YOUR/NCBI/DATABASE/$OME -engine ncbi 2>&1 | tee repeatmodeler.log
+RepeatModeler -pa 8 -database YOUR/NCBI/DATABASE/OME -engine ncbi 2>&1 | tee repeatmodeler.log
 ```
+NOTE - reference the `OME` after `-database`, *no file extensions*
 
 ##### - edit and submit a job to Torque
 ```

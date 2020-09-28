@@ -59,13 +59,13 @@ Download/compile necessary data and information:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE \
+funannotate predict -i YOUR/MASKED_ASSEMBLY -s “OME_RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE \
 --protein_evidence YOUR/PROTEIN_EVIDENCE /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
 –cpus 8 --busco_seed_species BUSCO_SPECIES -o OUTPUT/FOLDER
 ```
 
 ##### - edit and submit a job to Torque to run that file in the funannotate container
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS#### -N funannotate
 ```
 NOTE - you do not need to submit with the container active
