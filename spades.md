@@ -15,16 +15,16 @@ singularity run /fs/project/PAS1046/software/containers/spades/spades.sif
 <br />
 
 ### Assembling
-Edit the presented commands with the appropriate assembler, kmers, etc. Activate the container and run `spades.py --help` for more information.
+Activate the container and run `spades.py --help` for more information relevant to your use case.
 
-### EXAMPLE: Illumina 150 bp paired-end
+#### EXAMPLE1: Illumina 150 bp paired-end
 ##### - create a text file with the following command, save it as an `.sh` file, and transfer to OSC:
 
 ```
 spades.py --pe1-1 /PATH/TO/TRIMMED/F_READS -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir /PATH/TO/SCRATCH -t 6 -m 144 -o /PATH/TO/OUTPUT
 ```
 
-### EXAMPLE: Illumina 150 bp paired-end + Nanopore long read
+#### EXAMPLE2: Illumina 150 bp paired-end + Nanopore long read
 ##### - create a text file with the following command, save it as an `.sh` file and transfer to OSC:
 
 ```
