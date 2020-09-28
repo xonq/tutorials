@@ -1,8 +1,8 @@
 # Funannotate *de novo* annotation software setup and use
 
 ## NOTE 
-- Funannotate documentation: https://funannotate.readthedocs.io/en/latest/install.html. 
-- Fully capitalized paths, like `INSTALLATION/PATH` need to be manually edited by the user.
+- [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
+- Fully capitalized paths, like `INSTALLATION/PATH`, need to be manually edited by the user.
 
 If you are using OSC and have access to PAS1046, you should be able to run Funannotate after acquiring a GeneMark use key.
 
@@ -10,7 +10,7 @@ If you are using OSC and have access to PAS1046, you should be able to run Funan
 
 ## OSC USE
 #### Accessing GeneMark
-Accept the license for `GeneMark-ES/ET/EP` (http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
+Accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
 ##### - uncompress the key, then place it where GeneMark looks
 ```
 gunzip gm_key_64.gz
@@ -39,7 +39,7 @@ NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine
 <br />
 
 ### 1. Soft-mask assembly. 
-Compile an assembly and RepeatModeler library fasta - `$OME-families.fa`
+Compile an assembly and [RepeatModeler](https://gitlab.com/xonq/tutorials/repeatmodeler.md) library fasta - `$OME-families.fa`
 
 ##### - Soft mask the assembly by lowercasing masked nucleotides from the repeat library:
 ```
