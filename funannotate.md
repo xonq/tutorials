@@ -17,8 +17,8 @@ Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, d
 #### Accessing Funannotate
 ##### - activate singularity container and setup environment
 ```
-singularity run /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif
-source /fs/project/PAS1046/software/funannotate_1.7.4/source.sh
+singularity run /fs/project/PAS1046/software/singularity/funannotate/funannotate_1.7.4.sif
+source /fs/project/PAS1046/software/singularity/funannotate/source.sh
 ```
 NOTE - Only use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. 
 
@@ -46,7 +46,7 @@ Download/compile necessary data and information:
 
 ##### - create a text file with the following info, name it with `.sh`, and transfer to OSC:
 ```
-source /fs/project/PAS1046/software/funannotate_1.7.4/source.sh
+source /fs/project/PAS1046/software/singularity/funannotate/source.sh
 
 funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE \
 --protein_evidence YOUR/PROTEIN_EVIDENCE /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
@@ -56,7 +56,7 @@ NOTE - the source command exports the environment variables necessary for funann
 
 ##### - submit a job to Torque to run that file in the funannotate container
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/funannotate_1.7.4/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
+echo -e 'singularity exec /fs/project/PAS1046/software/singularity/funannotate/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
 ```
 
 <br /><br /><br />
