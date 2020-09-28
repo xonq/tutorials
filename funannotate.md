@@ -14,7 +14,7 @@ Accept the license for `GeneMark-ES/ET/EP` (http://topaz.gatech.edu/GeneMark/lic
 ##### - uncompress the key, then place it where GeneMark looks
 ```
 gunzip gm_key_64.gz
-mv gm_key_64 ~/.gm_key_64
+mv gm_key_64 ~/.gm_key
 ```
 
 NOTE - These expire in 400 days and will cause GeneMark errors.
