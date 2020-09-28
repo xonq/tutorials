@@ -14,7 +14,7 @@ Accept the license for `GeneMark-ES/ET/EP` (http://topaz.gatech.edu/GeneMark/lic
 
 
 #### Accessing Funannotate
-##### - activate singularity container then add Funannotate directories to your path
+##### - activate singularity container then temporarily source the Funannotate directories to your path
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
