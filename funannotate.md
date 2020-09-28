@@ -2,7 +2,7 @@
 
 ## NOTE 
 - Funannotate documentation: https://funannotate.readthedocs.io/en/latest/install.html. 
-- Fully capitalized paths, like `CONDA/INSTALLATION/PATH` need to be manually edited by the user.
+- Fully capitalized paths, like `INSTALLATION/PATH` need to be manually edited by the user.
 
 If you are accessing via OSC and have access to PAS1046, you should be able to run Funannotate out of the box. We use a *Singularity container* (recommended) or an *environment manager*, Miniconda, to run Funannotate. Containers and environments keep software isolated so they do not interfere. Additionally, containers and miniconda allow one to install prepackaged software bundles.
 
@@ -10,7 +10,7 @@ If you are accessing via OSC and have access to PAS1046, you should be able to r
 
 ## OSC USE
 #### Accessing GeneMark
-Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and transfer in your home directory as `~/.gm_key`. These expire every 400 days and will cause GeneMark errors.
+Accept the licensing at http://topaz.gatech.edu/GeneMark/license_download.cgi, download a key, and transfer to your home directory as `~/.gm_key`. These expire every 400 days and will cause GeneMark errors.
 
 
 #### Accessing Funannotate
