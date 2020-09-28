@@ -92,7 +92,7 @@ We are using a local installation. Accept the licensing at http://topaz.gatech.e
 ##### - copy a permissions key / download your own and place in home then copy GeneMark:
 ```
 cp /users/PAS1046/osu10393/.gm_key ~/
-cp /users/PAS1046/osu10393/program/gmes_petap ~/software/gmes_petap
+cp /users/PAS1046/osu10393/program/gm_et_linux_64 ~/software/gm_et_linux_64
 ```
 NOTE - you cannot interact with other user folders when singularity is active, so remember to exit
 
@@ -143,7 +143,7 @@ Install via the 2A instructions and additionally enter the following commands.
 
 #### - Add genemark to your environment path
 ```
-echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gmes_petap” >> /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
+echo “export GENEMARK_PATH=/users/PAS1046/osu9696/Software/gm_et_linux_64/gm_et_linux_64” >> /CONDA/INSTALLATION/PATH/miniconda3/envs/funannotate/etc/conda/activate.d/funannotate.sh
 ```
 
 <br />
