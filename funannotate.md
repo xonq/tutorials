@@ -39,7 +39,7 @@ NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine
 <br />
 
 ### 1. Soft-mask assembly. 
-Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/spades.md) and [RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) library fasta - `$OME-families.fa`
+Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) library fasta - `$OME-families.fa`
 
 ##### - Soft mask the assembly by lowercasing masked nucleotides from the repeat library:
 ```

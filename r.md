@@ -1,4 +1,4 @@
-# A compilation of R/ggplot2/gg3d commands and usage info
+# Compilation of R commands and usage info
 <br/>
 
 ## NOTE
