@@ -33,7 +33,7 @@ NOTE - Use the environment to run Funannotate commands. To deactivate press CTRL
 ```
 funannotate check
 ```
-NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine for annotation; `genemark` errors are not
+NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine for annotation; `gmes_petap.pl` errors are not
 
 <br />
 
