@@ -10,7 +10,14 @@ If you are accessing via OSC and have access to PAS1046, you should be able to r
 
 ## OSC USE
 #### Accessing GeneMark
-Accept the license for `GeneMark-ES/ET/EP` (http://topaz.gatech.edu/GeneMark/license_download.cgi), download a key, and transfer to your home directory as `~/.gm_key`. These expire in 400 days and will cause GeneMark errors.
+Accept the license for `GeneMark-ES/ET/EP` (http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
+##### - uncompress the key, then place it where GeneMark looks
+```
+gunzip gm_key_64.gz
+mv gm_key_64 ~/.gm_key_64
+```
+
+NOTE - These expire in 400 days and will cause GeneMark errors.
 
 
 #### Accessing Funannotate
