@@ -68,4 +68,4 @@ funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evi
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
 ```
-NOTE - you do not need to submit with the container active
+NOTE - edit the project number; you do not need to submit with the container active
