@@ -42,7 +42,7 @@ NOTE - only use the container for its specific commands; press CTRL + D or run `
 <br />
 
 #### Submitting jobs to Torque (OSC)
-Using containers have some quirks - particularly, when submitting a job to a compute cluster, the command must be executed in a bash script.
+Using containers have some quirks - particularly, when submitting a job to a compute cluster the command must be executed in a bash script.
 
 ##### - create a text file with the command to run in the container, save it as an `.sh` file, and transfer to OSC:
 
