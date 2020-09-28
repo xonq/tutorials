@@ -55,7 +55,7 @@ Download/compile necessary data and information:
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
 - find the most closely related BUSCO species database stored in `/usr/local/config/species` *in the singularity container.* Replace `BUSCO_SPECIES` with the name of the BUSCO species parameter folder
 
-##### - create a text file with the following info, name it with `.sh`, and transfer to OSC:
+##### - create a text file with the following funannotate command, save it as a `.sh` file, and transfer to OSC:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -68,3 +68,4 @@ funannotate predict -i YOUR/MASKED_ASSEMBLY -s “$OME_$RUN#” --transcript_evi
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/FILE.sh' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS####
 ```
+NOTE - you do not need to submit with the container active
