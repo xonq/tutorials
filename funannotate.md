@@ -4,7 +4,7 @@
 - Funannotate documentation: https://funannotate.readthedocs.io/en/latest/install.html. 
 - Fully capitalized paths, like `INSTALLATION/PATH` need to be manually edited by the user.
 
-If you are accessing via OSC and have access to PAS1046, you should be able to run Funannotate out of the box.
+If you are using OSC and have access to PAS1046, you should be able to run Funannotate after acquiring a GeneMark use key.
 
 <br />
 
@@ -19,6 +19,7 @@ mv gm_key_64 ~/.gm_key
 
 NOTE - These expire in 400 days and will cause GeneMark errors.
 
+<br />
 
 #### Accessing Funannotate
 ##### - activate singularity container then temporarily source the Funannotate directories to your path
