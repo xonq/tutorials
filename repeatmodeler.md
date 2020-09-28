@@ -11,7 +11,7 @@ If you are using OSC and have access to PAS1046, you should be able to repeat ma
 #### Accessing repeat masking software
 ##### - activate singularity container
 ```
-singularity run /fs/project/PAS1046/software/containers/repeat/tetools_latest.sif
+singularity run /fs/project/PAS1046/software/containers/repeat/repeat_tools.sif
 ```
 
 <br />
@@ -34,6 +34,6 @@ NOTE - reference the `OME` after `-database`, *no file extensions*
 
 ##### - edit and submit a job to Torque
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/repeat/tetools_latest.sif bash YOUR/FILE.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=8 -A PAS#### -N repeatmodeler
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/repeat/repeat_tools.sif bash YOUR/FILE.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=8 -A PAS#### -N repeatmodeler
 ```
 NOTE - you do not need to submit with the container active
