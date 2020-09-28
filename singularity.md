@@ -28,6 +28,8 @@ singularity pull docker://ONLINE/CONTAINER:<version>
 ```
 NOTE - `docker://` is necessary when the links are docker containers
 
+<br />
+
 #### Running containers
 ##### - once pulled, activate the container
 ```
