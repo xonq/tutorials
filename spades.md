@@ -49,6 +49,6 @@ spades.py --pe1-1 /PATH/TO/TRIMMED/F_READS.fq.gz --pe1-2 /PATH/TO/TRIMMED/R_READ
 
 ##### - edit and submit a job to Torque
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades.sif bash YOUR/FILE.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=8 -A PAS#### -N spades
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades.sif bash YOUR/FILE.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=6 -A PAS#### -N spades
 ```
 NOTE - you do not need to submit with the container active

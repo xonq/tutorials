@@ -17,7 +17,7 @@ singularity run /fs/project/PAS1046/software/containers/repeat/tetools_latest.si
 <br />
 
 ### Repeat modeling
-Compile an assembly
+Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/spades.md)
 
 ##### - build an NCBI database for `RepeatModeler` to reference
 ```
