@@ -1,4 +1,4 @@
-#Binning data in python
+# Binning data in python
 
 #### specify range to bin by
 `indices = list( range( 0, 50, 2 ) )`
