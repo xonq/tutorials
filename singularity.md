@@ -1,7 +1,7 @@
 # Singularity containers
 
 ## NOTE
-If you are using OSC or another super computer, Singularity may be enabled out of the box. Just run `singularity --help` to check.
+Singularity is a software that manages and executes software *containers*, like docker. Containers pack a program and its dependencies in an isolated environment that is easily disseminated. This not only makes bioinformatic software installation *much* easier, but it also allows multiple users to access the same installation and promotes reproducible computational science by freezing an image of published software and allowing reviewers to access that software with relative ease. If you are using OSC or another super computer, Singularity may be enabled out of the box. Just run `singularity --help` to check.
 
 <br />
 
