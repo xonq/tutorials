@@ -53,7 +53,7 @@ NOTE - access the container to run the command; you will not need to submit an O
 Download/compile necessary data and information:
 - transcript/EST evidence from organism(s) in the same genus
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
-- find the most closely related BUSCO species database `/fs/project/PAS1046/databases/busco/config/`. Replace `BUSCO_SPECIES` below with the name of the BUSCO species parameter folder, *not the full path*.
+- find the most closely related BUSCO species database from `funannotate species`
 
 ##### - create a text file with the following funannotate command, save it as a `.sh` file, and transfer to OSC:
 ```
