@@ -41,7 +41,7 @@ NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine
 ### OPTIONAL: "Clean" assembly
 Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md).
 
-#### - clean the assembly by removing duplicated and short contigs
+#### - clean the assembly by removing contigs < 500 bp and > 95% identity duplicates
 ```
 funannotate clean -i YOUR/ASSEMBLY -o OUTPUT/ASSEMBLY.clean
 ```
