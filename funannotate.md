@@ -44,6 +44,9 @@ Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.m
 ```
 funannotate clean -i YOUR/ASSEMBLY -o OUTPUT/ASSEMBLY.clean
 ```
+NOTE - you may need to submit a job. See 2. Gene prediction for job submission
+
+<br />
 
 ### 1. Soft-mask assembly. 
 Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) library fasta - `$OME-families.fa`
