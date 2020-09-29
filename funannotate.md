@@ -37,6 +37,7 @@ funannotate check
 NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine for annotation; `gmes_petap.pl` errors are not
 
 <br />
+
 ### OPTIONAL: "Clean" assembly
 Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md).
 
