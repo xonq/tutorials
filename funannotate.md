@@ -37,6 +37,13 @@ funannotate check
 NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine for annotation; `gmes_petap.pl` errors are not
 
 <br />
+### OPTIONAL: "Clean" assembly
+Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md).
+
+#### - clean the assembly by removing duplicated and short contigs
+```
+funannotate clean -i YOUR/ASSEMBLY -o OUTPUT/ASSEMBLY.clean
+```
 
 ### 1. Soft-mask assembly. 
 Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) library fasta - `$OME-families.fa`
