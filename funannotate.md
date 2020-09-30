@@ -39,15 +39,15 @@ NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine
 <br />
 
 ### OPTIONAL: "Clean" assembly
-Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md).
+Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md). By default, cleaning removes contigs < 500 bp and with 95% identity to any contig less than the N50.
 
-#### - create a text file with the clean assembly command, save it as an `.sh` file, and transfer to OSC
+##### - create a text file with the clean assembly command, save it as an `.sh` file, and transfer to OSC
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate clean -i YOUR/ASSEMBLY -o OUTPUT/ASSEMBLY.clean
 ```
 
-#### - clean the assembly by removing contigs < 500 bp and > 95% identity duplicates
+##### - edit and submit a job to Torque to run that command in the funannotate container
 ```
 echo -e 'singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/CMD.sh' | qsub -l walltime=30:00:00 -l nodes=1:ppn=6 -A PAS#### -N clean
 ```
