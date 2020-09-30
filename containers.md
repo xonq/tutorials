@@ -21,8 +21,8 @@ makepkg -si
 
 <br /><br />
 
-## USE
-#### Pulling premade software containers
+## Premade containers
+#### Pulling containers
 Many bioinformatics software have containers built from "conda recipes" hosted at [bioconda](https://bioconda.github.io/) or elsewhere. Simply find the software recipe page on bioconda.
 ##### - copy the docker/singularity link and pull:
 ```
@@ -51,3 +51,10 @@ Using containers have some quirks - particularly, you do not have access to othe
 echo -e 'singularity exec /YOUR/CONTAINER.sif bash YOUR/FILE.sh' | qsub -l walltime=##:##:## -l nodes=#:ppn=# -A PAS####
 ```
 NOTE - you do not need to submit with the container active; `exec` tells singularity to run the command and exit
+
+<br /><br />
+
+## Building containers
+Building containers is an advanced level task with too much nuance to describe here. In the future, I will link documentation concerning building.
+
+## 
