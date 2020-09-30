@@ -49,7 +49,7 @@ funannotate clean -i YOUR/ASSEMBLY -o OUTPUT/ASSEMBLY.clean
 
 ##### - edit and submit a job to Torque to run that command in the funannotate container
 ```
-echo -e 'singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/CMD.sh' | qsub -l walltime=30:00:00 -l nodes=1:ppn=6 -A PAS#### -N clean
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/CMD.sh' | qsub -l walltime=30:00:00 -l nodes=1:ppn=6 -A PAS#### -N clean
 ```
 
 <br />
