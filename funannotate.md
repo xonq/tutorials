@@ -41,11 +41,16 @@ NOTE - perl locale, `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine
 ### OPTIONAL: "Clean" assembly
 Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md).
 
-#### - clean the assembly by removing contigs < 500 bp and > 95% identity duplicates
+#### - create a text file with the clean assembly command, save it as an `.sh` file, and transfer to OSC
 ```
+source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate clean -i YOUR/ASSEMBLY -o OUTPUT/ASSEMBLY.clean
 ```
-NOTE - you may need to submit a job. See 2. Gene prediction for job submission
+
+#### - clean the assembly by removing contigs < 500 bp and > 95% identity duplicates
+```
+echo -e 'singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif bash YOUR/CMD.sh' | qsub -l walltime=30:00:00 -l nodes=1:ppn=6 -A PAS#### -N clean
+```
 
 <br />
 
