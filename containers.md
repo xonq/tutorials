@@ -55,6 +55,4 @@ NOTE - you do not need to submit with the container active; `exec` tells singula
 <br /><br />
 
 ## Building containers
-Building containers is an advanced level task with too much nuance to describe here. In the future, I will link documentation concerning building.
-
-## 
+Building containers is an advanced level task with too much nuance to describe here. If you cannot find an existing container in a trusted repository, consider creating an environment with `miniconda` and installing software into the environment. In the future, I will link documentation concerning building.
