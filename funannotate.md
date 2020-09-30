@@ -24,7 +24,7 @@ NOTE - These expire in 400 days and will cause GeneMark errors.
 #### Accessing Funannotate
 ##### - activate singularity container then temporarily source the Funannotate directories to your path
 ```
-singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif
+singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_1.7.4.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 ```
 NOTE - Use the environment to run Funannotate commands. To deactivate press CTRL + D or run `exit`. For job submission see 2. Gene Prediction.
