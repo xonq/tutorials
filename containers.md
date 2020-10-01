@@ -60,18 +60,14 @@ Building containers requires root access and therefore cannot be completed on sy
 
 ### Choose base OS Dockerfile / Singularity file(s)
 
-<br />
 
 ### Edit Dockerfile / Singularity file(s) to install dependencies
 
-<br />
 
 ### Build
 
-<br />
 
 ### Push
 
-<br /> 
 
 ### Pull
