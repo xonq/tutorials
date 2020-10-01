@@ -2,6 +2,7 @@
 
 ## NOTE 
 - [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
+- [Docker container](https://hub.docker.com/r/xonq/funannotate_mask/tags)
 - Fully capitalized paths, like `INSTALLATION/PATH`, need to be manually edited by the user.
 
 If you are using OSC and have access to PAS1046, you should be able to run Funannotate after acquiring a GeneMark use key.
