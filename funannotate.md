@@ -11,17 +11,18 @@ If you are using OSC and have access to PAS1046, you should be able to run Funan
 ## OSC USE
 #### Accessing GeneMark
 Accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
-**- uncompress the key, then place it where GeneMark looks**
+
+**- uncompress and rename**
 ```
 gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
 ```
 
-NOTE - These expire in 400 days and will cause GeneMark errors.
+NOTE - Keys expire in 400 days and will cause GeneMark errors.
 
 <br />
 
-#### Accessing Funannotate
+#### Activating Funannotate Container
 **- activate container then source the Funannotate directories to your path**
 ```
 singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
@@ -29,12 +30,6 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 ```
 
 NOTE - Only use to run the container's software. To deactivate press CTRL + D or run `exit`.
-
-**- check your first time**
-```
-funannotate check
-```
-NOTE - `hisat2`, `ete3`, `singalp` and `emapper.py` errors are fine for annotation; `gmes_petap.pl` errors are not
 
 <br />
 
@@ -55,7 +50,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br />
 
 ### 1. Soft-mask assembly. 
-Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) library fasta - `$OME-families.fa`
+Compile an [assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) library fasta - `$NAME-families.fa`
 
 **- soft-mask the assembly by using RepeatMasker to lowercase masked nucleotides**
 ```
@@ -71,7 +66,7 @@ Download/compile necessary data and information:
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
 - run `funannotate species` to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species
 
-**- create a text file with the following funannotate command, save it as a `.sh` file, and transfer to OSC:**
+**- create a file with the predict command, save as an `.sh`, and transfer to OSC:**
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -88,7 +83,7 @@ NOTE - you do not need to submit with the container active
 
 <br /><br />
 
-### Running all at once
+### All at once
 Here is the skeleton of a text file that can run through all the previous steps
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
