@@ -77,7 +77,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 funannotate predict -i YOUR/MASKED_ASSEMBLY -s “OME_RUN#” --transcript_evidence YOUR/TRANSCRIPT_AND_EST_EVIDENCE \
 --protein_evidence YOUR/PROTEIN_EVIDENCE /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
-–cpus 8 --busco_seed_species BUSCO_SPECIES -o OUTPUT/FOLDER
+-–cpus 8 --busco_seed_species BUSCO_SPECIES -o OUTPUT/FOLDER
 ```
 
 ##### - edit and submit a job to Torque to run that file in the funannotate container
