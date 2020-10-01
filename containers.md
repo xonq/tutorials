@@ -60,15 +60,16 @@ Building containers requires root access. The general steps are described below,
 
 
 ### Choose base OS Dockerfile / Singularity file(s)
-
+Find the most lightweight OS possible that can satisfy the dependencies of the software you want to install. E.g. Miniconda's preassembled container: `continuum.io/miniconda3`
 
 ### Edit Dockerfile / Singularity file(s) to install dependencies
-
+Review build file formatting, install dependencies, and clean out excess material from the container. Dockerfiles are more common and once they are built and pushed, they can be pulled by Singularity as previously described.
 
 ### Build
-
+Build the container: `docker build -i DOCKER_USR/PROJECT:VERSION .` Test it out by running `docker run -i -t DOCKER_USR/PROJECT /bin/bash`.
 
 ### Push
-
+Push the container to docker.io: `docker push DOCKER_USR/PROJECT:VERSION`
 
 ### Pull
+Pull the container at OSC: `singularity pull docker://DOCKER_USR/PROJECT:VERSION`
