@@ -55,7 +55,7 @@ NOTE - you do not need to submit with the container active; `exec` tells singula
 <br /><br />
 
 ## Building containers
-Building containers requires root access and therefore cannot be completed on systems, like OSC, without administrative privileges. Overall, there is too much nuance to describe here. If you cannot find an existing container in a trusted repository, consider creating an environment with `miniconda` and installing software into the environment. The general steps are as follows:
+Building containers requires root access. The general steps are described below, but there is too much nuance to go into detail here. If you cannot find an existing container in a trusted repository, consider creating an environment with `miniconda` and installing software into the environment.
 
 
 ### Choose base OS Dockerfile / Singularity file(s)
