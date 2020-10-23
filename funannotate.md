@@ -26,7 +26,7 @@ NOTE - Keys expire in 400 days and will cause GeneMark errors.
 #### Activating Funannotate Container
 **- activate container then source the Funannotate directories to your path**
 ```
-singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
+singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 ```
 
