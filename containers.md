@@ -27,7 +27,7 @@ makepkg -si
 Many bioinformatics software have containers built from "conda recipes" hosted at [bioconda](https://bioconda.github.io/) or elsewhere. Simply find the software recipe page on bioconda.
 ##### - copy the docker/singularity link and pull:
 ```
-singularity pull docker://ONLINE/CONTAINER:<version>
+singularity pull docker://<USER/CONTAINER>:<VERSION>
 ```
 NOTE - `docker://` is necessary when the links are docker containers
 
@@ -36,7 +36,7 @@ NOTE - `docker://` is necessary when the links are docker containers
 #### Running containers
 ##### - once pulled, activate the container
 ```
-singularity run /YOUR/CONTAINER.sif
+singularity run </YOUR/CONTAINER.sif>
 ```
 NOTE - only use the container for its specific commands; press CTRL + D or run `exit` to exit
 
@@ -49,7 +49,7 @@ Using containers have some quirks - particularly, you do not have access to othe
 
 ##### - edit and submit a job to Torque referencing the command file
 ```
-echo -e 'singularity exec /YOUR/CONTAINER.sif bash YOUR/FILE.sh' | qsub -l walltime=##:##:## -l nodes=#:ppn=# -A PAS####
+echo -e 'singularity exec </YOUR/CONTAINER.sif> bash <YOUR/CMD.sh>' | qsub -l walltime=<##:##:##> -l <nodes=#:ppn=#> -A PAS<####>
 ```
 NOTE - you do not need to submit with the container active; `exec` tells singularity to run the command and exit
 
@@ -66,10 +66,10 @@ Find the most lightweight OS possible that can satisfy the dependencies of the s
 Review build file formatting, install dependencies, and clean out excess material from the container. Dockerfiles are more common and once they are built and pushed, they can be pulled by Singularity as previously described.
 
 ### Build
-Build the container: `docker build -i DOCKER_USR/PROJECT:VERSION .` Test it out by running `docker run -i -t DOCKER_USR/PROJECT /bin/bash`.
+Build the container: `docker build -i <DOCKER_USR/PROJECT>:<VERSION> .` Test it out by running `docker run -i -t <DOCKER_USR/PROJECT> /bin/bash`.
 
 ### Push
-Push the container to docker.io: `docker push DOCKER_USR/PROJECT:VERSION`
+Push the container to docker.io: `docker push <DOCKER_USR/PROJECT>:<VERSION>`
 
 ### Pull
-Pull the container at OSC: `singularity pull docker://DOCKER_USR/PROJECT:VERSION`
+Pull the container at OSC: `singularity pull docker://<DOCKER_USR/PROJECT>:<VERSION>`
