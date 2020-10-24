@@ -10,7 +10,7 @@ If you are using OSC and have access to PAS1046, you should be able to run Funan
 <br />
 
 ## Prerequisites
-- [Assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md). 
+- [Assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
 - [Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) - `consensi.fa`
 
 <br />
@@ -30,6 +30,7 @@ NOTE - Keys expire in 400 days and will cause GeneMark errors.
 <br />
 
 #### Activating Funannotate Container
+
 **- activate container then source the Funannotate directories to your path**
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
@@ -40,8 +41,9 @@ NOTE - Only use to run the container's software. To deactivate press CTRL + D or
 
 <br />
 
-### 1: "Clean" assembly
+### 1. Clean assembly
 Clean by removing contigs < 1000 bp and with 95% identity to any contig less than the N50.
+
 ** - create a text file with the clean command, save as an `.sh` file, and transfer to OSC**
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
@@ -55,7 +57,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 <br />
 
-### 2. Soft-mask assembly. 
+### 2. Soft-mask assembly 
 
 ** - soft-mask the assembly by using RepeatMasker to lowercase masked nucleotides**
 ```
@@ -65,7 +67,7 @@ NOTE - the container needs to be active and sourced
 
 <br />
 
-### 3. Gene prediction. 
+### 3. Predict genes
 Download/compile necessary data and information:
 - transcript/EST evidence from organism(s) in the same genus
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
