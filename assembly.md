@@ -18,7 +18,7 @@ NOTE - only run SPAdes commands with the container active, press CTRL + D or run
 ### 1. Trimming Illumina paired-end reads
 ##### - edit the following command with your information:
 ```
-echo -e 'cd </OUTPUT/FOLDER> \njava -jar /fs/project/PAS1046/software/Trimmomatic-0.36/trimmomatic-0.36.jar \
+echo -e 'cd </OUTPUT/FOLDER> && java -jar /fs/project/PAS1046/software/Trimmomatic-0.36/trimmomatic-0.36.jar \
 PE -phred33 </PATH/TO/READ_1> </PATH/TO/READ_2> <OUTPUT_NAME_fpaired.fq.gz> <OUTPUT_NAME_funpaired.fq.gz> \
 <OUTPUT_NAME_rpaired.fq.gz> <OUTPUT_NAME_runpaired.fq.gz> ILLUMINACLIP:/fs/project/PAS1046/software/Trimmomatic-0.3.6/adapters/TruSeq3-PE.fa:2:30:10:11 \
 HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | qsub -l walltime=01:00:00 -l nodes=1:ppn=12 -A PAS#### \
