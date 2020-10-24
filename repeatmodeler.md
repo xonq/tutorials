@@ -10,6 +10,8 @@ If you are using OSC and have access to PAS1046, you should be able to repeat ma
 ## Prerequisites
 - [Assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
 
+<br />
+
 ## OSC USE
 #### Accessing repeat masking software
 ##### - activate singularity container
