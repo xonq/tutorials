@@ -95,7 +95,7 @@ Here is the skeleton of a text file that can run through all the previous steps
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 # remove contigs < 1000 bp and duplicates < N50 size
-#funannotate clean -i <YOUR/ASSEMBLY> -m 1000 -o <CLEAN/ASSEMBLY>
+funannotate clean -i <YOUR/ASSEMBLY> -m 1000 -o <CLEAN/ASSEMBLY>
 
 
 # soft-mask nucleotides
@@ -108,4 +108,4 @@ funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <
 --cpus 8 --busco_seed_species <BUSCO_SPECIES> -o <OUTPUT/FOLDER>
 ```
 
-Save as an `.sh`, transfer to OSC, and submit the script as previously described
+Save as an `.sh`, transfer to OSC, and submit the script as previously described (allocate enough resources)
