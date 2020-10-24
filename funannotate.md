@@ -37,7 +37,7 @@ singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 ```
 
-NOTE - Only use to run the container's software. To deactivate press CTRL + D or run `exit`.
+NOTE - Only use to run the container software. To deactivate press CTRL + D or run `exit`.
 
 <br />
 
