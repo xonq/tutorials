@@ -44,13 +44,13 @@ NOTE - Only use to run the container software. To deactivate press CTRL + D or r
 ### 1. Clean assembly
 Clean by removing contigs < 1000 bp and with 95% identity to any contig less than the N50.
 
-** - create a text file with the clean command, save as an `.sh` file, and transfer to OSC**
+**- create a text file with the clean command, save as an `.sh` file, and transfer to OSC**
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate clean -i <YOUR/ASSEMBLY> -o <OUTPUT/FILENAME> -m 1000
 ```
 
-** - edit and submit a job to Torque to run that file in the funannotate container**
+**- edit and submit a job to Torque to run that file in the funannotate container**
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | qsub -l walltime=30:00:00 -l nodes=1:ppn=6 -A PAS<####> -N clean
 ```
@@ -59,7 +59,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 ### 2. Soft-mask assembly 
 
-** - soft-mask the assembly by using RepeatMasker to lowercase masked nucleotides**
+**- soft-mask the assembly by using RepeatMasker to lowercase masked nucleotides**
 ```
 funannotate mask -i <YOUR/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBRARY> -o <OUTPUT/FILENAME>
 ```
