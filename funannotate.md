@@ -44,7 +44,7 @@ NOTE - Only use to run the container software. To deactivate press CTRL + D or r
 ### 1. Clean assembly
 Clean by removing contigs < 1000 bp and with 95% identity to any contig less than the N50.
 
-**- create a text file with the clean command, save as an `.sh` file, and transfer to OSC**
+**- create a plain text (UTF-8) file with the clean command, save as an `.sh` file, and transfer to OSC**
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate clean -i <YOUR/ASSEMBLY> -o <OUTPUT/FILENAME> -m 1000
