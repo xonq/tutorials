@@ -1,8 +1,6 @@
 # RepeatModeler *de novo* repeat library generation
 
 ## NOTE
-- This installation uses the Dfam database. Further modification is necessary to use RepBase.
-
 If you are using OSC and have access to PAS1046, you should be able to repeat mask out of the box.
 
 <br />
