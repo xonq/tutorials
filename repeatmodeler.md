@@ -1,7 +1,8 @@
 # RepeatModeler *de novo* repeat library generation
 
 ## NOTE
-If you are using OSC and have access to PAS1046, you should be able to repeat mask out of the box.
+If you are using OSC and have access to PAS1046, you should be able to repeat mask out of the box. I created a singularity/docker container with Funannotate and RepeatMasking software [here](https://hub.docker.com/r/xonq/funannotate_mask).
+
 
 <br />
 
