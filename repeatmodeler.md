@@ -11,6 +11,13 @@ If you are using OSC and have access to PAS1046, you should be able to repeat ma
 
 <br />
 
+## INSTALLING
+- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use) if using the Ohio Super Computer
+- Install the software container described [here](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#installing); note you do not need to source the environment script cited in that installation guide as it is specific to funannotate, not repeatmodeler
+- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use) and change paths to fit your use case
+
+<br />
+
 ## OSC USE
 #### Accessing repeat masking software
 ##### - activate singularity container
