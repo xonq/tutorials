@@ -23,19 +23,19 @@ Skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md
 
 #### Pulling the Funannotate Container
  
-**- Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container
+**- Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container**
 ```
 singularity pull docker.io//xonq/funannotate_mask:1.8.1
 ```
 
-**- Install databases
+**- Install databases**
 ```
 singularity run <CONTAINER.sif>
 funannotate setup -d <DATABASE/DIRECTORY>
 ```
 NOTE - only use the container to run Funannotate commands, press CTRL + D or type `exit` to exit
 
-**- Create an environment source file that points Funannotate to the appropriate directories and save as source.sh
+**- Create an environment source file that points Funannotate to the appropriate directories and save as source.sh**
 `source.sh`:
 ```
 # export path dependencies for databases, genemark, and augustus/busco species databases
@@ -46,7 +46,7 @@ export PATH=$PATH:		# path to genemark program directory
 ```
 NOTE - whenever you want to use Funannotate, you must run `source source.sh` to export these variables
 
-**- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary
+**- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary**
 
 <br />
 
