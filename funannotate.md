@@ -14,6 +14,42 @@ If you are using OSC and have access to PAS1046, you should be able to run Funan
 
 <br />
 
+## INSTALLING
+Skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) if you are using the Ohio SuperComputer
+
+#### Installing GeneMark
+
+**- Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/license_download.cgi), download the program, and transfer the use key to your home directory as `.gm_key`**
+
+#### Pulling the Funannotate Container
+ 
+**- Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container
+```
+singularity pull docker.io//xonq/funannotate_mask:1.8.1
+```
+
+**- Install databases
+```
+singularity run <CONTAINER.sif>
+funannotate setup -d <DATABASE/DIRECTORY>
+```
+NOTE - only use the container to run Funannotate commands, press CTRL + D or type `exit` to exit
+
+**- Create an environment source file that points Funannotate to the appropriate directories and save as source.sh
+`source.sh`:
+```
+# export path dependencies for databases, genemark, and augustus/busco species databases
+export FUNANNOTATE_DB=		# path to funannotate database
+export GENEMARK_PATH=		# path to genemark program directory
+#export AUGUSTUS_CONFIG_PATH=	# path to augustus species configuration (only specify if using a non-default one)
+export PATH=$PATH:		# path to genemark program directory
+```
+NOTE - whenever you want to use Funannotate, you must run `source source.sh` to export these variables
+
+**- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary
+
+<br />
+
 ## OSC USE
 #### Accessing GeneMark
 Accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
