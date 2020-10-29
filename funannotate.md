@@ -25,7 +25,7 @@ Skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md
  
 **- Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container**
 ```
-singularity pull docker.io://xonq/funannotate_mask:1.8.1
+singularity pull docker://xonq/funannotate_mask:1.8.1
 ```
 
 **- Install databases**
