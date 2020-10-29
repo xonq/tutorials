@@ -1,4 +1,4 @@
-# Compilation of R commands and usage info
+# R wisdom
 <br/>
 
 ## NOTE
