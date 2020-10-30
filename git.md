@@ -53,7 +53,7 @@ alternatively, you can use `git add .` to add all files and commit them together
 
 <br /><br />
 
-### hide from git
+### hiding paths
 edit/create `.gitignore` in the repository root folder and edit with folders to hide. Make sure the path(s) are *relative* to the repository root directory.
 ```
 <HIDE1>
@@ -72,3 +72,24 @@ git rm -r --cached <YOUR/HIDDEN/PATH>
 git commit -m '<YOURCOMMIT>'
 git push
 ```
+
+<br /><br />
+
+### pushing to multiple repositories
+
+add new url
+```
+git remote set-url --add --push origin <URL>
+```
+
+to change pull url
+```
+git remote set-url origin <URL>
+```
+
+to delete URL
+```
+git remote set-url --delete origin <URL>
+```
+
+
