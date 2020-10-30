@@ -6,7 +6,7 @@ If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you c
 
 <br />
 
-## Prerequisites
+## PREREQUISITES
 [A *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
 
 <br />
