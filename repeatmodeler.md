@@ -1,15 +1,14 @@
 # RepeatModeler *de novo* repeat library generation
 
 ## NOTE
-If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip to [OSC use](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use).
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can acquire the [prerequisites](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#prerequisites) and skip to [OSC use](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use).
 
-
-<br />
+<br /><br />
 
 ## PREREQUISITES
 [A *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
 
-<br />
+<br /><br />
 
 ## INSTALLING
 #### Pulling the Repeat masking/Funannotate Container
