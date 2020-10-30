@@ -3,7 +3,7 @@
 ## NOTE 
 [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
 
-If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use].
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use).
 
 <br />
 
