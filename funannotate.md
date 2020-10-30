@@ -1,25 +1,24 @@
 # Funannotate *de novo* annotation software setup and use
 
 ## NOTE 
-- [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
-- [Docker container](https://hub.docker.com/r/xonq/funannotate_mask/tags) - requires exporting dynamic variables upon startup
+[Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
 
-If you are using OSC and have access to PAS1046, you should be able to run Funannotate after acquiring a GeneMark use key.
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use].
 
 <br />
 
 ## Prerequisites
-- [Assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
-- [Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) - `consensi.fa`
+- [A *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
+- [A *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) - `consensi.fa`
 
-<br />
+<br /><br />
 
 ## INSTALLING
-Skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) if you are using the Ohio SuperComputer
-
 #### Installing GeneMark
 
 **- Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/license_download.cgi), download the program, and transfer the use key to your home directory as `.gm_key`**
+
+<br />
 
 #### Pulling the Funannotate Container
  
@@ -48,11 +47,11 @@ NOTE - whenever you want to use Funannotate, you must run `source source.sh` to 
 
 **- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary**
 
-<br />
+<br /><br />
 
 ## OSC USE
 #### Accessing GeneMark
-Accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
+If you do not have a GeneMark use key, accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
 
 **- uncompress and rename**
 ```
