@@ -1,19 +1,17 @@
 # RepeatModeler *de novo* repeat library generation
 
 ## NOTE
-If you are using OSC and have access to PAS1046, you should be able to repeat mask out of the box. I created a singularity/docker container with Funannotate and RepeatMasking software [here](https://hub.docker.com/r/xonq/funannotate_mask).
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip to [OSC use](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use).
 
 
 <br />
 
 ## Prerequisites
-- [Assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
+[A *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
 
 <br />
 
 ## INSTALLING
-- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use) if using the Ohio Super Computer
-
 #### Pulling the Repeat masking/Funannotate Container
  
 **- Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt container**
