@@ -1,6 +1,24 @@
 # git wisdom
 
-### installation
+NOTE - git commands need to be run in the git repository folder
+
+<br />
+
+### cloning a repository
+
+clone
+```
+git clone <URL.git>
+```
+
+update
+```
+git pull
+```
+
+<br />
+
+### initializing your repository
 UNDER CONSTRUCTION
 
 initialize git in a folder, set o
@@ -10,7 +28,7 @@ git init
 
 <br />
 
-### general use
+### tracking your repository
 
 add and push a file:
 ```
