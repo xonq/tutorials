@@ -34,8 +34,7 @@ funannotate setup -d <DATABASE/DIRECTORY>
 ```
 NOTE - only use the container to run Funannotate commands, press CTRL + D or type `exit` to exit
 
-**- Create an environment source file that points Funannotate to the appropriate directories and save as source.sh**
-`source.sh`:
+**- Create a UTF-8 text file with the following information, fill it in, and save it near the container as `source.sh`.**
 ```
 # export path dependencies for databases, genemark, and augustus/busco species databases
 export FUNANNOTATE_DB=		# path to funannotate database
@@ -43,7 +42,7 @@ export GENEMARK_PATH=		# path to genemark program directory
 #export AUGUSTUS_CONFIG_PATH=	# path to augustus species configuration (only specify if using a non-default one)
 export PATH=$PATH:		# path to genemark program directory
 ```
-NOTE - whenever you want to use Funannotate, you must run `source source.sh` to export these variables
+NOTE - this points Funannotate to your software and databases, so whenever you want to use Funannotate, you must run `source source.sh` to export these variables
 
 **- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary**
 
