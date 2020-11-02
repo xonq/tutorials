@@ -66,7 +66,7 @@ Find the most lightweight OS possible that can satisfy the dependencies of the s
 Review build file formatting, install dependencies, and clean out excess material from the container. Dockerfiles are more common and once they are built and pushed, they can be pulled by Singularity as previously described.
 
 ### Build
-Build the container: `docker build -i <DOCKER_USR/PROJECT>:<VERSION> .` 
+Build the container: `docker build -t <DOCKER_USR/PROJECT>:<VERSION> .` 
 
 Test it out by running `docker run -i -t <DOCKER_USR/PROJECT> /bin/bash`.
 
