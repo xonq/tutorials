@@ -1,9 +1,19 @@
 # SPAdes *de novo* genome assembly
 
 ## NOTE
-If you are using OSC and have access to PAS1046, you should be able to assemble out of the box.
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use).
 
 <br />
+
+## INSTALLATION
+#### Pulling SPAdes container
+```
+singularity pull quay.io://biocontainers/spades:latest
+```
+
+proceed to OSC USE and adjust paths and job submission commands as necessary
+
+<br /><br />
 
 ## OSC USE
 #### Accessing SPAdes assembler
