@@ -8,7 +8,7 @@ If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip 
 ## INSTALLATION
 #### Pulling SPAdes container
 ```
-singularity pull docker://quay.io/biocontainers/spades:latest
+singularity pull docker://quay.io/biocontainers/spades:3.14.1--h2d02072_0
 ```
 
 proceed to OSC USE and adjust paths and job submission commands as necessary
