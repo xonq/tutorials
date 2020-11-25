@@ -9,8 +9,8 @@ be the default job scheduler for Ohio Super Computer, which includes the `qsub q
 as of 2021 most clusters schedule using Slurm.
 
 ### Job submission
-You can submit jobs through the command line or by creating a plain text shell `.sh` file. I recommend using this
-as it serves as a log, keeps complex commands readable, and is easily edited via a command line text editor.
+You can submit jobs through the command line or by creating a plain text shell `.sh` file. I recommend a shell 
+file as it serves as a log, keeps complex commands readable, and is easily edited via a command line text editor.
 
 #### shell file 
 
