@@ -72,15 +72,23 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 NOTE - Only use to run the container software. To deactivate press CTRL + D or run `exit`.
 
-<br />
+<br /><br />
 
-### 1. Clean assembly
-Clean by removing contigs < 1000 bp and with 95% identity to any contig less than the N50.
+### 1. Sort/clean assembly
+Decide if you want to `clean` or simply `sort` the assembly: sorting renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts contigs; cleaning additionally removes contigs with 95% blast identity.
+
+#### a) sorting
+**- activate and source the singularity container first**
+```
+funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/SORTED_ASSEMBLY> --minlen 1000
+```
+
+#### b) cleaning
 
 **- create a plain text (UTF-8) file with the clean command, save as an `.sh` file, and transfer to OSC**
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
-funannotate clean -i <YOUR/ASSEMBLY> -o <OUTPUT/FILENAME> -m 1000
+funannotate clean -i <YOUR/ASSEMBLY> -o <OUTPUT/CLEANED_ASSEMBLY> -m 1000
 ```
 
 **- edit and submit a job to Torque to run that file in the funannotate container**
