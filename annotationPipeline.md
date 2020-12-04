@@ -9,3 +9,5 @@
 ### [Curate annotation](https://gitlab.com/xonq/turotials/-/blob/master/annotationCuration.md)
 
 ![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
+
+Flowchart originally authored by Kelsey Scott and Emile Gluck-Thaler; modified by Zachary Konkel from Maker to Funannotate and Orthofiller
