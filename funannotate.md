@@ -122,7 +122,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### All at once
-Here is the skeleton of a text file that can run through all the previous steps
+Once you have tested the individual steps of Funannotate and are familiar with the pipeline, you can submit all the commands in one `.sh` file to move a genome through all steps at once. Here is the skeleton of such a file:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
