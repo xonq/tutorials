@@ -2,6 +2,8 @@
 
 ## GETTING STARTED
 [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
+[Slot Lab Annotation Pipeline](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md)
+
 
 Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip installation and jump straight to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use).
 
