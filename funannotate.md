@@ -2,6 +2,7 @@
 
 ## GETTING STARTED
 [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
+
 [Slot Lab Annotation Pipeline](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md)
 
 
