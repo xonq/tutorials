@@ -31,13 +31,14 @@ build an NCBI database for `RepeatModeler` to reference
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
-create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC:
+Make an output directory, create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC. NOTE - reference the `NAME` after `-database`, *no file extensions*
+
 
 ```
-cd YOUR/SCRATCH/FOLDER
+mkdir <YOUR/SCRATCH/FOLDER/OUTPUT>
+cd <YOUR/SCRATCH/FOLDER/OUTPUT>
 RepeatModeler -pa 8 -database <YOUR/NCBI/DATABASE/NAME> -engine ncbi 2>&1 | tee repeatmodeler.log
 ```
-NOTE - reference the `NAME` after `-database`, *no file extensions*
 
 Edit the command below and submit the job. You do not have to activate the container to submit a job that calls the container.
 ```
