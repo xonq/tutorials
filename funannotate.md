@@ -62,7 +62,7 @@ gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
 ```
 
-Relogin and test Funannotate: To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
+Relogin and test Funannotate as described below: To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
@@ -71,9 +71,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 <br /><br />
 
 ### 1. Sort assembly
-Sort the assembly: sorting renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest
-
-Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate
+Sort the assembly: sorting renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest. Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate
 ```
 funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/SORTED_ASSEMBLY> --minlen 1000
 ```
