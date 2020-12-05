@@ -48,8 +48,15 @@ Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotat
 <br /><br /><br />
 
 ## OSC USE
-#### Accessing GeneMark
-Accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. These keys expire every 400 days.
+#### Prepare your profile for using Funannotate
+First, run this command to make your profile compatible with Funannotate:
+```
+echo -e 'export SINGULARITY_BINDPATH="/opt:/tmp"' >> ~/.bash_profile
+```
+
+<br />
+
+Next, accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. These keys expire every 400 days.
 
 uncompress the key and place it in your home folder as `.gm_key`
 ```
@@ -59,9 +66,7 @@ mv gm_key_64 ~/.gm_key
 
 <br />
 
-#### Activating Funannotate Container
-
-To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
+Finally, relogin and test it out. To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
