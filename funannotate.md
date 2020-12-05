@@ -1,112 +1,100 @@
 # Funannotate *de novo* annotation software setup and use
 
-## NOTE 
+## GETTING STARTED
 [Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
 
-If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can acquire the [prerequisites](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#prerequisites) and skip to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use).
+Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip installation and jump straight to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use).
 
-<br />
-
-## PREREQUISITES
-- [A *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) - `scaffolds.fasta`
-- [A *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) - `consensi.fa`
-
-<br /><br />
+<br /><br /><br />
 
 ## INSTALLING
-#### Installing GeneMark
+#### Install GeneMark
 
-**- Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/license_download.cgi), download the program, and transfer the use key to your home directory as `.gm_key`**
+Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/license_download.cgi), download the program, and transfer the use key to your home directory as `.gm_key`**
 
 <br />
 
-#### Pulling the Funannotate Container
+#### Pull the Funannotate Container
  
-**- Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container**
+Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container**
 ```
 singularity pull docker://xonq/funannotate_mask:1.8.1
 ```
 
-**- Install databases**
+Install databases
 ```
 singularity run <CONTAINER.sif>
 funannotate setup -d <DATABASE/DIRECTORY>
 ```
 NOTE - only use the container to run Funannotate commands, press CTRL + D or type `exit` to exit
 
-**- Create a UTF-8 text file with the following information, fill it in, and save it near the container as `source.sh`.**
+Create a UTF-8 text file with the following information, fill it in, and save it in the folder with the container `.img` as `source.sh`. Everytime you wish to use the container, you must run `source <PATH/TO>/source.sh` to point Funannotate to the binaries.
 ```
+# activate funannotate software
+. /opt/conda/etc/profile.d/conda.sh
+conda activate base
+
 # export path dependencies for databases, genemark, and augustus/busco species databases
 export FUNANNOTATE_DB=		# path to funannotate database
 export GENEMARK_PATH=		# path to genemark program directory
 #export AUGUSTUS_CONFIG_PATH=	# path to augustus species configuration (only specify if using a non-default one)
 export PATH=$PATH:		# path to genemark program directory
 ```
-NOTE - this points Funannotate to your software and databases, so whenever you want to use Funannotate, you must run `source source.sh` to export these variables
 
-**- Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary**
+<br />
 
-<br /><br />
+Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) and follow instructions, changing path references when necessary
+
+<br /><br /><br />
 
 ## OSC USE
 #### Accessing GeneMark
-If you do not have a GeneMark use key, accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. 
+Accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. These keys expire every 400 days.
 
-**- uncompress and rename**
+uncompress the key and place it in your home folder as `.gm_key`
 ```
 gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
 ```
 
-NOTE - Keys expire in 400 days and will cause GeneMark errors.
-
 <br />
 
 #### Activating Funannotate Container
 
-**- activate container then source the Funannotate directories to your path**
+To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 ```
 
-NOTE - Only use to run the container software. To deactivate press CTRL + D or run `exit`.
-
 <br /><br />
 
-### 1. Sort/clean assembly
-Decide if you want to `clean` or simply `sort` the assembly: sorting renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts contigs; cleaning additionally removes contigs with 95% blast identity.
+### 1. Sort assembly
+Sort the assembly: sorting renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest
 
-#### a) sorting
-**- activate and source the singularity container first**
+Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate
 ```
 funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/SORTED_ASSEMBLY> --minlen 1000
 ```
 
-#### b) cleaning
-
-**- create a plain text (UTF-8) file with the clean command, save as an `.sh` file, and transfer to OSC**
-```
-source /fs/project/PAS1046/software/containers/funannotate/source.sh
-funannotate clean -i <YOUR/ASSEMBLY> -o <OUTPUT/CLEANED_ASSEMBLY> -m 1000
-```
-
-**- edit and submit a job to Torque to run that file in the funannotate container**
-```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | qsub -l walltime=30:00:00 -l nodes=1:ppn=6 -A PAS<####> -N clean
-```
-
-<br />
+<br /><br />
 
 ### 2. Soft-mask assembly 
 
-**- soft-mask the assembly by using RepeatMasker to lowercase masked nucleotides**
+Soft-mask the assembly by using RepeatMasker referencing a custom repeat library. May take a while, so submit this as a job to the supercomputer. *You do not want the container to be activated when submitting a job*. Instead, you first create a `UTF-8` plain-text file with your commands and save it as a `.sh` file, like `funmask.sh`. 
 ```
+source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate mask -i <YOUR/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBRARY> -o <OUTPUT/FILENAME>
 ```
-NOTE - the container needs to be active and sourced
 
 <br />
+
+If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit the `.sh` file to the job node:
+```
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif /bin/bash <YOUR/SH_FILE>' | qsub -l walltime=10:00:00 -l nodes=1:ppn=1 -A <PROJECT>
+```
+
+<br /><br />
 
 ### 3. Predict genes
 Download/compile necessary data and information:
@@ -114,7 +102,7 @@ Download/compile necessary data and information:
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
 - run `funannotate species` to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
 
-**- create a file with the predict command, save as an `.sh`, and transfer to OSC:**
+create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -123,11 +111,12 @@ funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME_RUN#>” --transcript_e
 -–cpus 8 --busco_seed_species <BUSCO_SPECIES> -o <OUTPUT/FOLDER>
 ```
 
-**- edit and submit a job to Torque to run that file in the funannotate container**
+<br />
+
+Edit and submit a job to run that file in the funannotate container. Remember, you don't need to activate the container to submit a job that uses the container.
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS<####> -N funannotate
 ```
-NOTE - you do not need to submit with the container active
 
 <br /><br />
 
@@ -136,8 +125,8 @@ Here is the skeleton of a text file that can run through all the previous steps
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-# remove contigs < 1000 bp and duplicates < N50 size
-funannotate clean -i <YOUR/ASSEMBLY> -m 1000 -o <CLEAN/ASSEMBLY>
+# sort and remove contigs < 1000 bp
+funannotate sort -i <YOUR/ASSEMBLY> --minlen 1000 -o <SORTED/ASSEMBLY>
 
 
 # soft-mask nucleotides
