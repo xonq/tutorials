@@ -16,17 +16,17 @@ Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/lic
 
 #### Pull the Funannotate Container
  
-Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container**
+Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container
 ```
 singularity pull docker://xonq/funannotate_mask:1.8.1
 ```
 
-Install databases
+Install databases and exit the container
 ```
 singularity run <CONTAINER.sif>
 funannotate setup -d <DATABASE/DIRECTORY>
+exit
 ```
-NOTE - only use the container to run Funannotate commands, press CTRL + D or type `exit` to exit
 
 Create a UTF-8 text file with the following information, fill it in, and save it in the folder with the container `.img` as `source.sh`. Everytime you wish to use the container, you must run `source <PATH/TO>/source.sh` to point Funannotate to the binaries.
 ```
@@ -48,13 +48,11 @@ Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotat
 <br /><br /><br />
 
 ## OSC USE
-#### Prepare your profile for using Funannotate
+#### First use
 First, run this command to make your profile compatible with Funannotate:
 ```
 echo -e 'export SINGULARITY_BINDPATH="/opt:/tmp"' >> ~/.bash_profile
 ```
-
-<br />
 
 Next, accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. These keys expire every 400 days.
 
@@ -64,9 +62,7 @@ gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
 ```
 
-<br />
-
-Finally, relogin and test it out. To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
+Relogin and test Funannotate: To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
