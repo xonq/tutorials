@@ -32,7 +32,7 @@ build an NCBI database for `RepeatModeler` to reference. Make sure you activate 
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
-Make an output directory  in your scratch folder:
+Deactivate the container as described above and make an output directory  in your scratch folder:
 
 ```
 mkdir <YOUR/SCRATCH/DIR>
