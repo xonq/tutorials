@@ -1,7 +1,7 @@
 # RepeatModeler *de novo* repeat library generation
 
 ## Getting Started
-You will need [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046 you can skip installation to [OSC use](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use).
+You will need [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
 
 <br /><br />
