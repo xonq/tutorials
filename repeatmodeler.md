@@ -7,7 +7,6 @@ You will need [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/ma
 <br /><br />
 
 ## INSTALLING
-#### Pulling the Repeat masking/Funannotate Container
  
 Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt container
 ```
