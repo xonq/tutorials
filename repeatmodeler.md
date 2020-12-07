@@ -26,7 +26,7 @@ singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_
 <br />
 
 ### Repeat modeling
-build an NCBI database for `RepeatModeler` to reference
+build an NCBI database for `RepeatModeler` to reference. Make sure you activate the container as explained above.
 ```
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
