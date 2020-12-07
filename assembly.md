@@ -18,14 +18,6 @@ Proceed to OSC USE and adjust paths and job submission commands as necessary
 <br /><br />
 
 ## OSC USE
-#### Accessing SPAdes assembler
-Activate the SPAdes singularity container, which gives you access to SPAdes software. Only use the container to run the software within it, otherwise you will experience difficulties. To exit the container, press CTRL + D, or type `exit`.
-```
-singularity run /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
-```
-
-<br />
-
 ### 1. Trimming Illumina paired-end reads
 Find the adapter relevant to your sequence data and edit the following job submission command with your information:
 ```
@@ -39,6 +31,12 @@ HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | qsub -l walltime=01:00:00
 <br />
 
 ### 2. Assembling
+#### Accessing SPAdes assembler
+When using SPAdes, you have to activate the SPAdes singularity container, which gives you access to SPAdes software. Only use the container to run the software within it, otherwise you will experience weird errors. Also, the container should NOT be active when submitting jobs that use the container - the procedure for job submission is explained below. To exit the container, press `CTRL` + `D`, or type `exit`.
+```
+singularity run /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
+```
+
 Activate the container and run `spades.py --help` for more information relevant to your use case.
 
 #### EXAMPLE1: Illumina 150 bp paired-end
