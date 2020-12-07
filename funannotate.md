@@ -119,7 +119,7 @@ Edit and submit a job to run that file in the funannotate container. Remember, y
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS<####> -N funannotate
 ```
 
-<br /><br />
+<br />
 
 ### All at once
 Once you have tested the individual steps of Funannotate and are familiar with the pipeline, you can submit all the commands in one `.sh` file to move a genome through all steps at once. Here is the skeleton of such a file:
@@ -141,3 +141,8 @@ funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <
 ```
 
 Save as an `.sh`, transfer to OSC, and submit the script as previously described (allocate enough resources)
+
+<br /><br />
+
+## OUTPUT
+Funannotate will output many working files and an organized folder of results. The results can be found in your `<OUTPUT>/predict_results`. The naming scheme is intuitive: the gene coordinate file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/scripts).
