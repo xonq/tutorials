@@ -31,16 +31,20 @@ build an NCBI database for `RepeatModeler` to reference
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
-Make an output directory, create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC. NOTE - reference the `NAME` after `-database`, *no file extensions*
+Make an output directory  in your scratch folder:
+
+```
+mmkdir <YOUR/SCRATCH/DIR> ```
+
+create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC. NOTE - reference the `NAME` after `-database`, *no file extensions*
 
 
 ```
-mkdir <YOUR/SCRATCH/FOLDER/OUTPUT>
 cd <YOUR/SCRATCH/FOLDER/OUTPUT>
 RepeatModeler -pa 8 -database <YOUR/NCBI/DATABASE/NAME> -engine ncbi 2>&1 | tee repeatmodeler.log
 ```
 
-Edit the command below and submit the job. You do not have to activate the container to submit a job that calls the container.
+Edit the command below and submit the job. *Do not activate the container to submit a job using it*
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMD>.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=8 -A PAS<####> -N repeatmodeler
 ```
