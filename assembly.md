@@ -55,6 +55,7 @@ spades.py --pe1-1 </PATH/TO/TRIMMED/F_READS.fq.gz> --pe1-2 </PATH/TO/TRIMMED/R_R
 
 <br />
 
+#### SUBMITTING A JOB SCRIPT
 Edit the below and submit a job to Torque job management - you do not need the container active to submit the job.
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif bash <YOUR/CMD>' | qsub -l walltime=100:00:00 -l nodes=1:ppn=6 -A PAS<####> -N spades
