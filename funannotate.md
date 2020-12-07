@@ -65,7 +65,7 @@ gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
 ```
 
-Relogin and test Funannotate as described below: To interface with Funannotate in the login node, you will have to activate a *container* of software and then run a `source` command to add the software to our `PATH`. To deactivate the container, press CTRL + D or run `exit`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior.
+Relogin and test Funannotate as described below: To interface with Funannotate in the login node you activate a *container* of software and then run a `source` command to add the software to our `PATH`. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior. To deactivate the container, press CTRL + D or run `exit`. 
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
@@ -74,7 +74,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 <br /><br />
 
 ### 1. Sort assembly
-Sort the assembly: sorting renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest. Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate
+Sort the assembly: this renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest. Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate. This command can be run without submitting a job.
 ```
 funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/SORTED_ASSEMBLY> --minlen 1000
 ```
@@ -83,15 +83,14 @@ funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/SORTED_ASSEMBLY> --minlen 1000
 
 ### 2. Soft-mask assembly 
 
-Soft-mask the assembly by using RepeatMasker referencing a custom repeat library. May take a while, so submit this as a job to the supercomputer. *You do not want the container to be activated when submitting a job*. Instead, you first create a `UTF-8` plain-text file with your commands and save it as a `.sh` file, like `funmask.sh`. 
+Soft-mask the assembly: this references your [*de novo* repeat library](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) to lowercase masked nucleotides. This will be submitted as a job, which is slightly different for `singularity` containers. 
+NOTE - *You do not want the container to be activated when submitting a job*. Instead, you first create a `UTF-8` plain-text file with the information below and save it as a `.sh` file, like `funmask.sh`. 
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate mask -i <YOUR/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBRARY> -o <OUTPUT/FILENAME>
 ```
 
-<br />
-
-If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit the `.sh` file to the job node:
+If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit to the job node by invoking singularity to reference your `.sh` file like so:
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif /bin/bash <YOUR/SH_FILE>' | qsub -l walltime=10:00:00 -l nodes=1:ppn=1 -A <PROJECT>
 ```
@@ -101,7 +100,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 ### 3. Predict genes
 Download/compile necessary data and information:
 - transcript/EST evidence from organism(s) in the same genus
-- protein evidence from at least 10 closely related organisms (separate by spaces in command)
+- protein evidence from at least 10 closely related organisms (separate by spaces in command) and the uniprot database.
 - run `funannotate species` to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
 
 create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC:
