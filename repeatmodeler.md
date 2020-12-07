@@ -44,3 +44,8 @@ Edit the command below and submit the job. You do not have to activate the conta
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMD>.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=8 -A PAS<####> -N repeatmodeler
 ```
+
+<br />
+
+## OUTPUT
+RepeatModeler outputs a ton of files, which is why output needs to be directed to a scratch folder. You will not need most of the files - instead, the `-consensi.fa` is the *de novo* repeat library you reference when [masking](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#2.-soft-mask-assembly) your assembly for gene prediction.
