@@ -13,7 +13,7 @@ export SINGULARITY_BINDPATH="/opt:/mnt"
 #### 3) [Generate a repeat library with RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md)
 #### 4) [Predict genes with Funannotate](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md)
 #### 5) Fill annotation with OrthoFiller
-#### 6) [Curate annotation](https://gitlab.com/xonq/turotials/-/blob/master/annotationCuration.md)
+#### 6) [Curate annotation](https://gitlab.com/xonq/tutorials/-/blob/master/annotationCuration.md)
 
 ![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
 
