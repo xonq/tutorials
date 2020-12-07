@@ -13,7 +13,7 @@ Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.co
 ## INSTALLING
 #### Install GeneMark
 
-Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/license_download.cgi), download the program, and transfer the use key to your home directory as `.gm_key`**
+Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/license_download.cgi), download the program, and transfer the use key to your home directory as `.gm_key`
 
 <br />
 
@@ -59,7 +59,7 @@ echo -e 'export SINGULARITY_BINDPATH="/opt:/tmp"' >> ~/.bash_profile
 
 Next, accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. These keys expire every 400 days.
 
-uncompress the key and place it in your home folder as `.gm_key`
+Once the key is uploaded, uncompress it and place it in your home folder as `.gm_key`:
 ```
 gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
