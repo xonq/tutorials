@@ -1,7 +1,7 @@
 # SPAdes *de novo* genome assembly
 
 ## GETTING STARTED 
-If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use).
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
 <br />
 
