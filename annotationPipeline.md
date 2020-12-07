@@ -1,8 +1,8 @@
 # Slot Lab Annotation Pipeline
 ## GETTING STARTED
-If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is run this command to set up your profile:
+If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
 ```
-echo 'export SINGULARITY_BINDPATH="/opt:/mnt"' >> ~/.bash_profile
+export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
 
 <br />
