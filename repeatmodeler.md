@@ -36,7 +36,8 @@ BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 Make an output directory  in your scratch folder:
 
 ```
-mkdir <YOUR/SCRATCH/DIR> ```
+mkdir <YOUR/SCRATCH/DIR>
+```
 
 create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC. NOTE - reference the `NAME` after `-database`, *no file extensions*
 
