@@ -9,6 +9,7 @@ If you are using the Ohio Super Computer and have access to PAS1046, you should 
 
 #### Gene/Protein headers
 `<$SCRIPTS>/curateFunannotate.py -n <NAMECODE> -g <GFF3> -p <PROTEOME> -t <TRANSCRIPTS>`
+NOTE - this script will be edited in the future to curate orthofiller output as well
 
 <br />
 
