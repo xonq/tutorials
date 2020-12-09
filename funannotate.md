@@ -6,7 +6,7 @@
 [Slot Lab Annotation Pipeline](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md)
 
 
-Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, you can skip installation and jump straight to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use).
+Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
 <br /><br /><br />
 
@@ -52,12 +52,7 @@ Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotat
 
 ## OSC USE
 #### First use
-First, run this command to make your profile compatible with Funannotate:
-```
-echo -e 'export SINGULARITY_BINDPATH="/opt:/tmp"' >> ~/.bash_profile
-```
-
-Next, accept the license for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), download the 64-bit key (NOT the program), and transfer to your OSC home directory. These keys expire every 400 days.
+First, accept the license and download the 64-bit key (NOT THE PROGRAM) for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi), and transfer to your OSC home directory. These keys expire every 400 days.
 
 Once the key is uploaded, uncompress it and place it in your home folder as `.gm_key`:
 ```
