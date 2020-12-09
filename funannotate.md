@@ -93,7 +93,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### 3. Predict genes
-Download/compile necessary data and information:
+Download/compile necessary data and information - if you are using JGI, checkout my [`jgiDwnld.py` script](https://gitlab.com/xonq/scripts/-/blob/master/README.md):
 - transcript/EST evidence from organism(s) in the same genus
 - protein evidence from at least 10 closely related organisms (separate by spaces in command) and the uniprot database.
 - run `funannotate species` to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
