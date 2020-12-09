@@ -19,7 +19,7 @@ Proceed to OSC USE and change hard coded paths as necessary.
 
 ## OSC USE
 #### Accessing OrthoFiller software
-To use OrthoFiller software you will have to activate the container. Press CTRL + D or run `exit` to exit. Only run the container for commands related to OrthoFiller or you may experience unexpected problems. NOTE - you will only have access to your home folder and shared project folders when in a container on OSC.
+To use OrthoFiller software you will have to activate the container. Press CTRL + D or run `exit` to exit. Only run the container for commands related to OrthoFiller or you may experience unexpected problems. NOTE - you will only have access to your home folder and shared project folders while in a container on OSC.
 
 ```
 singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
@@ -28,7 +28,7 @@ singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_
 <br />
 
 #### 1) Procure raw data
-Gather at least 10 species' `.gff3` gene coordinate files and their corresponding assemblies. These can be downloading from NCBI, JGI, or any other genome portal or you can grab them using the [database](https://gitlab.com/xonq/scripts/-/blob/master/README.md#installing-database). NOTE - this conversion works for JGI `.gff` as well, but due to the incongruent nature of `.gff`, files from other sources, like Maker, may be incompatible.
+Gather at least 10 species' `.gff3` gene coordinate files and their corresponding assemblies. These can be downloaded from NCBI, JGI, or any other genome portal or you can grab them using the [database](https://gitlab.com/xonq/scripts/-/blob/master/README.md#installing-database). NOTE - this conversion works for JGI `.gff` as well, but due to the incongruent nature of `.gff`, files from other sources, like Maker, may be incompatible.
 
 Activate the container and convert each `.gff3` to a `.gtf` compatible with OrthoFiller.
 ```
