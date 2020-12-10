@@ -50,7 +50,7 @@ Many commands use an output flag, typically `-o` or `--output`. However, some pr
 <br />
 
 #### None of these fit my error.
-Computing is a lot of troubleshooting and you can only learn how to overcome those errors on your own if you familiarize yourself with interpreting the errors, tracing back the error to the source, and researching solutions. Please give an effort to solve your issues on your own. If you cannot find a solution, please contact Zach. Most, if not all, commands have been verified to be correct on here; however, there could be a cryptic issue I can help you work out.
+Computing is a lot of troubleshooting and you can only learn how to overcome those errors on your own if you familiarize yourself with interpreting the errors, tracing back the error to the source, and researching solutions. Most of my conceptual knowledge about computers comes from countless failures and errors. Please give an effort to solve your issues on your own. If you cannot find a solution, please contact Zach. Most, if not all, commands have been verified to be correct on here; however, there could be a cryptic issue I can help you work out.
 
 ## CREDIT
 Flowchart originally authored by Kelsey Scott and Emile Gluck-Thaler; modified by Zachary Konkel from Maker to Funannotate and Orthofiller
