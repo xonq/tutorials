@@ -71,7 +71,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 ### 1. Sort assembly
 Sort the assembly: this renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest. Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate. This command can be run without submitting a job.
 ```
-funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/SORTED_ASSEMBLY> --minlen 1000
+funannotate sort -i <YOUR/ASSEMBLY> -o <OUTPUT/ASSEMBLY.sort.fa> --minlen 1000
 ```
 
 <br /><br />
@@ -82,7 +82,7 @@ Soft-mask the assembly: this references your [*de novo* repeat library](https://
 NOTE - *You do not want the container to be activated when submitting a job*. Instead, you first create a `UTF-8` plain-text file with the information below and save it as a `.sh` file, like `funmask.sh`. 
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
-funannotate mask -i <YOUR/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBRARY> -o <OUTPUT/FILENAME>
+funannotate mask -i <YOUR/SORTED_ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBRARY> -o <OUTPUT/ASSEMBLY.masked.fa>
 ```
 
 If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit to the job node by invoking singularity to reference your `.sh` file like so:
@@ -126,7 +126,7 @@ funannotate sort -i <YOUR/ASSEMBLY> --minlen 1000 -o <SORTED/ASSEMBLY>
 
 
 # soft-mask nucleotides
-funannotate mask -i <CLEAN/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT-LIBRARY.fa> -o <MASKED/ASSEMBLY>
+funannotate mask -i <SORTED/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT-LIBRARY.fa> -o <MASKED/ASSEMBLY>
 
 
 # gene prediction
