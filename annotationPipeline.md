@@ -45,6 +45,12 @@ Running containers prevents access to other users' folders. You are only given a
 
 <br />
 
+#### Are you specifying the right output type?
+Many commands use an output flag, typically `-o` or `--output`. However, some programs want a file name and some want a directory. Frustratingly, some programs want a directory that exists, some will make it if it does not exist, and some want to make it. I have tried to make these nuances clear in the tutorials by denoting output files as something similar to `<OUTPUT/FILE>` and directories as `<OUTPUT/FOLDER>` so please abide by the tutorials. Most commands also come equiped with a `-h`, `-help`, and/or `--help` flag, so you can also run that and check what it wants for the output flag.
+
+<br />
+
+#### I have checked these and none of them fit my error.
 If none of these fit your issues, please contact Zach. Most, if not all, commands have been verified to be correct on here; however, there could be a cryptic issue I can help you work out.
 
 ## CREDIT
