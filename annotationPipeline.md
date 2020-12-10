@@ -25,13 +25,12 @@ Many common problems can be addressed by asking the following:
 <br />
 
 #### Is the container active/inactive appropriately?
-The software used here is contained within a *container* that needs to be activated to have access to the software. HOWEVER, it should only be active when running commands interactively in the login node. If you have the container active when you are trying to run other commands, you will potentially get weird errors, or `command not found` for commands you often run. To deactivate the container, press `CTRL` + `D` or run `exit`. It is also important to note, there is a special procedure for submitting jobs using containers that is explained in each tutorial that needs it. 
+This software is contained within a *container* that needs to be activated to have access. HOWEVER, containers should only be active when running commands that are specific to the container software. If you have the container active when you are trying to run other commands you will potentially get weird errors, or `command not found`. To deactivate the container, press `CTRL` + `D` or run `exit`. It is also important to note, there is a special procedure for submitting jobs using containers that is explained in each tutorial that needs it. CONTAINERS SHOULD NOT BE ACTIVE DURING JOB SUBMISSION. 
 
 <br />
 
 #### Are your `.sh` files formatted in plain text UTF-8 / have hidden characters?
-As stated above, invoking a container during job submission requires a special procedure that makes use of a shell, or `.sh`, file. These files MUST be formatted in UTF-8 format, which requires the use of a plain text editor. Additionally, copying and pasting commands, particularly if you are using Windows, can inadvertently introduce hidden characters that you will not see in a text editor. These characters lead to obscure errors. I have separated the code you run in these tutorials in command boxes, that should remove hidden characters, however odd things can happen. 
-So what do I recommend? If you are adventurous enough for this pipeline, you may benefit from using a command-line text editor like `nano` (easiest), `vim`, or `emacs`, which will allow you to write new files directly on the supercomputer and make sure they are plain-text. For hidden characters... Windows, man...
+Invoking a container during job submission requires a shell, or `.sh`, file. These files MUST be formatted in UTF-8 format, which requires the use of a plain text editor. Additionally, copying and pasting commands, particularly if you are using Windows, can inadvertently introduce hidden characters - these will often manifest in an error that says a flag does not exist, even though you have checked the `--help` menu and confirmed the flag is spelled correct. I have separated code in these tutorials into command boxes, which should remove hidden characters, however odd things can happen. I recommend getting familiar with a command-line text editor like `nano` (easiest), `vim`, or `emacs`, which will allow you to write new files directly from the command line and make ensure they are plain-text. Most of the time I have observed hidden character errors from Windows.
 
 <br />
 
@@ -50,8 +49,8 @@ Many commands use an output flag, typically `-o` or `--output`. However, some pr
 
 <br />
 
-#### I have checked these and none of them fit my error.
-If none of these fit your issues, please contact Zach. Most, if not all, commands have been verified to be correct on here; however, there could be a cryptic issue I can help you work out.
+#### None of these fit my error.
+Computing is a lot of troubleshooting and you can only learn how to overcome those errors on your own if you familiarize yourself with interpreting the errors, tracing back the error to the source, and researching solutions. Please give an effort to solve your issues on your own. If you cannot find a solution, please contact Zach. Most, if not all, commands have been verified to be correct on here; however, there could be a cryptic issue I can help you work out.
 
 ## CREDIT
 Flowchart originally authored by Kelsey Scott and Emile Gluck-Thaler; modified by Zachary Konkel from Maker to Funannotate and Orthofiller
