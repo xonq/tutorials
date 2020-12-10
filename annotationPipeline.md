@@ -26,7 +26,7 @@ Many common problems can be addressed by asking the following:
 <br />
 
 #### Is the container active/inactive appropriately?
-This software is contained within a *container* that needs to be activated to have access. HOWEVER, containers should only be active when running commands that are specific to the container software. If you have the container active when you are trying to run other commands you will potentially get weird errors, or `command not found`. To deactivate the container, press `CTRL` + `D` or run `exit`. It is also important to note, there is a special procedure for submitting jobs using containers that is explained in each tutorial that needs it. CONTAINERS SHOULD NOT BE ACTIVE DURING JOB SUBMISSION. 
+This software is contained within [*containers*](https://gitlab.com/xonq/tutorials/-/blob/master/containers.md) that needs to be activated to have access. HOWEVER, containers should only be active when running commands that are specific to the container software. If you have the container active when you are trying to run other commands you will potentially get weird errors, or `command not found`. To deactivate the container, press `CTRL` + `D` or run `exit`. It is also important to note, there is a special procedure for submitting jobs using containers that is explained in each tutorial that needs it. CONTAINERS SHOULD NOT BE ACTIVE DURING JOB SUBMISSION. 
 
 <br />
 
