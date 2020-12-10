@@ -26,24 +26,20 @@ singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_
 <br />
 
 ### Repeat modeling
-build an NCBI database for `RepeatModeler` to reference. Make sure you activate the container as explained above.
+Make an output directory in your scratch folder, then build an NCBI database for `RepeatModeler` to reference. Make sure you activate the container as explained above.
 
 ```
+mkdir <SCRATCH/OUTPUT/DIRECTORY>
+cd <SCRATCH/OUTPUT/DIRECTORY>
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
-Deactivate the container as described above and make an output directory  in your scratch folder:
-
-```
-mkdir <YOUR/SCRATCH/DIR>
-```
-
-create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC. NOTE - reference the `<NAME>` used previously after `-database`, *no file extensions*
+Deactivate the container, create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC. NOTE - reference the `<NAME>` used previously after `-database`, *no file extensions*
 
 
 ```
-cd <YOUR/SCRATCH/FOLDER/OUTPUT>
-RepeatModeler -pa 8 -database <YOUR/NCBI/DATABASE/NAME> -engine ncbi 2>&1 | tee repeatmodeler.log
+cd </SCRATCH/OUTPUT/DIRECTORY>
+RepeatModeler -pa 8 -database <SCRATCH/OUTPUT/DIRECTORY/NAME> -engine ncbi 2>&1 | tee repeatmodeler.log
 ```
 
 Edit the command below and submit the job. *Do not activate the container to submit a job that invokes the container*
@@ -55,4 +51,4 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br />
 
 ## OUTPUT
-RepeatModeler outputs a ton of files, which is why output needs to be directed to a scratch folder. You will not need most of the files - instead, the `-consensi.fa` is the *de novo* repeat library you reference when [masking](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#2-soft-mask-assembly) your assembly for gene prediction.
+RepeatModeler outputs a ton of files, which is why output needs to be directed to a scratch folder. You will not need most of the files - instead, the `<NAME>-families.fa` is the *de novo* repeat library you reference when [masking](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#2-soft-mask-assembly) your assembly for gene prediction. Simply move the main files to a different directory so they do not get deleted in the scratch folder and either compress or delete the working directory.
