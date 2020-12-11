@@ -36,17 +36,12 @@ Invoking a container during job submission requires a shell, or `.sh`, file. The
 <br />
 
 #### Are your paths inputted correctly?
-Are your commands pointing to the correct files?
+Are your commands pointing to the correct files? In particular, many commands use an output flag, typically `-o` or `--output`. However, some programs want a file name and some want a directory. Frustratingly, some programs want a directory that exists, some will make it if it does not exist, and some want to make it. I have tried to make these nuances clear in the tutorials by denoting directories as `<OUTPUT/DIRECTORY>` so please abide by the tutorials. Most commands also come equipped with a `-h`, `-help`, and/or `--help` flag, so you can also check what the software wants for the output flag.
 
 <br />
 
 #### Are your files in accessible folders?
 Running containers prevents access to other users' folders. You are only given access to your home folder, scratch folder, and shared project folder. Therefore, even during job submission commands, you CANNOT reference other users' files; they must be copied and referenced in an accessible folder or you will get a `file not found` error.
-
-<br />
-
-#### Are you specifying the right output type?
-Many commands use an output flag, typically `-o` or `--output`. However, some programs want a file name and some want a directory. Frustratingly, some programs want a directory that exists, some will make it if it does not exist, and some want to make it. I have tried to make these nuances clear in the tutorials by denoting directories as `<OUTPUT/DIRECTORY>` so please abide by the tutorials. Most commands also come equipped with a `-h`, `-help`, and/or `--help` flag, so you can also check what the software wants for the output flag.
 
 <br />
 
