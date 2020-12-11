@@ -28,7 +28,7 @@ singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_
 <br />
 
 #### 1) Procure raw data
-Gather at least 10 species' `.gff3` gene coordinate files and their corresponding assemblies. These can be downloaded from NCBI, JGI, or any other genome portal or you can grab them using the [database](https://gitlab.com/xonq/scripts/-/blob/master/README.md#installing-database). NOTE - this conversion works for NCBI, JGI, and Funannotate `.gff`s, but files from other sources, like Maker, may be incompatible. If you are having trouble, try running `clean_gff.py <GFF3> > <CLEAN_GFF3>` in the container and reference `<CLEAN_GFF3>` in next command. If both fail, you will have to implement or find a solution.
+Gather at least 10 species' `.gff3` gene coordinate files and their corresponding assemblies. These can be downloaded from NCBI, JGI, or any other genome portal or you can grab them using the [database](https://gitlab.com/xonq/scripts/-/blob/master/README.md#installing-database). NOTE - this conversion works for NCBI, JGI, and Funannotate `.gff`s, but files from other sources, like Maker, may be incompatible. If the following command fails, try running `clean_gff.py <GFF3> > <CLEAN_GFF3>` in the container and reference `<CLEAN_GFF3>` in next command. If both fail, you will have to implement or find a solution.
 
 Activate the container and convert each `.gff3` to a `.gtf` compatible with OrthoFiller.
 ```
