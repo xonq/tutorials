@@ -52,8 +52,9 @@ Create a plain text file for both the reference and target input:
 <br />
 
 #### 3) Run OrthoFiller
-Create a plain text `.sh` file to execute OrthoFiller with the following information:
+Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results.
 ```
+source /fs/project/PAS1046/software/containers/orthofiller/source.sh
 orthofiller.py -r <YOUR/reference.tsv> -i <YOUR/target.tsv> -c 28 --fulloutput -o <SCRATCH/OUTPUT/DIRECTORY>
 ```
 Allot 10-20 hours per target genome and invoke the container to execute the `.sh` file as a job:
