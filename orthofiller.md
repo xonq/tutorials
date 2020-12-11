@@ -1,6 +1,8 @@
 # OrthoFiller annotation completion
 
 ## Getting Started
+[OrthoFiller](https://gitlab.com/xonq/OrthoFiller) fills missing genes in annotations by building profile models of orthogroups from closely related species and searching for these models in nonannotated regions of the assembly.
+
 You will need at least one [annotation](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md#osc-use).
 
 
