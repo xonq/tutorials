@@ -5,6 +5,8 @@ If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you sh
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
 
+This pipeline is tailored toward the annotation of fungal genomes without direct transcript evidence (adding transcript evidence is simply another step in the Funannotate portion). I have not tested its applicability for other eukaryotes. 
+
 If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at the bottom of this page.
 
 <br />
