@@ -1,10 +1,9 @@
 # Funannotate *de novo* annotation software setup and use
 
 ## GETTING STARTED
-[Funannotate documentation](https://funannotate.readthedocs.io/en/latest/install.html)
-
 [Slot Lab Annotation Pipeline](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md)
 
+[Funannotate](https://funannotate.readthedocs.io/en/latest/install.html) is an all-in-one genome annotation software that wraps and curates output from multiple *ab initio* gene prediction software.
 
 Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
@@ -139,5 +138,7 @@ Save as an `.sh`, transfer to OSC, and submit the script as previously described
 
 <br /><br />
 
-## OUTPUT
+## OUTPUT / CITATION INFO
 Funannotate will output many working files and an organized folder of results. The results can be found in your `<OUTPUT>/predict_results`. The naming scheme is intuitive: the gene coordinate file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/scripts).
+
+Funannotate is the `wrapper` that packages many other software. In addition to citing Funannotate, you should cite `GlimmerHMM`, `GeneMark ES`, `Snap`, `BUSCO`, and `Augustus`.
