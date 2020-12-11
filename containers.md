@@ -3,7 +3,7 @@
 ## CONTAINERS
 - [Singularity documentation](https://sylabs.io/guides/3.6/user-guide/)
 
-Singularity is a software that manages and executes software *containers*, similar to Docker. Containers pack a program and its dependencies in essentially a miniaturized virtual machine, which isolates the software environment, preserves its integrity, and makes software easily disseminated. Publishing container links promotes reproducible computational science by providing an image of published software and allowing reviewers/readers to access that software with relative ease. 
+Singularity is a software that manages and executes software *containers*, similar to Docker. Containers pack a program and its dependencies in essentially a miniaturized virtualization environment - similar to a virtual machine except smaller and with less overhead. This isolates the software environment, preserves its integrity, and makes software easily disseminated. Additionally, publishing container links promotes reproducible computational science by providing an image of published software and allowing reviewers/readers to access that software with relative ease. 
 
 <br />
 
