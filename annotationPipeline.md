@@ -1,11 +1,11 @@
 # Slot Lab *de novo* Gene Annotation Pipeline
 ## GETTING STARTED
+This pipeline is tailored toward the annotation of fungal genomes without direct transcript evidence (adding transcript evidence is simply another step in the Funannotate portion).
+
 If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
-
-This pipeline is tailored toward the annotation of fungal genomes without direct transcript evidence (adding transcript evidence is simply another step in the Funannotate portion). I have not tested its applicability for other eukaryotes. 
 
 If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at the bottom of this page.
 
