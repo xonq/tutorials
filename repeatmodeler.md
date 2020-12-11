@@ -50,5 +50,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 <br />
 
-## OUTPUT
+## OUTPUT / CITATION INFO
 RepeatModeler outputs a ton of files, which is why output needs to be directed to a scratch folder. You will not need most of the files - instead, the `<NAME>-families.fa` is the *de novo* repeat library you reference when [masking](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#2-soft-mask-assembly) your assembly for gene prediction. Simply move the main files to a different directory so they do not get deleted in the scratch folder and either compress or delete the working directory.
+
+This installation of RepeatModeler references the Dfam 3.0 repeat library. In addition to citing RepeatMasker software, cite the Dfam library as well.
