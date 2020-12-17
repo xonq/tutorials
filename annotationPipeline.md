@@ -16,7 +16,6 @@ If you are having trouble with this pipeline, refer to the [troubleshooting](htt
 #### 2) [Generate a repeat library with RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md)
 #### 3) [Predict genes with Funannotate](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md)
 #### 4) [Fill annotation with OrthoFiller](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md)
-#### 5) [Curate annotation](https://gitlab.com/xonq/tutorials/-/blob/master/annotationCuration.md)
 
 ![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
 
