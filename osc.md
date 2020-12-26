@@ -39,7 +39,7 @@ sbatch <YOUR_SCRIPT>
 
 #### command line submission
 ```
-echo -e "<YOUR_CMD>" | sbatch --nodes=<NODES> --ntasks-per-node=<THREADS/CORES> -A <ACCOUNT>
+echo -e "<YOUR_CMD>" | sbatch --time=<TIME> --nodes=<NODES> --ntasks-per-node=<THREADS/CORES> -A <ACCOUNT>
 ```
 
 <br /><br />
