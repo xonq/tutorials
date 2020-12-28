@@ -86,7 +86,7 @@ funannotate mask -i <YOUR/SORTED_ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBR
 
 If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit to the job node by invoking singularity to reference your `.sh` file like so:
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif /bin/bash <YOUR/SH_FILE>' | qsub -l walltime=10:00:00 -l nodes=1:ppn=1 -A <PROJECT>
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif /bin/bash <YOUR/SH_FILE>' | sbatch --time=10:00:00 --nodes=1 --ntasks-per-node=1 -A <PROJECT>
 ```
 
 <br /><br />
@@ -110,7 +110,7 @@ funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME_RUN#>” --transcript_e
 
 Edit and submit a job to run that file in the funannotate container. Remember, you don't need to activate the container to submit a job that uses the container.
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | qsub -l walltime=60:00:00 -l nodes=1:ppn=8 -A PAS<####> -N funannotate
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | sbatch --time=60:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####>
 ```
 
 <br />

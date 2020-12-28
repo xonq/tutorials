@@ -26,8 +26,7 @@ Find the adapter relevant to your sequence data and edit the following job submi
 echo -e 'cd </OUTPUT/FOLDER> && java -jar /fs/project/PAS1046/software/Trimmomatic-0.36/trimmomatic-0.36.jar \
 PE -phred33 </PATH/TO/READ_1> </PATH/TO/READ_2> <OUTPUT_NAME_fpaired.fq.gz> <OUTPUT_NAME_funpaired.fq.gz> \
 <OUTPUT_NAME_rpaired.fq.gz> <OUTPUT_NAME_runpaired.fq.gz> ILLUMINACLIP:/fs/project/PAS1046/software/Trimmomatic-0.3.6/adapters/TruSeq3-PE.fa:2:30:10:11 \
-HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | qsub -l walltime=01:00:00 -l nodes=1:ppn=12 -A PAS#### \
--N trimmomatic
+HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | sbatch --time=01:00:00 --nodes=1 --ntasks-per-node=12 -A PAS####
 ```
 
 <br />
@@ -60,7 +59,7 @@ spades.py --pe1-1 </PATH/TO/TRIMMED/F_READS.fq.gz> --pe1-2 </PATH/TO/TRIMMED/R_R
 #### SUBMITTING A JOB SCRIPT
 Edit the below and submit a job to Torque job management - you do not need the container active to submit the job.
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif bash <YOUR/CMD>' | qsub -l walltime=100:00:00 -l nodes=1:ppn=6 -A PAS<####> -N spades
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif bash <YOUR/CMD>' | sbatch --time=100:00:00 --nodes=1 --ntasks-per-node=6 -A PAS<####>
 ```
 
 <br /><br />

@@ -45,7 +45,7 @@ RepeatModeler -pa 8 -database <SCRATCH/OUTPUT/DIRECTORY/NAME> -engine ncbi 2>&1 
 Edit the command below and submit the job. *Do not activate the container to submit a job that invokes the container*
 
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMD>.sh' | qsub -l walltime=100:00:00 -l nodes=1:ppn=8 -A PAS<####> -N repeatmodeler
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMD>.sh' | sbatch --time=100:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####>
 ```
 
 <br />
