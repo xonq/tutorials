@@ -38,20 +38,20 @@ When using SPAdes, you have to activate the SPAdes singularity container, which 
 singularity run /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
 ```
 
-Activate the container and run `spades.py --help` for more information relevant to your use case.
+Activate the container and run `spades.py --help` for more information relevant to your use case. You do not need the container active for the rest of the tutorial.
 
 #### EXAMPLE1: Illumina 150 bp paired-end
 Create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC:
 
 ```
-spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/R_paired.fq.gz -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir </PATH/TO/SCRATCH> -t 6 -m 144 -o </PATH/TO/OUTPUT>
+spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/R_paired.fq.gz -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir </PATH/TO/SCRATCH> -t 6 -m 144 -o </PATH/TO/OUTPUT> --isolate
 ```
 
 #### EXAMPLE2: Illumina 150 bp paired-end + Nanopore long read
 Create a plain text (UTF-8) file with the following command, save it as an `.sh` file and transfer to OSC:
 
 ```
-spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/R_paired.fq.gz> --nanopore </PATH/TO/NANOPORE_READS> -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir </PATH/TO/SCRATCH> -t 6 -m 144 -o </PATH/TO/OUTPUT>
+spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/R_paired.fq.gz> --nanopore </PATH/TO/NANOPORE_READS> -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir </PATH/TO/SCRATCH> -t 6 -m 144 -o </PATH/TO/OUTPUT> --isolate
 ```
 
 <br />
