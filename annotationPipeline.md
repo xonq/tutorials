@@ -24,15 +24,23 @@ If you are having trouble with this pipeline, refer to the [troubleshooting](htt
 ## TROUBLESHOOTING
 Many common problems can be addressed by asking the following:
 
+#### Is everything spelled correct, do the input paths point to the right
+directory, and are the flags / arguments correct?
+"Flag options are non-positional arguments passed to the command. Flags can
+either be option flags which take an argument, or boolean flags which do not.
+An option flag must have an argument."
+
+Oct 17, 2018
+
+Command Flags · oclif: The Open CLI Framework
+
+oclif.io › docs › flags
+
+
 <br />
 
 #### Is the container active/inactive appropriately?
 This software is contained within [*containers*](https://gitlab.com/xonq/tutorials/-/blob/master/containers.md) that need to be activated to have access. HOWEVER, containers should only be active when running commands that are specific to the container software. If you have the container active when you are trying to run other commands you will potentially get weird errors, or `command not found`. You can tell if a container is active because it will change the terminal prompt name, e.g. for Owens@OSC `-bash-4.2$` to `<Singularity>` or something else. To deactivate the container, press `CTRL` + `D` or run `exit`. It is also important to note, there is a special procedure for submitting jobs using containers that is explained in each tutorial that needs it. CONTAINERS SHOULD NOT BE ACTIVE DURING JOB SUBMISSION. 
-
-<br />
-
-#### Are your `.sh` files formatted in plain text UTF-8 / have hidden characters?
-Invoking a container during job submission requires a shell, or `.sh`, file. These files MUST be formatted in UTF-8 format, which requires the use of a plain text editor. Additionally, copying and pasting commands, particularly if you are using Windows, can inadvertently introduce hidden characters - these will often manifest in an error that says a flag does not exist, even though you have checked the `--help` menu and confirmed the flag is spelled correct. I have separated code in these tutorials into command boxes, which should remove hidden characters, however odd things can happen. I recommend getting familiar with a command-line text editor like `nano` (easiest), `vim`, or `emacs`, which will allow you to write new files directly from the command line and ensure they are plain-text. Most of the time I have observed hidden character errors from Windows. If you cannot pinpoint the suspect part of your command, rewrite it manually in a plain text editor instead of copying and pasting.
 
 <br />
 
@@ -41,6 +49,23 @@ Are your commands pointing to the correct files? In particular, many commands us
 
 <br />
 
+#### Are your `.sh` files formatted in plain text UTF-8 / have hidden characters?
+Invoking a container during job submission requires a shell, or `.sh`, file.
+These files MUST be formatted in UTF-8 format, which requires the use of a
+plain text editor. Additionally, copying and pasting commands, particularly if
+you are using Windows, can inadvertently introduce hidden characters into a
+shell - these will often manifest in an error that says a flag does not exist
+even though you've verified it from the `man` page or `-h` menu for a command.
+They may also present as a path that does not exist and you have 100% verified
+it does. 
+
+I recommend getting familiar with a command-line text editor like `nano` (easiest), 
+`vim`, or `emacs`, which will allow you to write new files directly from the command 
+line and ensure they are plain-text. Most of the time I have observed hidden character 
+errors from Windows. If you cannot pinpoint the suspect part of your command, 
+rewrite it manually in a plain text editor instead of copying and pasting.
+
+<br />
 #### Are your files in accessible folders?
 Running containers prevents access to other users' folders. You are only given access to your home folder, scratch folder, and shared project folder. Therefore, even during job submission commands, you CANNOT reference other users' files; they must be copied and referenced in an accessible folder or you will get a `file not found` error.
 
