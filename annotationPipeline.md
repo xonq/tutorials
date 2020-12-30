@@ -26,7 +26,11 @@ Many common problems can be addressed by asking the following:
 
 #### Is your command correct?
 Is everything spelled correct, do the input paths point to the right
-directory, and are the flags / arguments correct?
+directory, and are the arguments correct? The text *following* `-o` here is the
+argument:
+```
+-bash-4.2$ python ~/scripts/ncbi2db -o ~/.kontools/db/
+```
 
 "Flag options are non-positional arguments passed to the command. Flags can
 either be option flags which take an argument, or boolean flags which do not.
