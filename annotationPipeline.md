@@ -32,17 +32,6 @@ argument:
 -bash-4.2$ python ~/scripts/ncbi2db -o ~/.kontools/db/
 ```
 
-"Flag options are non-positional arguments passed to the command. Flags can
-either be option flags which take an argument, or boolean flags which do not.
-An option flag must have an argument."
-
-Oct 17, 2018
-
-Command Flags · oclif: The Open CLI Framework
-
-oclif.io › docs › flags
-
-
 <br />
 
 #### Is the container active/inactive appropriately?
@@ -72,6 +61,7 @@ errors from Windows. If you cannot pinpoint the suspect part of your command,
 rewrite it manually in a plain text editor instead of copying and pasting.
 
 <br />
+
 #### Are your files in accessible folders?
 Running containers prevents access to other users' folders. You are only given access to your home folder, scratch folder, and shared project folder. Therefore, even during job submission commands, you CANNOT reference other users' files; they must be copied and referenced in an accessible folder or you will get a `file not found` error.
 
