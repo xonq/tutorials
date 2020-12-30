@@ -81,12 +81,13 @@ Soft-mask the assembly: this references your [*de novo* repeat library](https://
 NOTE - *You do not want the container to be activated when submitting a job*. Instead, you first create a `UTF-8` plain-text file with the information below and save it as a `.sh` file, like `funmask.sh`. 
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
-funannotate mask -i <YOUR/SORTED_ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT_LIBRARY> -o <OUTPUT/ASSEMBLY.masked.fa>
+funannotate mask -i <YOUR/SORTED_ASSEMBLY> -m repeatmodeler \
+-l <YOUR/REPEAT_LIBRARY>-o <OUTPUT/ASSEMBLY.masked.fa --cpus 6
 ```
 
 If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit to the job node by invoking singularity to reference your `.sh` file like so:
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif /bin/bash <YOUR/SH_FILE>' | sbatch --time=10:00:00 --nodes=1 --ntasks-per-node=1 -A <PROJECT> --job-name=softmask
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif /bin/bash <YOUR/SH_FILE>' | sbatch --time=10:00:00 --nodes=1 --ntasks-per-node=6 -A <PROJECT> --job-name=softmask
 ```
 
 <br /><br />
