@@ -24,30 +24,83 @@ If you are having trouble with this pipeline, refer to the [troubleshooting](htt
 ## TROUBLESHOOTING
 Many common problems can be addressed by asking the following:
 
+
+<br />
+
+#### Is everything spelled correct and do the PATH(s) exist?
+- most of my errors are due to spelling mistakes or using non-existent directories
+
+- sometimes flags, like `-o / --output`, need directories and sometimes they need files; these are made clear in the tutorials
+
+
+##### Common errors
+These are typically made clear
+
+
+##### Solutions
+- meticulously scan your command and check if you PATHs are real
+
+- make sure the correct virtual environment (miniconda) is loaded or the environment is appropriately sourced
+
+- run `man $CMD` or `$CMD --help` to check what the command wants (sometimes `-h / -help`)
+
+
 <br />
 
 #### Is the container active/inactive appropriately?
-This software is contained within [*containers*](https://gitlab.com/xonq/tutorials/-/blob/master/containers.md) that need to be activated to have access. HOWEVER, containers should only be active when running commands that are specific to the container software. If you have the container active when you are trying to run other commands you will potentially get weird errors, or `command not found`. You can tell if a container is active because it will change the terminal prompt name, e.g. for Owens@OSC `-bash-4.2$` to `<Singularity>` or something else. To deactivate the container, press `CTRL` + `D` or run `exit`. It is also important to note, there is a special procedure for submitting jobs using containers that is explained in each tutorial that needs it. CONTAINERS SHOULD NOT BE ACTIVE DURING JOB SUBMISSION. 
+- most of the pipeline software is contained within [*containers*](https://gitlab.com/xonq/tutorials/-/blob/master/containers.md) 
+
+- containers should only be activated to run the software within them
+
+- when active, a container will change your shell prompt (e.g. for Owens@OSC `-bash-4.2$` to `<Singularity>`)
+
+- submitting jobs in a container is different than interacting with it on the login node
+
+- do not activate the container when submitting a job that calls on it
+
+
+##### Common errors
+`command not found` ONLY if you know for sure the command should be available (i.e. loaded into your PATH)
+
+
+##### Solutions
+- to deactivate the container press `CTRL` + `D` or run `exit`
+
 
 <br />
 
 #### Are your `.sh` files formatted in plain text UTF-8 and free of hidden characters?
-Invoking a container during job submission requires a shell, or `.sh`, file. These files MUST be formatted in UTF-8 format, which requires the use of a plain text editor. Additionally, copying and pasting commands, particularly if you are using Windows, can inadvertently introduce hidden characters - these will often manifest in an error that says a flag does not exist, even though you have checked the `--help` menu and confirmed the flag is spelled correct. I have separated code in these tutorials into command boxes, which should remove hidden characters, however odd things can happen. I recommend getting familiar with a command-line text editor like `nano` (easiest), `vim`, or `emacs`, which will allow you to write new files directly from the command line and ensure they are plain-text. Most of the time I have observed hidden character errors from Windows. If you cannot pinpoint the suspect part of your command, rewrite it manually in a plain text editor instead of copying and pasting.
+- shell files must be written in UTF-8 format, which requires the use of a plain text editor
 
-<br />
+- copying and pasting commands can inadvertently introduce hidden characters 
 
-#### Are your paths inputted correctly?
-Are your commands pointing to the correct files? In particular, many commands use an output flag, typically `-o` or `--output`. However, some programs want a file name and some want a directory. Frustratingly, some programs want a directory that exists, some will make it if it does not exist, and some want to make it. I have tried to make these nuances clear in the tutorials by denoting directories as `<OUTPUT/DIRECTORY>` so please abide by the tutorials. Most commands also come equipped with a `-h`, `-help`, and/or `--help` flag, so you can also check what the software wants for the output flag.
+
+##### Common errors
+An error stating the flag/command does not exist, though you have checked the `--help` menu and confirmed the flag is spelled correct. 
+
+
+##### Solutions
+- try a command-line text editor like `nano` (easiest), `vim`, or `emacs`
+
+- rewrite the command / suspect portion manually in a plain text editor instead of copying and pasting
+
 
 <br />
 
 #### Are your files in accessible folders?
-Running containers prevents access to other users' folders. You are only given access to your home folder, scratch folder, and shared project folder. Therefore, even during job submission commands, you CANNOT reference other users' files; they must be copied and referenced in an accessible folder or you will get a `file not found` error.
+- containers can prevent access to some directories for safety
+
+- OSC only grant access to your home folder, scratch folder, and shared project folder
+
+
+##### Common errors
+`file not found` or `directory / folder not found` and the path does not fit the above criteria
+
 
 <br />
 
 #### None of these fit my error.
-Computing is a lot of troubleshooting and you can only learn how to overcome those errors on your own if you familiarize yourself with interpreting the errors, tracing back the error to the source, and researching solutions. Most of my conceptual knowledge about computers comes from independent research of countless errors. Please give an effort to solve your issues on your own. If you cannot find a solution, please contact me. Most, if not all, commands have been verified to be correct on here; however, there could be a cryptic issue I can help you work out.
+Researching and tracing back errors is a large part of computational work. I venture to say most of my conceptual computation knowledge comes from independent research of countless errors. Make an attempt to address your own issues for your own knowledge, but if you cannot find a solution, please contact me or raise an issue.
 
 ## CREDIT
 Flowchart originally authored by Kelsey Scott and Emile Gluck-Thaler; modified by Zachary Konkel from Maker to Funannotate and Orthofiller
