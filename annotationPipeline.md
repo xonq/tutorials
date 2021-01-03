@@ -31,7 +31,7 @@ This software is contained within [*containers*](https://gitlab.com/xonq/tutoria
 
 <br />
 
-#### Are your `.sh` files formatted in plain text UTF-8 / have hidden characters?
+#### Are your `.sh` files formatted in plain text UTF-8 and free of hidden characters?
 Invoking a container during job submission requires a shell, or `.sh`, file. These files MUST be formatted in UTF-8 format, which requires the use of a plain text editor. Additionally, copying and pasting commands, particularly if you are using Windows, can inadvertently introduce hidden characters - these will often manifest in an error that says a flag does not exist, even though you have checked the `--help` menu and confirmed the flag is spelled correct. I have separated code in these tutorials into command boxes, which should remove hidden characters, however odd things can happen. I recommend getting familiar with a command-line text editor like `nano` (easiest), `vim`, or `emacs`, which will allow you to write new files directly from the command line and ensure they are plain-text. Most of the time I have observed hidden character errors from Windows. If you cannot pinpoint the suspect part of your command, rewrite it manually in a plain text editor instead of copying and pasting.
 
 <br />
