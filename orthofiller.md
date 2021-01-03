@@ -61,7 +61,7 @@ orthofiller.py -r <YOUR/reference.tsv> -i <YOUR/target.tsv> -c 28 --fulloutput -
 ```
 Allot 10-20 hours per target genome and invoke the container to execute the `.sh` file as a job:
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif /bin/bash <YOUR/.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=28 -A <PROJECT>
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif /bin/bash <YOUR/.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=28 -A <PROJECT> --job-name=orthofiller
 ```
 
 <br /><br />
