@@ -29,6 +29,7 @@ mkdir assembly
 ```
 Whatever you choose to do, just remember your the directory you want to output things in. You can always find the absolute path to your current directory by running `pwd`.
 
+<br />
 
 ### 1. Trimming Illumina paired-end reads
 Find the adapter relevant to your sequence data - these are located in the trimmomatic software folder; on OSC this is the same directory as the argument following `ILLUMINACLIP` in the command below. Once ready, edit the following job submission command with your information:
