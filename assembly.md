@@ -3,7 +3,7 @@
 ## GETTING STARTED 
 Assembly software takes next generation reads and stitches them into contiguous sequences (contigs). Some software go a step further and attempt to stich the contigs themselves (scaffolds).
 
-If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
+If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use) once you have read the [pipeline introduction](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
 <br />
 
