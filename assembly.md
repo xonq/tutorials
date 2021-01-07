@@ -21,7 +21,7 @@ Proceed to OSC USE and adjust paths and job submission commands as necessary
 
 ## OSC USE
 ### 0. Keep it clean
-Prepare a directory where you will make your output. If you think about your directory organization before the analysis you will have an easier time returning and disseminating your data. I personally will create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g.
+Imagine a pile of dishes from that shitty roommate in undergrad... don't let your folder get like that. Prepare a directory where you will make your output. If you think about your directory organization before the analysis you will have an easier time returning and disseminating your data. I personally will create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g.
 ```
 mkdir <ORGANISM_CODENAME>
 cd <ORGANISM_CODENAME>
