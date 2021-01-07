@@ -1,6 +1,6 @@
 # Slot Lab *de novo* Gene Annotation Pipeline
 ## GETTING STARTED
-This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly - what is not necessary will be made clear.
+This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes reread sections - what is not necessary to read will be made clear.
 
 To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir` and `ls` do is a good start. Before each command in each tutorial, I have tried to explain what the command does. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output.
 
