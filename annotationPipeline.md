@@ -1,11 +1,11 @@
 # Slot Lab *de novo* Gene Annotation Pipeline
 ## GETTING STARTED
-This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. To get started, you will want to be familiar with interacting in the command line to some extent (e.g. know what `mv`, `cd`, `rm`, `mkdir` and `ls` do). Before each command in each tutorial, I have tried to explain what you will be doing within the command itself. Inside the command you will find parts that you need to edit inside these `<>`; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia`. If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
+This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir` and `ls` do is a good start. Before each command in each tutorial, I have tried to explain what you will be doing within the command itself. Inside the command you will find parts that you need to edit inside these `<>`; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia`. If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
 
-If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at the bottom of this page.
+It is useful to know the difference between absolute and relative paths before moving forward: Paths are what computers use to point to files, e.g. `/fs/scratch`; however, there are multiple ways to write a PATH. The full or absolute path is always correct for a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths do not start with `/`, `$`, or `~`. If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at the bottom of this page.
 
 <br />
 
