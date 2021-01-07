@@ -29,6 +29,8 @@ mkdir <ORGANISM_CODENAME>/trimmomatic
 ```
 The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember the directories to input in the output portion of commands. You can always find the absolute path to your current directory by running `pwd`. It's important to note Unix/Linux is non-forgiving - in other words, if you pipe output to the same file in different commands, it will overwrite the first file and the program likely won't ask you if you are sure you want to delete it. Be cautious with this power.
 
+Finally, some commands are dirty and may trash your nice organized output folders. You will just have to use a combination of `mv`, `rm`, `mkdir`, etc to manipulate and move files to create a clean structure. This isn't something you familiarize with overnight, but put your toes in the water.
+
 <br />
 
 ### 1. Trimming Illumina paired-end reads
