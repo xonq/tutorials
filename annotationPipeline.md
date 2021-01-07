@@ -1,6 +1,7 @@
 # Slot Lab *de novo* Gene Annotation Pipeline
 
 ## SUMMARY
+Information on getting started is below
 #### 1) [Prepare & assemble reads with SPAdes](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md)
 #### 2) [Generate a repeat library with RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md)
 #### 3) [Predict genes with Funannotate](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md)
