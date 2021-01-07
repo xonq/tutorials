@@ -51,7 +51,7 @@ Continue to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotat
 
 ## OSC USE
 #### First use
-Upon first use or every 400 days, accept the license and download the 64-bit key (NOT THE PROGRAM) at this link for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi). Then we will transfer the key to your home directory. These keys expire every 400 days.
+GeneMark is one of the *ab initio* gene prediction software Funannotate calls. Upon first use or every 400 days, accept the license and download the 64-bit key (NOT THE PROGRAM) at this link for [GeneMark-ES/ET/EP](http://topaz.gatech.edu/GeneMark/license_download.cgi). Then we will transfer the key to your home directory. These keys expire every 400 days.
 
 Once the key is uploaded, uncompress it and rename it in your home folder as `.gm_key`:
 ```
