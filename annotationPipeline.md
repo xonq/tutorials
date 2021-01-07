@@ -14,9 +14,9 @@ To get started, you will want to be familiar with interacting in the command lin
 
 1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. Why is it important - well it keeps the commands looking more readable, easier to edit, and cleaner if you break up a big block command into multiple lines. I emphasize cleanliness in these tutorials because do you like dirty laundry on your workbench? Would you wear your mask below your nose? (please no)
 
-2) The `\` means completely different things than `/`, as the latter is typically involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/absolute path always points to the exact location of a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths do not start with `/`, `$`, or `~`. 
+2) The `\` means completely different things than `/`, as the latter is typically involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/absolute path always points to the exact location of a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths typically do not start with `/`, `$`, or `~`. 
 
-Say my current folder is: `/user/zach`
+Say my current folder is: `/user/zach` (which I confirmed by running `pwd`)
 
 A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory)
 
