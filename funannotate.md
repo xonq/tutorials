@@ -66,7 +66,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate --help
 ```
 
-If you got an error above, stop and contact me.
+If you entered it all correct and got an error above then stop and contact me.
 
 <br /><br />
 
