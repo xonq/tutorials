@@ -116,7 +116,7 @@ Once compiled, create an output directory in your scratch folder to avoid file l
 mkdir /fs/scratch/<PAS###>/<USER>/funannotate_<NAME>
 ```
 
-Now we are ready for gene prediction. Create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC. This command first sources the environment for the container, then tells funannotate to input your masked assembly, a name for the annotation run, transcript evidence, protein evidence, the number of CPU cores you use, the BUSCO species database, and the output folder:
+Now we are ready for gene prediction. Create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC. This command first sources the environment for the container, then tells funannotate to input your masked assembly, a name for the annotation run, transcript evidence, protein evidence, the number of CPU cores you use, the BUSCO species database, and the output folder you made above:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
