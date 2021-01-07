@@ -12,7 +12,7 @@ Say my current folder is: `/user/zach`
 
 A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory)
 
-The absolute path is: `/users/zach/this/is/my/path`
+The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates your home folder)
 
 
 <br />
