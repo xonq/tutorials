@@ -73,10 +73,10 @@ If you entered it all correct and got an error above then stop and contact me.
 <br /><br />
 
 ### 0. Keep it clean
-I am once again reminding you how important it is to keep your directory structures clean. Following what we have done in previous tutorials, we are ultimately going to output to our `<ORGANISM_CODENAME>` directory.
+I am once again reminding you how important it is to keep your directory structures clean. Following what we have done in previous tutorials, we are ultimately going to output to our `<ORGANISM_CODENAME>` directory. If `<OUTPUT>/<ORGRANISM_CODENAME>` doesn't exist then choose an `<OUTPUT>` folder that already exists, then `mkdir <OUTPUT>/<ORGANISM_CODENAME>`.
 
 ```
-mkdir <ORGANISM_CODENAME>/funannotate_prep
+mkdir <OUTPUT>/<ORGANISM_CODENAME>/funannotate_prep
 ```
 
 <br /><br />
