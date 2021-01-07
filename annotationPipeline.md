@@ -60,8 +60,7 @@ to your `~/.bash_profile` file in your OSC home directory:
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
 
-If you are having trouble with this pipeline, refer to the [troubleshooting](https://
-gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at 
+If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at 
 the bottom of this page.
 
 <br />
