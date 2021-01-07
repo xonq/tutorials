@@ -41,7 +41,9 @@ A relative path to a directory would be: `this/is/my/path` or you may see `./thi
 path` (the `.` indicates current directory). 
 
 The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
-your home folder). Do you see why using a relative path when you aren't sure if it will
+your home folder). 
+
+Do you see why using a relative path when you aren't sure if it will
 be right is important? It's particularly important when submitting jobs to the a high
 performance computer (HPC or supercomputer) because your job may not start at the right 
 directory for your relative path to work
