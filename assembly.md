@@ -25,7 +25,7 @@ Imagine a pile of dishes from that shitty roommate in undergrad... don't let you
 ```
 mkdir <ORGANISM_CODENAME>
 cd <ORGANISM_CODENAME>
-mkdir assembly
+mkdir spades
 ```
 Whatever you choose to do, just remember your the directory you want to output things in. You can always find the absolute path to your current directory by running `pwd`.
 
@@ -77,4 +77,9 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades_
 <br /><br />
 
 ## OUTPUT
-SPAdes will output many files, but ultimately the `scaffolds.fa` is what you want to move on to [2) gene prediction](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#3.-predict-genes). 
+SPAdes will output many files, but ultimately the `scaffolds.fa` is what you want to move on to [2) gene prediction](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#3.-predict-genes). Let's make a directory for important output files to consolidate them.
+
+```
+mkdir <ORGANISM_CODENAME>/results
+mv <SPADES/OUTPUT>/scaffolds.fa <ORGANISM_CODENAME>/results/<ORGANISM_CODENAME>.scaffolds.fa
+```
