@@ -2,11 +2,15 @@
 ## GETTING STARTED
 This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes reread sections - what is not necessary to read will be made clear.
 
-To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir` and `ls` do is a good start. Before each command in each tutorial, I have tried to explain what the command does. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output.
+#### How to read tutorials
+Before each command in each tutorial, I have tried to explain what the command does. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output.
 
-It is also useful to know a couple things before getting started: Namely, if a line ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. Why is it important - well it keeps the commands looking more readable, easier to edit, and cleaner if you break up a big block command into multiple lines. I emphasize cleanliness in these tutorials because do you like dirty laundry on your workbench? Would you wear your mask below your nose? (please no)
+#### Useful information
+To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir`, and `ls` do is a good start. 
 
-The `\` means completely different things than `/`, as the latter is typically involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/absolute path always points to the exact location of a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths do not start with `/`, `$`, or `~`. 
+Two other points worth emphasizing: 1) if a line ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. Why is it important - well it keeps the commands looking more readable, easier to edit, and cleaner if you break up a big block command into multiple lines. I emphasize cleanliness in these tutorials because do you like dirty laundry on your workbench? Would you wear your mask below your nose? (please no)
+
+2) The `\` means completely different things than `/`, as the latter is typically involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/absolute path always points to the exact location of a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths do not start with `/`, `$`, or `~`. 
 
 Say my current folder is: `/user/zach`
 
@@ -17,6 +21,7 @@ The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` 
 
 <br />
 
+#### Actually getting started
 With all that out of the way, if you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do to get started is add this line to your `~/.bash_profile` file in your OSC home directory:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
