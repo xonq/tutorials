@@ -27,7 +27,7 @@ cd <ROOT_DIR>
 mkdir -p <ORGANISM_CODENAME>/spades
 mkdir <ORGANISM_CODENAME>/trimmomatic
 ```
-The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember your the directory you want to output things in. You can always find the absolute path to your current directory by running `pwd`.
+The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember the directories to input in the output portion of commands. You can always find the absolute path to your current directory by running `pwd`.
 
 <br />
 
