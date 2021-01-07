@@ -1,6 +1,6 @@
 # Slot Lab *de novo* Gene Annotation Pipeline
 ## GETTING STARTED
-This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. To get started, you will want to be familiar with interacting in the command line to some extent (e.g. know what `mv`, `cd`, `rm` do). Before each command in each tutorial, I have tried to explain what you will be doing within the command itself. If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
+This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. To get started, you will want to be familiar with interacting in the command line to some extent (e.g. know what `mv`, `cd`, `rm` do). Before each command in each tutorial, I have tried to explain what you will be doing within the command itself. Inside the command you will find parts that you need to edit inside these `<>`; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia`. If you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
