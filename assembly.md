@@ -27,7 +27,7 @@ cd <ROOT_DIR>
 mkdir -p <ORGANISM_CODENAME>/spades
 mkdir <ORGANISM_CODENAME>/trimmomatic
 ```
-The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember the directories to input in the output portion of commands. You can always find the absolute path to your current directory by running `pwd`.
+The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember the directories to input in the output portion of commands. You can always find the absolute path to your current directory by running `pwd`. It's important to note Unix/Linux is non-forgiving - in other words, if you pipe output to the same file in different commands, it will overwrite the first file and the program likely won't ask you if you are sure you want to delete it. Be cautious with this power.
 
 <br />
 
