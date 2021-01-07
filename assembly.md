@@ -76,7 +76,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades_
 <br /><br />
 
 ## OUTPUT
-SPAdes will output many files, but ultimately the `scaffolds.fa` is what you want to move on to [2) gene prediction](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#3.-predict-genes). Let's make a directory for important output files to consolidate them.
+SPAdes will output many files, but ultimately the `scaffolds.fa` is what you want to move on to [gene prediction](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#3.-predict-genes). Before moving ahead, let's keep it organized and make a directory for important output files to consolidate them and get them out of their different analyses folders:
 
 ```
 mkdir <ORGANISM_CODENAME>/results
