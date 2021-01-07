@@ -44,13 +44,13 @@ HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | sbatch --time=01:00:00 --
 
 ### 2. Assembling
 #### Accessing SPAdes assembler
-When using SPAdes, you have to activate the SPAdes singularity container, which gives you access to SPAdes software. You do not need the container active for the rest of this tutorial, but we will use a special job submission command to invoke the container later on. For now, if you want to try opening the container and accessing the software run the following command: 
+When using SPAdes, you have to activate the SPAdes singularity container, which gives you access to SPAdes software. You do not need the container active for the rest of this tutorial, but we will use a special job submission command to invoke the container later on. For now, try running the following to introduce yourself to containers: 
 ```
 singularity run /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
 spades.py --help
 ```
 
-Only use the container to run the software within it, otherwise you will experience weird errors. Also, the container should NOT be active when submitting jobs that use the container - the procedure for job submission is explained below. To exit the container, press `CTRL` + `D`, or type `exit`. Now try running `spades --help`. You'll probably get an error, do you see why? If not, no worries, you will get more familiar as you go.
+You should see a help menu with possible arguments for spades (if you get a `command not found error` contact me). Only use the container to run the software within it, otherwise you will experience weird errors. Also, the container should NOT be active when submitting jobs that use the container - the procedure for job submission is explained below. To exit the container, press `CTRL` + `D`, or type `exit`. Now try running `spades --help`. You'll probably get an error, do you see why? If not, no worries, you will get more familiar as you go.
 
 Now we will prepare a job submission command in a "shell" file. Keeping commands in shell files is a good way to keep things organized and is ncessary for submitting jobs with containers. Create a plain text (UTF-8) file with either of the following commands if they fit your use case (check `spades.py --help` if these do not fit your criteria). Once finished, save it as an `.sh` file and transfer to OSC:
 
