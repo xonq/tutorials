@@ -27,24 +27,40 @@ To get started, you will want to be familiar with interacting in the command lin
 
 1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. Why is it important - well it keeps the commands looking more readable, easier to edit, and cleaner if you break up a big block command into multiple lines. I emphasize cleanliness in these tutorials because do you like dirty laundry on your workbench? Would you wear your mask below your nose? (please no)
 
-2) The `\` means completely different things than `/`, as the latter is typically involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/absolute path always points to the exact location of a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths typically do not start with `/`, `$`, or `~`. 
+2) The `\` means completely different things than `/`, as the latter is typically 
+involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/
+scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/
+absolute path always points to the exact location of a file, however the *relative* path 
+is only relative to your current position in the file system. In other words, if you 
+point to that same relative path in a different spot, it won't exist! Relative paths 
+typically do not start with `/`, `$`, or `~`. 
 
 Say my current folder is: `/user/zach` (which I confirmed by running `pwd`)
 
-A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory). 
+A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/
+path` (the `.` indicates current directory). 
 
-The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates your home folder). Do you see why they are denoted as absolute or relative paths now?
+The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
+your home folder). Do you see why using a relative path when you aren't sure if it will
+be right is important? It's particularly important when submitting jobs to the a high
+performance computer (HPC or supercomputer) because your job may not start at the right 
+directory for your relative path to work
 
 
 <br />
 
 #### Actually getting started
-With all that out of the way, if you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do to get started is add this line to your `~/.bash_profile` file in your OSC home directory:
+With all that out of the way, if you are using the Ohio Supercomputer (OSC) and have 
+access to PAS1046, you should be able to skip all installation and proceed to the OSC Use 
+sections of the following tutorials. All you need to do to get started is add this line 
+to your `~/.bash_profile` file in your OSC home directory:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
 
-If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at the bottom of this page.
+If you are having trouble with this pipeline, refer to the [troubleshooting](https://
+gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at 
+the bottom of this page.
 
 <br />
 
