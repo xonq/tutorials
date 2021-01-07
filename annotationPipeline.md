@@ -30,9 +30,9 @@ To get started, you will want to be familiar with interacting in the command lin
 
 Say my current folder is: `/user/zach` (which I confirmed by running `pwd`)
 
-A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory)
+A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory). 
 
-The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates your home folder)
+The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates your home folder). Do you see why they are denoted as absolute or relative paths now?
 
 
 <br />
