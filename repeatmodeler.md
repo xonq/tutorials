@@ -54,7 +54,8 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 Keep it clean - would you bring a date into your dirty room? If you know `cd`, `mv`, `ls` and `rm` then you know everything you need to move files around and create a clean directory structure with informative directory names and file paths. You will not need most of the files - instead, the `<NAME>-families.fa` is the *de novo* repeat library you reference when [masking](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#2-soft-mask-assembly) your assembly for gene prediction. Let's move that file into your organism(s)' folder(s) that we created when starting assembly.
 
 ```
-mv <REPEATMODELER>/<NAME>-families.fa <ORGANISM/repeatmodeler>
+mkdir <ORGANISM>/repeatmodeler
+mv <REPEATMODELER>/<NAME>-families.fa <ORGANISM>/repeatmodeler
 ```
 
 ## CITATION INFO
