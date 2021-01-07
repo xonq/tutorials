@@ -1,7 +1,7 @@
 # SPAdes *de novo* genome assembly
 
 ## GETTING STARTED 
-Assembly software takes next generation reads and uses models to guide stitching the reads into contiguous sequences, or contigs. Some software go a step further and attempt to stich the contigs themselves into scaffolds.
+Assembly software takes next generation reads and stitches them into contiguous sequences (contigs). Some software go a step further and attempt to stich the contigs themselves (scaffolds).
 
 If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
@@ -20,8 +20,18 @@ Proceed to OSC USE and adjust paths and job submission commands as necessary
 <br /><br />
 
 ## OSC USE
+### 0. Keep it clean
+Prepare a directory where you will make your output. If you think about your directory organization before the analysis you will have an easier time returning and disseminating your data. I personally will create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g.
+```
+mkdir <ORGANISM_CODENAME>
+cd <ORGANISM_CODENAME>
+mkdir assembly
+```
+Whatever you choose to do, just remember your the directory you want to output things in. You can always find the absolute path to your current directory by running `pwd`.
+
+
 ### 1. Trimming Illumina paired-end reads
-Find the adapter relevant to your sequence data and edit the following job submission command with your information:
+Find the adapter relevant to your sequence data - these are located in the trimmomatic software folder; on OSC this is the same directory as the argument following `ILLUMINACLIP`. Once ready, edit the following job submission command with your information:
 ```
 echo -e 'cd </OUTPUT/FOLDER> && java -jar /fs/project/PAS1046/software/Trimmomatic-0.36/trimmomatic-0.36.jar \
 PE -phred33 </PATH/TO/READ_1> </PATH/TO/READ_2> <OUTPUT_NAME_fpaired.fq.gz> <OUTPUT_NAME_funpaired.fq.gz> \
@@ -33,12 +43,13 @@ HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | sbatch --time=01:00:00 --
 
 ### 2. Assembling
 #### Accessing SPAdes assembler
-When using SPAdes, you have to activate the SPAdes singularity container, which gives you access to SPAdes software. Only use the container to run the software within it, otherwise you will experience weird errors. Also, the container should NOT be active when submitting jobs that use the container - the procedure for job submission is explained below. To exit the container, press `CTRL` + `D`, or type `exit`.
+When using SPAdes, you have to activate the SPAdes singularity container, which gives you access to SPAdes software. You do not need the container active for the rest of this tutorial, but we will use a special job submission command to invoke the container later on. For now, if you want to try opening the container and accessing the software run the following command: 
 ```
 singularity run /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
+spades.py --help
 ```
 
-Activate the container and run `spades.py --help` for more information relevant to your use case. You do not need the container active for the rest of the tutorial.
+Only use the container to run the software within it, otherwise you will experience weird errors. Also, the container should NOT be active when submitting jobs that use the container - the procedure for job submission is explained below. To exit the container, press `CTRL` + `D`, or type `exit`. Now try running `spades --help`. You'll probably get an error, do you see why? If not, no worries, you will get more familiar as you go.
 
 #### EXAMPLE1: Illumina 150 bp paired-end
 Create a plain text (UTF-8) file with the following command, save it as an `.sh` file, and transfer to OSC:
