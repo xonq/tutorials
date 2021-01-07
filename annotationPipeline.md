@@ -10,7 +10,7 @@ like this
 Before each command in each tutorial, I have tried to explain what the command does. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output.
 
 #### Useful information
-To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir`, and `ls` do is a good start. Other important info:
+To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir`, and `ls` do is a good start. Dr. Michael Sovic has some [good videos](https://www.youtube.com/playlist?list=PLxhIMi78eQehzRgd1C6wkJaaf0_nEnmvH) on these. Other important info:
 
 1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. Why is it important - well it keeps the commands looking more readable, easier to edit, and cleaner if you break up a big block command into multiple lines. I emphasize cleanliness in these tutorials because do you like dirty laundry on your workbench? Would you wear your mask below your nose? (please no)
 
