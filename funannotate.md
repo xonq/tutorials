@@ -59,6 +59,8 @@ gunzip gm_key_64.gz
 mv gm_key_64 ~/.gm_key
 ```
 
+<br />
+
 Let's get started with gene prediction. First we have to interface with Funannotate. Like other parts of the pipeline, Funannotate is in *container* of software. Furthermore, Funannotate also requires that we run a `source` command upon activating the container - this adds software to our `PATH` which essentially is telling the computer the default places to look for files. Only use the container to run Funannotate commands, otherwise you will experience unexpected behavior. To deactivate the container, press CTRL + D or run `exit`. 
 ```
 singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
