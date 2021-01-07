@@ -12,7 +12,7 @@ Absolute path: `/users/zach/this/is/my/path`
 
 <br />
 
-With all that out of the way, if you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do is add this line to your `~/.bash_profile` file in your OSC home directory:
+With all that out of the way, if you are using the Ohio Supercomputer (OSC) and have access to PAS1046, you should be able to skip all installation and proceed to the OSC Use sections of the following tutorials. All you need to do to get started is add this line to your `~/.bash_profile` file in your OSC home directory:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
