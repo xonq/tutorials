@@ -1,7 +1,7 @@
 # RepeatModeler *de novo* repeat library generation
 
 ## Getting Started
-You will need [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
+If you do not already have one, you will need [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md#osc-use) once you have added the line to your profile from [here](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
 
 <br /><br />
@@ -26,7 +26,7 @@ singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_
 <br />
 
 ### Repeat modeling
-RepeatModeler outputs more files than you could ever deal with, so to circumnavigate project and user folder file limits, we will make an output directory in your scratch folder (`/fs/scratch/<PAS####>/<USER>`). Once done, we prepare an NCBI database for `RepeatModeler` to reference in the next step. Make sure you have the container active as explained above.
+RepeatModeler outputs more files than you could ever deal with, so to circumnavigate project and user folder file limits, we will make an output directory in your scratch folder (`/fs/scratch/<PAS####>/<USER>`). Once done, we prepare an NCBI database for `RepeatModeler` to reference when actually running RepeatModeler. Make sure you have the container active as explained above.
 
 ```
 mkdir <SCRATCH/OUTPUT/DIRECTORY>
@@ -34,7 +34,7 @@ cd <SCRATCH/OUTPUT/DIRECTORY>
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
-Now, deactivate the container, create a plain text (UTF-8) shell file with the following command, save it with a `.sh` extension, and transfer to OSC. NOTE - reference the `<NAME>` used after `-name` in the previous command, *no file extensions*
+Now, deactivate the container, create a plain text (UTF-8) shell file with the following command, save it with a `.sh` extension, and transfer to OSC. This file is for job submission. NOTE - reference the `<NAME>` used after `-name` in the previous command, *no file extensions*
 
 
 ```
