@@ -69,7 +69,7 @@ spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/
 <br />
 
 #### SUBMITTING A JOB SCRIPT
-Now we submit the job by telling the supercomputer to invoke our singularity container and call upon the shell script you made above. Edit the command below and submit a job to Torque job management - do not have the container active when submitting the job.
+Now we submit the job by telling the supercomputer to invoke our singularity container and call upon the shell script you made above. Edit the command below and submit a job - do not have the container active when submitting the job.
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif bash <YOUR/CMD>' | sbatch --time=100:00:00 --nodes=1 --ntasks-per-node=6 -A PAS<####> --job-name=assembly
 ```
