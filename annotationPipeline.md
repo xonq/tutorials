@@ -2,13 +2,16 @@
 ## GETTING STARTED
 This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly - what is not necessary will be made clear.
 
-To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir` and `ls` do is a good start. Before each command in each tutorial, I have tried to explain what you will be doing within the command itself. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia` if that is where you are piping your output
+To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir` and `ls` do is a good start. Before each command in each tutorial, I have tried to explain what the command does. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output.
 
-It is also useful to know a couple things before getting started. First `\` at the end of a line in a command is simply telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. The `\` means completely different things than `/`, which you will note when we look at the difference between absolute and relative paths: Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full or absolute path is always correct for a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths do not start with `/`, `$`, or `~`. 
+It is also useful to know a couple things before getting started: Namely, `\` at the end of a line in a command is simply telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. The `\` means completely different things than `/`, which you will note when we look at the difference between absolute and relative paths: Paths are what computers use to point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full or absolute path is always correct for a file, however the *relative* path is only relative to your current position in the file system. In other words, if you point to that same relative path in a different spot, it won't exist! Relative paths do not start with `/`, `$`, or `~`. 
 
-Relative path: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory)
+Say my current folder is: `/user/zach`
 
-Absolute path: `/users/zach/this/is/my/path`
+A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/path` (the `.` indicates current directory)
+
+The absolute path is: `/users/zach/this/is/my/path`
+
 
 <br />
 
