@@ -21,8 +21,9 @@ Proceed to OSC USE and adjust paths and job submission commands as necessary
 
 ## OSC USE
 ### 0. Keep it clean
-Imagine a pile of dishes from that shitty roommate in undergrad... don't let your folder get like that. Prepare a directory where you will make your output. If you think about your directory organization before the analysis you will have an easier time returning and disseminating your data. I personally will create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g.
+Imagine a pile of dishes from that shitty roommate in undergrad... don't let your folder get like that. Prepare a directory where you will make your output. If you think about your directory organization before the analysis you will have an easier time returning and disseminating your data. I personally will create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g. (use whatever folder you like as the `<ROOT_DIR>`)
 ```
+cd <ROOT_DIR>
 mkdir -p <ORGANISM_CODENAME>/spades
 mkdir <ORGANISM_CODENAME>/trimmomatic
 ```
@@ -31,7 +32,7 @@ The `-p` there tells `mkdir` to make a directory and if the parent directory doe
 <br />
 
 ### 1. Trimming Illumina paired-end reads
-Find the adapter relevant to your sequence data - these are located in the trimmomatic software folder; on OSC this is the same directory as the argument following `ILLUMINACLIP` in the command below. Once ready, edit the following job submission command with your information:
+Find the adapter relevant to your sequence data - these are located in the trimmomatic software folder; on OSC this is the same directory as the argument following `ILLUMINACLIP` in the command below. Once ready, edit the following job submission command with your information - remember to pipe the output somewhere useful and informative, like the `trimmomatic` folder we created above:
 ```
 echo -e 'cd </OUTPUT/FOLDER> && java -jar /fs/project/PAS1046/software/Trimmomatic-0.36/trimmomatic-0.36.jar \
 PE -phred33 </PATH/TO/READ_1> </PATH/TO/READ_2> <OUTPUT_NAME_fpaired.fq.gz> <OUTPUT_NAME_funpaired.fq.gz> \
