@@ -29,19 +29,18 @@ To get started, you will want to be familiar with interacting in the command lin
 1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... this keeps things readable and clean - which is a theme this tutorial puts forth. If you do not add the `\`, then each line will be executed as an individual line of code. A clean lab bench is best practice.
 
 2) The `\` means completely different things than `/`, as the latter is typically 
-involved in delineating paths. Paths point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to delineate paths. The full/
+involved in delineating paths. Paths point to files, e.g. `/fs/scratch/` (or even this URL!); however, there are multiple ways to delineate paths. The full/
 absolute path always points to the exact location of a file and is therefore always safe to use, however the *relative* path 
 is only relative to your current position in the file system. 
 
-Say my current folder is: `/user/zach` (which I found via `pwd`)
+Say my current folder is: `/user/zach/` (which I found via `pwd`)
 
-The absolute path for a directory could be `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
-your home folder)
+The absolute path for a directory could be `/users/zach/this/is/my/path/`. It is "absolute" because the path begins at the start of the file system. Can you guess what the starting folder of the file system is? ... it is simply `/`. Absolute paths can also start with `~` (your home directory) or `$` (beyond the scope of this tutorial). 
 
-The relative path to my current position in the file structure would then be: `this/is/my/path` or you may see `./this/is/my/
-path` (the `.` indicates current directory) 
+So if my current directory is `/user/zach` and the absolute path is `/users/zach/this/is/my/path`, then a path relative to my position in the file system, or *the relative path* is: `this/is/my/path`. You may also see `./this/is/my/
+path` (the `.` indicates current directory.
 
-Now, if I changed a folder like this: `cd this/is` then print my current directory: `pwd`, I'm now in `/user/zach/this/is`. But what if I input tried the relative path I used before: `this/is/my/path`? Will it exist? ... No. Because the absolute path for the path I just described is actually `/user/zach/this/is/this/is/my/path`. TL;DR, if you point to the same relative path in a different spot, it won't exist! Relative paths typically do not start with `/`, `$`, or `~`. 
+Now, if I changed to an existing folder with a relative path like this: `cd this/is/` it would work. I then print my current directory: `pwd`, and it shows I'm now in `/user/zach/this/is/`... But what if I now tried the relative path I used before: `this/is/my/path/`? Will it exist? ... No. Because the absolute path for that is actually `/user/zach/this/is/this/is/my/path/` *relative* to my position. TL;DR, if you point to the same relative path in a different spot, it won't exist!  
 
 <br />
 
