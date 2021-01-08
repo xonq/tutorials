@@ -20,7 +20,8 @@ Commands in this tutorial will be placed in obvious command boxes `like this` or
 ```
 like this
 ```
-Before each command in each tutorial, I have tried to explain what the command does. Inside the command you will find parts that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output.
+
+The information required to put into shell - `.sh` files - will be in their own box and made clear in the writing before each command where I've attempted to explain what the command(s) do. You will also find parts within commands that you need to edit inside these `<>` brackets; for example, if you see `<OUTPUT/DIRECTORY>` then you may change that to `~/athelia/` if that is where you are piping your output. 
 
 #### Useful information
 To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir`, and `ls` do is a good start. Dr. Michael Sovic has some [good videos](https://www.youtube.com/playlist?list=PLxhIMi78eQehzRgd1C6wkJaaf0_nEnmvH) on these. Other important info:
@@ -35,14 +36,13 @@ is only relative to your current position in the file system.
 
 Say my current folder is: `/user/zach` (which I found via `pwd`)
 
-The absolute path is for a directory could be `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
+The absolute path for a directory could be `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
 your home folder)
 
-And the relative path would be: `this/is/my/path` or you may see `./this/is/my/
+The relative path to my current position in the file structure would then be: `this/is/my/path` or you may see `./this/is/my/
 path` (the `.` indicates current directory) 
 
-Now, if I changed a folder: `cd this/is` and print `pwd`, I'm now in `/user/zach/this/is`. But what if I to input the relative path `this/is/my/path`? Will it exist? No. Because the absolute path for the relative path I just demonstrated is actually `/user/zach/this/is/this/is/my/path`. TL;DR, if you point to the same relative path in a different spot, it won't exist! Relative paths 
-typically do not start with `/`, `$`, or `~`. 
+Now, if I changed a folder like this: `cd this/is` then print my current directory: `pwd`, I'm now in `/user/zach/this/is`. But what if I input tried the relative path I used before: `this/is/my/path`? Will it exist? ... No. Because the absolute path for the path I just described is actually `/user/zach/this/is/this/is/my/path`. TL;DR, if you point to the same relative path in a different spot, it won't exist! Relative paths typically do not start with `/`, `$`, or `~`. 
 
 <br />
 
