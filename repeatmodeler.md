@@ -26,6 +26,7 @@ Press CTRL + D or run `exit` to exit it. Only run the container for repeat maski
 <br />
 
 ### Repeat modeling
+#### 1) build a database
 RepeatModeler outputs more files than you could ever deal with, so to circumnavigate project and user folder file limits, we will make an output directory in your scratch folder (`/fs/scratch/<PAS####>/<USER>`). Once done, we prepare an NCBI database for `RepeatModeler` to reference when actually running RepeatModeler. Make sure you have the container active as explained above.
 
 ```
@@ -34,6 +35,7 @@ cd <SCRATCH/OUTPUT/DIRECTORY>
 BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
+#### 2) run repeatmodeler
 Now, deactivate the container, create a plain text (UTF-8) shell file with the following command, save it with a `.sh` extension, and transfer to OSC. This file is for job submission. NOTE - reference the `<NAME>` used after `-name` in the previous command, *no file extensions*
 
 
@@ -42,7 +44,7 @@ cd </SCRATCH/OUTPUT/DIRECTORY>
 RepeatModeler -pa 8 -database <SCRATCH/OUTPUT/DIRECTORY/NAME> -engine ncbi 2>&1 | tee repeatmodeler.log
 ```
 
-Edit the command below and submit the job. *Remember, this command activates the container inside the job, but you do not activate the container to submit a job*
+Edit the command below and submit the job. Remember, you do not want the container active when submitting the job - the job itself calls upon the container. Confusing, yes, but what you are doing is 1. telling the computer to submit a command to the supercomputer job scheduler, 2. telling the job itself to invoke singularity, and 3. telling singularity to run your shell file prepared above.
 
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMD>.sh' | sbatch --time=100:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=repeatmodeler
