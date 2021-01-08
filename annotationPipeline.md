@@ -37,8 +37,8 @@ Say my current folder is: `/user/zach/` (which I found via `pwd`)
 
 The absolute path for a directory could be `/users/zach/this/is/my/path/`. It is "absolute" because the path begins at the start of the file system. Can you guess what the starting folder of the file system is? ... it is simply `/`. Absolute paths can also start with `~` (your home directory) or `$` (beyond the scope of this tutorial). 
 
-So if my current directory is `/user/zach` and the absolute path is `/users/zach/this/is/my/path`, then a path relative to my position in the file system, or *the relative path* is: `this/is/my/path`. You may also see `./this/is/my/
-path` (the `.` indicates current directory.
+So if my current directory is `/user/zach/` and the absolute path is `/users/zach/this/is/my/path/`, then a path relative to my position in the file system, or *the relative path* is: `this/is/my/path`. Notice what it starts with... the directory `this/`. If instead you wrote `/this/` it would be pointing you at an absolute path for a directory "this" at the start of the file system. You may also see `./this/is/my/
+path` (the `.` indicates current directory).
 
 Now, if I changed to an existing folder with a relative path like this: `cd this/is/` it would work. I then print my current directory: `pwd`, and it shows I'm now in `/user/zach/this/is/`... But what if I now tried the relative path I used before: `this/is/my/path/`? Will it exist? ... No. Because the absolute path for that is actually `/user/zach/this/is/this/is/my/path/` *relative* to my position. TL;DR, if you point to the same relative path in a different spot, it won't exist!  
 
