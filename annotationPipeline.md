@@ -1,4 +1,4 @@
-# Slot Lab *de novo* Gene Annotation Pipeline
+# Slot Lab *de novo* Gene Annotation Pipeline | 2021/01/07
 This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes rereading to understand - what is not necessary to read will be made clear. Information on [getting started](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) is below the figure.
 
 <br />
