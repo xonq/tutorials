@@ -65,7 +65,7 @@ spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/
 #### EXAMPLE2: Illumina 150 bp paired-end + Nanopore long read
 
 ```
-spades.py --pe-1 1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2 1 </PATH/TO/TRIMMED/R_paired.fq.gz> --nanopore </PATH/TO/NANOPORE_READS> -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir </PATH/TO/SCRATCH> -t 6 -m 144 -o </PATH/TO/OUTPUT>
+spades.py --pe-1-1 </PATH/TO/TRIMMED/F_paired.fq.gz> --pe-2-1 </PATH/TO/TRIMMED/R_paired.fq.gz> --nanopore </PATH/TO/NANOPORE_READS> -k 21,33,55,77,99,121 --cov-cutoff auto --tmp-dir </PATH/TO/SCRATCH> -t 6 -m 144 -o </PATH/TO/OUTPUT>
 ```
 
 <br />
