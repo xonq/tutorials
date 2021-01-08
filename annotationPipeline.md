@@ -29,8 +29,7 @@ To get started, you will want to be familiar with interacting in the command lin
 1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... this keeps things readable and clean - which is a theme this tutorial puts forth. If you do not add the `\`, then each line will be executed as an individual line of code. A clean lab bench is best practice.
 
 2) The `\` means completely different things than `/`, as the latter is typically 
-involved in delineating paths. Paths point to files, e.g. `/fs/
-scratch` (or even this URL!); however, there are multiple ways to delineate paths. The full/
+involved in delineating paths. Paths point to files, e.g. `/fs/scratch` (or even this URL!); however, there are multiple ways to delineate paths. The full/
 absolute path always points to the exact location of a file and is therefore always safe to use, however the *relative* path 
 is only relative to your current position in the file system. 
 
