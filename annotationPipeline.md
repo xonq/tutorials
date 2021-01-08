@@ -25,29 +25,24 @@ Before each command in each tutorial, I have tried to explain what the command d
 #### Useful information
 To get started, you will want to be familiar with interacting in the command line to some extent: knowing what `mv`, `cd`, `rm`, `mkdir`, and `ls` do is a good start. Dr. Michael Sovic has some [good videos](https://www.youtube.com/playlist?list=PLxhIMi78eQehzRgd1C6wkJaaf0_nEnmvH) on these. Other important info:
 
-1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... if you do not add that, then each line will be executed as an individual line of code. Why is it important - well it keeps the commands looking more readable, easier to edit, and cleaner if you break up a big block command into multiple lines. I emphasize cleanliness in these tutorials because do you like dirty laundry on your workbench? Would you wear your mask below your nose? (please no)
+1) If a line of code ends with EXACTLY (even the space before) ` \` then it is telling the command line that you want to write on the next line... this keeps things readable and clean - which is a theme this tutorial puts forth. If you do not add the `\`, then each line will be executed as an individual line of code. A clean lab bench is best practice.
 
 2) The `\` means completely different things than `/`, as the latter is typically 
-involved in delineating paths. Paths are what computers use to point to files, e.g. `/fs/
-scratch` (or even this URL!); however, there are multiple ways to write a PATH. The full/
-absolute path always points to the exact location of a file, however the *relative* path 
-is only relative to your current position in the file system. In other words, if you 
-point to that same relative path in a different spot, it won't exist! Relative paths 
+involved in delineating paths. Paths point to files, e.g. `/fs/
+scratch` (or even this URL!); however, there are multiple ways to delineate paths. The full/
+absolute path always points to the exact location of a file and is therefore always safe to use, however the *relative* path 
+is only relative to your current position in the file system. 
+
+Say my current folder is: `/user/zach` (which I found via `pwd`)
+
+The absolute path is for a directory could be `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
+your home folder)
+
+And the relative path would be: `this/is/my/path` or you may see `./this/is/my/
+path` (the `.` indicates current directory) 
+
+Now, if I changed a folder: `cd this/is` and print `pwd`, I'm now in `/user/zach/this/is`. But what if I to input the relative path `this/is/my/path`? Will it exist? No. Because the absolute path for the relative path I just demonstrated is actually `/user/zach/this/is/this/is/my/path`. TL;DR, if you point to the same relative path in a different spot, it won't exist! Relative paths 
 typically do not start with `/`, `$`, or `~`. 
-
-Say my current folder is: `/user/zach` (which I confirmed by running `pwd`)
-
-A relative path to a directory would be: `this/is/my/path` or you may see `./this/is/my/
-path` (the `.` indicates current directory). 
-
-The absolute path is: `/users/zach/this/is/my/path` or `~/this/is/my/path` (`~` indicates
-your home folder). 
-
-Do you see why using a relative path when you aren't sure if it will
-be right is important? It's particularly important when submitting jobs to the a high
-performance computer (HPC or supercomputer) because your job may not start at the right 
-directory for your relative path to work
-
 
 <br />
 
