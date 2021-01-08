@@ -108,11 +108,9 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### 3. Predict genes
-Okay, this is the first place I'm going to prominently put a plug in for my scripts (mycotools) and the database (mycodb). You are running an analysis I do often, and I have automated many portions of it for convenience. As a believer in open source software, I've also provided the tools for everyone. You can go ahead and attempt these things manually, but if you are fine with the initial learning curve, you can save some time in the long run and have access to my scripts and the database by following [this short installation guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). I will make note of my script to use and how to use them below. 
-
 Download/compile necessary data and information:
-- transcript/EST evidence from organism(s) in the same genus (JGI/GenBank)
-    * my script: `jgiDwnld.py` - create a file with JGI codes (e.g. Fibsp1 for example) separated by new lines. Then run `python jgiDwnld.py -i <JGICODEFILE> -t -e`; this will download the transcripts and store them in their appropriate folder.
+- transcript/EST evidence from the most closely related available organism(s) in the same genus (JGI/GenBank)
+    * if using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
 - run `funannotate species` (container must be active) to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
 
