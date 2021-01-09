@@ -119,11 +119,11 @@ Once compiled, create an output directory in your scratch folder to avoid file l
 mkdir /fs/scratch/<PAS###>/<USER>/funannotate_<NAME>
 ```
 
-Now we are ready for gene prediction. Create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC. This command first sources the environment for the container, then tells funannotate to input your masked assembly, a name for the annotation run, transcript evidence, protein evidence, the number of CPU cores you use, the BUSCO species database, and the output folder you made above:
+Now we are ready for gene prediction. Create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC. This command first sources the environment for the container, then tells funannotate to input your masked assembly, a name for the annotation run, transcript evidence, protein evidence, the number of CPU cores you use, the BUSCO species database, and the output folder you made above. It is also important to choose a brief, descriptive codename/name for your species in `<OME>_<RUN#>`:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME_RUN#>” --transcript_evidence <YOUR/TRANSCRIPT_AND_EST_EVIDENCE> \
+funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” --transcript_evidence <YOUR/TRANSCRIPT_AND_EST_EVIDENCE> \
 --protein_evidence <YOUR/PROTEIN_EVIDENCE> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
 -–cpus 8 --busco_seed_species <BUSCO_SPECIES> -o <OUTPUT/FOLDER>
 ```
@@ -138,12 +138,19 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ## OUTPUT
-Funannotate will output many working files and an organized folder of results. Let's just move those to your clean directory.
+Funannotate will output many working files and an organized folder of results. The naming scheme of the output directory is intuitive: the gene coordinate file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. Let's just move those to your clean directory.
 ```
-mv /fs/scratch/<PAS####>/<USER>/funannotate/predict_results <OUTPUT>/<ORGANISM_CODENAME>/results
+mv /fs/scratch/<PAS####>/<USER>/<FUNANNOTATEOUTPUT> <OUTPUT>/<ORGANISM_CODENAME>/funannotate
+mv <OUTPUT>/<ORGANISM_CODENAME>/funannotate/predict_results <OUTPUT>/<ORGANISM_CODENAME>/results
 ```
 
-The naming scheme of the output directory is intuitive: the gene coordinate file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/scripts).
+You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/mycotools_scripts). Follow the README in that link if you want to install my scripts. There really is not an objective metric to evaluate annotation quality, but a good check is to compare the % of the assembly covered by the total length of the annotation to similar species. You can use `annotationStats.py` on species' gffs in the [database](https://gitlab.com/xonq/mycodb).
+
+If you are happy with your annotation quality, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
+```
+funannotate species -s <GENUS>_<SPECIES>_<STRAIN> -a <OUTPUT>/<ORGANISM_CODENAME>/results/<OME>_<RUN#>.parameters.json
+```
+
 
 <br /><br />
 
