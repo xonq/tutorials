@@ -114,10 +114,14 @@ Download/compile necessary data and information:
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (JGI/GenBank)
     * if using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
     * My script, `jgiDwnld.py` can download these for you. Sign-up at MycoCosm, then just prepare a file with the JGI codenames for each organism separated by line, then run `python <SCRIPTS>/jgiDwnld.py -i <INPUT_FILE> -e -t`
+
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
     * These can be acquired from the database proteome path, or by setting up a file as described above and then calling `python <SCRIPTS>/jgiDwnld.py -i <INPUT_FILE> -p`
     * If you want to use NCBI, create a file with BioSample Accessions separated by new lines, then run `python <SCRIPTS>/ncbiDwnld.py -i <INPUT_FILE> -p`
+
 - run `funannotate species` (container must be active) to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
+
+<br />
 
 Once compiled, create an output directory in your scratch folder to avoid file limits:
 ```
