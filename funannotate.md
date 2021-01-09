@@ -108,7 +108,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### 3. Predict genes
-This is the first prominent plug I'm going to make for installing [my scripts]((https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md)). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI sequence data (not transcript data at the moment), so if you want to skip downloading proteomes then you can learn how to acquire them from the database by asking Zach to teach you (tutorial in progress).
+This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI sequence data (not transcript data at the moment), so if you want to skip downloading proteomes then you can learn how to acquire them from the database by asking Zach to teach you (tutorial in progress).
 
 Download/compile necessary data and information:
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (JGI/GenBank)
