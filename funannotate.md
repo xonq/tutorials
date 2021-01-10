@@ -139,7 +139,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” \
 --transcript_evidence <YOUR/TRANSCRIPT_EVIDENCE1> <YOUR/TRANSCRIPT_EVIDENCEn> \
 --protein_evidence <YOUR/PROTEIN_EVIDENCE1> <YOUR/PROTEIN_EVIDENCEn> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
--–cpus 8 --busco_seed_species <BUSCO_SPECIES> -o <OUTPUT/FOLDER>
+-–cpus 8 --busco_seed_species <BUSCO_SPECIES> --optimize_augustus -o <OUTPUT/FOLDER>
 ```
 
 <br />
