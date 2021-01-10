@@ -162,7 +162,7 @@ You can obtain a summary of your annotation statistics using the `annotationStat
 
 If you are happy with your annotation quality, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
-funannotate species -s <GENUS>_<SPECIES>_<STRAIN> -a <OUTPUT>/<ORGANISM_CODENAME>/results/<OME>_<RUN#>.parameters.json
+funannotate species -s <GENUS>_<SPECIES>_<STRAIN> -a <OUTPUT>/<ORGANISM_CODENAME>/funannotate/logfiles/<OME>_<RUN#>.parameters.json
 ```
 
 
