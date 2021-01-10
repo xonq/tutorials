@@ -111,12 +111,17 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
 
 Download/compile necessary data and information:
+
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (JGI/GenBank)
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
     * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) or NCBI, then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#jgidwnldpy-ncbidwnldpy)
     
+<br />
+
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
     * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#dbFilespy)
+
+<br />
 
 - run `funannotate species` (container must be active) to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
 
