@@ -108,16 +108,14 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### 3. Predict genes
-This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI sequence data (not transcript data at the moment), so if you want to skip downloading proteomes then you can learn how to acquire them from the database by asking Zach to teach you (tutorial in progress).
+This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
 
 Download/compile necessary data and information:
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (JGI/GenBank)
-    * if using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
-    * My script, `jgiDwnld.py` can download these for you. Sign-up at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home), then just prepare a file with the JGI codenames for each organism separated by line, then run `python <SCRIPTS>/jgiDwnld.py -i <INPUT_FILE> -e -t`
-
+    * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
+    * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) or NCBI, then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#jgidwnldpy-ncbidwnldpy)
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
-    * These can be acquired from the database proteome path, or by setting up a file as described above and then calling `python <SCRIPTS>/jgiDwnld.py -i <INPUT_FILE> -p`
-    * NOT YET WORKING: If you want to use NCBI, create a file with BioSample Accessions separated by new lines, then run `python <SCRIPTS>/ncbiDwnld.py -i <INPUT_FILE> -p`
+    * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#dbFilespy)
 
 - run `funannotate species` (container must be active) to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
 
@@ -153,7 +151,7 @@ mv /fs/scratch/<PAS####>/<USER>/<FUNANNOTATEOUTPUT> <OUTPUT>/<ORGANISM_CODENAME>
 mv <OUTPUT>/<ORGANISM_CODENAME>/funannotate/predict_results <OUTPUT>/<ORGANISM_CODENAME>/results
 ```
 
-You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/mycotools_scripts). Follow the README in that link if you want to install my scripts. There really is not an objective metric to evaluate annotation quality, but a good check is to compare the % of the assembly covered by the total length of the annotation to similar species. You can use `annotationStats.py` on species' gffs in the [database](https://gitlab.com/xonq/mycodb).
+You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/mycotools_scripts): `python3 <SCRIPTS>/annotationStats.py <YOUROUTPUT>.gff3`. There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
 
 If you are happy with your annotation quality, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
