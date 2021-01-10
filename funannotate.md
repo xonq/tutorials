@@ -93,7 +93,7 @@ funannotate sort -i <YOUR/ASSEMBLY> -o <ORGANISM_CODENAME>/funannotate_prep/ASSE
 
 Soft-mask the assembly: this references your [*de novo* repeat library](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) to lowercase masked nucleotides. If you followed the previous tutorials' directory structure, the file will be in `<ORGANISM_CODENAME>/results`. 
 
-We are now going to submit a job that invokes the singularity container, so we need to write the shell, `.sh` execution script in plain-text UTF-8 format and save it as something meaningful like `<ORGANISM>_mask.sh`.
+We are now going to submit a job that invokes the singularity container, so we need to write the shell, `.sh` execution script in plain-text UTF-8 format and save it as something meaningful like `<ORGANISM>_mask.sh`:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate mask -i <YOUR/SORTED_ASSEMBLY> -m repeatmodeler \
