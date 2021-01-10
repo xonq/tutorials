@@ -112,7 +112,7 @@ This is the first prominent plug I'm going to make for installing [my scripts](h
 
 Download/compile necessary data and information:
 
-- transcript/EST evidence from the most closely related available organism(s) in the same genus (JGI/GenBank)
+- transcript/EST evidence from the most closely related available organism(s) in the same genus (separate by spaces in command if > 1)
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
     * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) or NCBI, then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#jgidwnldpy-ncbidwnldpy)
     
@@ -136,8 +136,9 @@ Now we are ready for gene prediction. Create a UTF-8 file with the predict comma
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” --transcript_evidence <YOUR/TRANSCRIPT_AND_EST_EVIDENCE> \
---protein_evidence <YOUR/PROTEIN_EVIDENCE> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
+funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” \
+--transcript_evidence <YOUR/TRANSCRIPT_EVIDENCE1> <YOUR/TRANSCRIPT_EVIDENCEn> \
+--protein_evidence <YOUR/PROTEIN_EVIDENCE1> <YOUR/PROTEIN_EVIDENCEn> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
 -–cpus 8 --busco_seed_species <BUSCO_SPECIES> -o <OUTPUT/FOLDER>
 ```
 
