@@ -114,7 +114,7 @@ Download/compile necessary data and information:
 
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (separate by spaces in command if > 1)
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
-    * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) or NCBI, then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#jgidwnldpy-ncbidwnldpy)
+    * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#jgidwnldpy-ncbidwnldpy)
     
 <br />
 
@@ -123,7 +123,7 @@ Download/compile necessary data and information:
 
 <br />
 
-- run `funannotate species` (container must be active) to find the most closely related BUSCO species database; funannotate will generate a BUSCO species database for your species; funannotate will create and add a BUSCO species database for your organism
+- run `funannotate species` (container must be active) to find the most closely related BUSCO species database
 
 <br />
 
