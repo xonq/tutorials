@@ -1,5 +1,5 @@
 # Slot Lab *de novo* Gene Annotation Pipeline | 2021/01/11
-This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes rereading to understand - what is not necessary to read will be made clear. Make sure to read the [GETTING STARTED](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) section.
+This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes rereading to understand - what is not necessary to read will be made clear. Make sure to read the [GETTING STARTED](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) section. If you are having trouble with this pipeline, refer to the [TROUBLESHOOTING](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section.
 
 
 ![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
@@ -47,15 +47,13 @@ Now, if I changed to an existing folder with a relative path like this: `cd this
 With all that out of the way, if you are using the Ohio Supercomputer (OSC) and have 
 access to PAS1046, you should be able to skip all installation and proceed to the OSC Use 
 sections of the following tutorials. All you need to do to get started is add this line 
-to your `~/.bash_profile` file in your OSC home directory:
+to your `~/.bash_profile` file in your OSC home directory to circumnavigate OSC container
+mount point restrictions:
 ```
 export SINGULARITY_BINDPATH="/opt:/mnt"
 ```
 
-If you are having trouble with this pipeline, refer to the [troubleshooting](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section at 
-the bottom of this page.
-
-<br />
+<br /><br />
 
 ## TROUBLESHOOTING
 Many common problems can be addressed by asking the following:
