@@ -158,7 +158,7 @@ mv /fs/scratch/<PAS####>/<USER>/<FUNANNOTATEOUTPUT> <OUTPUT>/<ORGANISM_CODENAME>
 mv <OUTPUT>/<ORGANISM_CODENAME>/funannotate/predict_results <OUTPUT>/<ORGANISM_CODENAME>/results
 ```
 
-You can obtain a summary of your annotation statistics using the `annotationStats.py` [script](https://gitlab.com/xonq/mycotools_scripts): `python3 <SCRIPTS>/annotationStats.py <YOUROUTPUT>.gff3`. There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
+You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#assembly-annotation-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
 
 If you are happy with your annotation quality, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
