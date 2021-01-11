@@ -123,7 +123,7 @@ Download/compile necessary data and information:
 
 <br />
 
-- run `funannotate species` ([container must be active](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container)) to find the most closely related BUSCO species database
+- run `funannotate species` ([container must be active](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#first-use)) to find the most closely related BUSCO species database
 
 <br />
 
