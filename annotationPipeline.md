@@ -1,16 +1,16 @@
-# Slot Lab *de novo* Gene Annotation Pipeline | 2021/01/07
-This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes rereading to understand - what is not necessary to read will be made clear. Information on [getting started](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) is below the figure.
+# Slot Lab *de novo* Gene Annotation Pipeline | 2021/01/11
+This pipeline and tutorials are tailored toward the annotation of fungal genomes without direct transcript evidence. Please read thoroughly, sometimes rereading to understand - what is not necessary to read will be made clear. Make sure to read the [GETTING STARTED](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) section.
+
+
+![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
 
 <br />
 
 ## SUMMARY
-Information on getting started is below
 #### 1) [Prepare & assemble reads with SPAdes](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md)
 #### 2) [Generate a repeat library with RepeatModeler](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md)
 #### 3) [Predict genes with Funannotate](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md)
 #### 4) OPTIONAL: [Fill annotation with OrthoFiller](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md)
-
-![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
 
 <br />
 
