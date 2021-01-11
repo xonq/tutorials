@@ -119,7 +119,7 @@ Download/compile necessary data and information:
 <br />
 
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
-    * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#dbFilespy)
+    * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#dbfilespy)
 
 <br />
 
