@@ -64,6 +64,8 @@ Many common problems can be addressed by asking the following:
 #### Is everything spelled correct and do the PATH(s) exist?
 - most of my errors are due to spelling mistakes or using non-existent directories
 
+- are your paths or relative? if relative, are you in the correct directory?
+
 - sometimes flags, like `-o / --output`, need directories and sometimes they need files; these are made clear in the tutorials
 
 
@@ -72,7 +74,8 @@ These are typically made clear
 
 
 ##### Solutions
-- meticulously scan your command and check if you PATHs are real
+- meticulously scan your command and check if you PATHs are real; convert relatives to
+absolute
 
 - make sure the correct virtual environment (miniconda) is loaded or the environment is appropriately sourced
 
