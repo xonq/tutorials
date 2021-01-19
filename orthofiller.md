@@ -25,6 +25,7 @@ To use OrthoFiller software you will have to activate the software container. Pr
 
 ```
 singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
+source /fs/project/PAS1046/software/containers/orthofiller/source.sh
 ```
 
 <br />
