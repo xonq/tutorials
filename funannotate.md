@@ -245,7 +245,7 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 
 # 3b. add BUSCO to database
 cp -r <OUTPUT>/busco_prelim/run_<ORGANISM>/augustus_output/retraining_parameters \
-$AUGUSTUS_CONFIG_PATH/<ORGANISM>_prelim &&
+$AUGUSTUS_CONFIG_PATH/species/<ORGANISM>_prelim &&
 funannotate setup -u &&
 
 
