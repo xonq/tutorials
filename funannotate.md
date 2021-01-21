@@ -123,7 +123,7 @@ Deactivate the container, and create a directory for preliminary BUSCO output:
 mkdir <OUTPUT>/busco_prelim
 ```
 
-Create a plain text `.sh` file. Please include `_prelim` in the output name so that it is obvious. Remember the output name (`<ORGANISM_CODE>_prelim`) and `<LINEAGE>` as we will use them later:
+Create a plain text `.sh` file with the BUSCO command:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -131,7 +131,7 @@ cd <OUTPUT>/busco_prelim
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH \
--i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE>_prelim \
+-i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE> \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
 ```
 
@@ -140,9 +140,12 @@ Execute the command:
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/BUSCO.sh>' | sbatch --time=60:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
 ```
 
-Once finished, copy the resulting database to the lab BUSCO database set:
+Once finished, copy the resulting database to the lab BUSCO database set -
+PLEASE SPECIFY `_prelim` at the end to indicate this is not a finalized BUSCO
+database. Remember what you input for `<ORGANISM>_prelim` for the next step:
 ```
-cp -r <OUTPUT>/busco_prelim/<ORGANISM_CODE>_prelim /fs/project/PAS1046/software/augustus/config/species/
+cp -r <OUTPUT>/run_<ORGANISM_CODE>/busco_prelim/augustus_output/retraining_parameters/ \ 
+/fs/project/PAS1046/software/augustus/config/species/<ORGANISM>_prelim
 ```
 
 Finally, source and activate the container and update Funannotate so it can find your BUSCO db:
@@ -241,7 +244,8 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 &&
 
 # 3b. add BUSCO to database
-cp -r <OUTPUT>/busco_prelim/<OME>_prelim $AUGUSTUS_CONFIG_PATH &&
+cp -r <OUTPUT>/busco_prelim/run_<ORGANISM>/augustus_output/retraining_parameters \
+$AUGUSTUS_CONFIG_PATH/<ORGANISM>_prelim &&
 funannotate setup -u &&
 
 
@@ -249,7 +253,7 @@ funannotate setup -u &&
 funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <YOUR/EVIDENCE> \
 --protein_evidence <YOUR/EVIDENCE1> <YOUR/EVIDENCEn> \
 /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <OME>_prelim -o <OUTPUT>/funannotate \
+--cpus 8 --busco_seed_species <ORGANISM>_prelim -o <OUTPUT>/funannotate \
 --optimize_augustus
 ```
 
