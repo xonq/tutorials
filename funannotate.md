@@ -254,7 +254,7 @@ funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <
 --protein_evidence <YOUR/EVIDENCE1> <YOUR/EVIDENCEn> \
 /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
 --cpus 8 --busco_seed_species <ORGANISM>_prelim -o <OUTPUT>/funannotate \
---optimize_augustus
+--optimize_augustus --busco_db <LINEAGE>
 ```
 
 Save as an `.sh`, transfer to OSC, and submit the script as previously
