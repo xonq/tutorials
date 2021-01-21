@@ -189,7 +189,7 @@ funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” \
 
 Edit the below to submit the `.sh` file as a job in the funannotate container. Remember, you don't need to activate the container to submit a job that uses the container.
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | sbatch --time=60:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=funannotate
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/CMDFILE>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=funannotate
 ```
 
 <br /><br />
