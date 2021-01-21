@@ -108,7 +108,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### 3. Generate a BUSCO database
-BUSCO is used by Funannotate and the *ab initio* gene prediction software AUGUSTUS to predict introns within your gene models. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step for Funannotate to reference. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species, only a finalized version that is created following the predict command.
+BUSCO is used by Funannotate and the *ab initio* gene prediction software AUGUSTUS to predict introns within your gene models. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step for Funannotate to reference. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species.
 
 To prepare BUSCO, first find the closest existing *species database* after activating and sourcing the container:
 ```
