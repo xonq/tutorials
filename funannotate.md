@@ -115,17 +115,17 @@ To prepare BUSCO, first find the closest existing *species database* after activ
 funannotate species
 ```
 
-Then find the most refined BUSCO *lineage dataset* for your organism; you will also use this in step 4:
+Then find the most refined BUSCO *lineage dataset* for your organism (this is `<LINEAGE>` in step 4):
 ```
 funannotate database --show-buscos
 ```
 
-Deactivate the container, and dd a directory for preliminary BUSCO output to your output directory:
+Deactivate the container, and create a directory for preliminary BUSCO output:
 ```
 mkdir <OUTPUT>/busco_prelim
 ```
 
-Compile the information you have gathered into a plain text `.sh` file, remember the output for step 4 and please include `_prelim` in the output name so that it is obvious:
+Compile the information you have gathered into a plain text `.sh` file. Please include `_prelim` in the output name so that it is obvious. Remember the output name (`<ORGANISM_CODE>_prelim`) and `<LINEAGE>` as we will use them later:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
