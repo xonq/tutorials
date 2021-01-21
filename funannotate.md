@@ -7,6 +7,8 @@
 
 Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) once you have read the [pipeline introduction](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
+---
+
 <br /><br /><br />
 
 ## INSTALLING
@@ -69,6 +71,8 @@ funannotate --help
 ```
 
 If you entered it all correct and do not see the help menu then stop and contact me.
+
+---
 
 <br /><br />
 
