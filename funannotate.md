@@ -107,7 +107,51 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 <br /><br />
 
-### 3. Predict genes
+### 3. Generate a BUSCO database
+BUSCO is used by Funannotate and the *ab initio* gene prediction software AUGUSTUS to predict introns within your gene models. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step for Funannotate to reference. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species, only a finalized version that is created following the predict command.
+
+To prepare BUSCO, first find the closest existing *species database* after activating and sourcing the container:
+```
+funannotate species
+```
+
+Then find the most refined BUSCO *lineage dataset* for your organism; you will also use this in step 4:
+```
+funannotate database --show-buscos
+```
+
+Deactivate the container, and dd a directory for preliminary BUSCO output to your output directory:
+```
+mkdir <OUTPUT>/busco_prelim
+```
+
+Compile the information you have gathered into a plain text `.sh` file, remember the output for step 4 and please include `_prelim` in the output name so that it is obvious:
+```
+source /fs/project/PAS1046/software/containers/funannotate/source.sh
+
+python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
+-i <YOUR/MASKED/ASSEMBLY.fa> -o <OUTPUT>/busco_prelim/<ORGANISM_CODE>_prelim \
+-l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 -sp <SPECIES>
+```
+
+Execute the command:
+```
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/BUSCO.sh>' | sbatch --time=60:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
+```
+
+Once finished, copy the resulting database to the lab BUSCO database set:
+```
+cp -r <OUTPUT>/busco_prelim/<ORGANISM_CODE>_prelim /fs/project/PAS1046/software/augustus/config/species/
+```
+
+Finally, source and activate the container and update Funannotate so it can find your BUSCO db:
+```
+funannotate setup -u
+```
+
+<br />
+
+### 4. Predict genes
 This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
 
 Download/compile necessary data and information:
@@ -123,10 +167,6 @@ Download/compile necessary data and information:
 
 <br />
 
-- run `funannotate species` ([container must be active](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#first-use)) to find the most closely related BUSCO species database
-
-<br />
-
 Once compiled, create an output directory in your scratch folder to avoid file limits:
 ```
 mkdir /fs/scratch/<PAS###>/<USER>/funannotate_<NAME>
@@ -139,7 +179,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” \
 --transcript_evidence <YOUR/TRANSCRIPT_EVIDENCE1> <YOUR/TRANSCRIPT_EVIDENCEn> \
 --protein_evidence <YOUR/PROTEIN_EVIDENCE1> <YOUR/PROTEIN_EVIDENCEn> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <BUSCO_SPECIES> --optimize_augustus -o <OUTPUT/FOLDER>
+--cpus 8 --busco_seed_species <ORGANISM_CODE>_prelim --optimize_augustus --busco_db <LINEAGE> -o <OUTPUT/FOLDER>
 ```
 
 ( this may have hidden characters at the `--cpus` portion, if you get an error referencing this, retype that portion of the command in a plain text editor )
@@ -170,7 +210,7 @@ funannotate species -s <GENUS>_<SPECIES>_<STRAIN> -a <OUTPUT>/<ORGANISM_CODENAME
 
 <br /><br />
 
-### All at once
+### All at once (CURRENTLY NOT FUNCTIONAL)
 Once you have tested the individual steps of Funannotate and are familiar with this portion of the pipeline, you can submit all the commands in one `.sh` file to move a genome through all steps at once. Here is the skeleton of such a file:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
