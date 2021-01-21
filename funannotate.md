@@ -219,7 +219,7 @@ Once you have tested the individual steps of Funannotate and are familiar with t
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 # 0. make directories for your outputs
-mkdir -p <OUTPUT>/sort_mask <OUTPUT>/busco_prelim <SCRATCH>/<ORGANISM>_funannotate &&
+mkdir -p <OUTPUT>/sort_mask <OUTPUT>/busco_prelim <OUTPUT>/funannotate &&
 
 
 # 1. sort and remove contigs < 1000 bp
@@ -247,11 +247,17 @@ funannotate setup -u &&
 
 # 4. gene prediction
 funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <YOUR/EVIDENCE> \
---protein_evidence <YOUR/EVIDENCE1> <YOUR/EVIDENCEn> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <OME>_prelim -o <OUTPUT/FOLDER>
+--protein_evidence <YOUR/EVIDENCE1> <YOUR/EVIDENCEn> \
+/fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
+--cpus 8 --busco_seed_species <OME>_prelim -o <OUTPUT>/funannotate \
+--optimize_augustus
 ```
 
-Save as an `.sh`, transfer to OSC, and submit the script as previously described (allocate enough resources)
+Save as an `.sh`, transfer to OSC, and submit the script as previously
+described (allocate enough resources). If you encounter an error or failure
+while running all at once then you will have to pinpoint which step failed,
+then comment (add `#`) the out/delete the lines before the failure to begin at
+the failure step.
 
 <br /><br />
 
