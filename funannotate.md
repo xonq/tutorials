@@ -217,30 +217,30 @@ Once you have tested the individual steps of Funannotate and are familiar with t
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 # 0. make directories for your outputs
-mkdir -p <OUTPUT>/sort_mask <OUTPUT>/busco_prelim <SCRATCH>/<ORGANISM>_funannotate
+mkdir -p <OUTPUT>/sort_mask <OUTPUT>/busco_prelim <SCRATCH>/<ORGANISM>_funannotate &&
 
 
 # 1. sort and remove contigs < 1000 bp
 funannotate sort -i <YOUR/ASSEMBLY> --minlen 1000 \
--o <OUTPUT>/sort_mask/<OME>_sort.fa
+-o <OUTPUT>/sort_mask/<OME>_sort.fa &&
 
 
 # 2. soft-mask nucleotides
 funannotate mask -i <OUTPUT>/sort_mask/<OME>_sort.fa -m repeatmodeler \
--l <YOUR/REPEAT-LIBRARY.fa> -o <OUTPUT>/sort_mask/<OME>_mask.fa
+-l <YOUR/REPEAT-LIBRARY.fa> -o <OUTPUT>/sort_mask/<OME>_mask.fa &&
 
 
 # 3a. run BUSCO
-cd <OUTPUT>/busco_prelim
+cd <OUTPUT>/busco_prelim &&
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH \
 -i <OUTPUT>/sort_mask/<OME>_mask.fa -o <OME>_prelim \
--l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
+-l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 &&
 
 # 3b. add BUSCO to database
-cp -r <OUTPUT>/busco_prelim/<OME>_prelim $AUGUSTUS_CONFIG_PATH
-funannotate setup -u
+cp -r <OUTPUT>/busco_prelim/<OME>_prelim $AUGUSTUS_CONFIG_PATH &&
+funannotate setup -u &&
 
 
 # 4. gene prediction
