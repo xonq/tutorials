@@ -81,7 +81,7 @@ mkdir <OUTPUT>/<ORGANISM_CODENAME>/funannotate_prep
 
 <br /><br />
 
-### 1. Sort assembly
+### 1. Sort assembly (~ 1 min)
 Sort your assembly: this renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest. Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate. This command can be run without submitting a job. If you followed the previous tutorial, your assembly will be in `<ORGANISM_CODENAME>/results`:
 ```
 funannotate sort -i <YOUR/ASSEMBLY> -o <ORGANISM_CODENAME>/funannotate_prep/ASSEMBLY.sort.fa> --minlen 1000
@@ -89,7 +89,7 @@ funannotate sort -i <YOUR/ASSEMBLY> -o <ORGANISM_CODENAME>/funannotate_prep/ASSE
 
 <br /><br />
 
-### 2. Soft-mask assembly 
+### 2. Soft-mask assembly  (~ 1-3 hrs)
 
 Soft-mask the assembly: this references your [*de novo* repeat library](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md) to lowercase masked nucleotides. If you followed the previous tutorials' directory structure, the file will be in `<ORGANISM_CODENAME>/results`. 
 
@@ -107,7 +107,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 <br /><br />
 
-### 3. Generate a BUSCO database
+### 3. Generate a *preliminary* BUSCO database (~ 1-2 hrs)
 BUSCO is used by Funannotate and the *ab initio* gene prediction software AUGUSTUS to predict introns within your gene models. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step for Funannotate to reference. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species.
 
 Activate the container and find the most refined BUSCO *lineage dataset* for your organism (this is
@@ -135,9 +135,10 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
 ```
 
-Execute the command:
+Execute the command (will usually take less than an hour):
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash <YOUR/BUSCO.sh>' | sbatch --time=60:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash
+<YOUR/BUSCO.sh>' | sbatch --time=4:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
 ```
 
 Once finished, copy the resulting database to the lab BUSCO database set -
@@ -155,7 +156,7 @@ funannotate setup -u
 
 <br />
 
-### 4. Predict genes
+### 4. Predict genes (~ 10-20 hrs)
 This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
 
 Download/compile necessary data and information:
