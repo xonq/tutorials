@@ -110,6 +110,12 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 ### 3. Generate a BUSCO database
 BUSCO is used by Funannotate and the *ab initio* gene prediction software AUGUSTUS to predict introns within your gene models. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step for Funannotate to reference. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species.
 
+First, activate and source the container, then run this command and find the
+most closely related species database `<SPECIES>` to reference:
+```
+funannotate species
+```
+
 Then find the most refined BUSCO *lineage dataset* for your organism (this is
 `<LINEAGE>` in step 4). For example, if you are annotating a Basidiomycete, use
 basidiomycota, if you are using a Sordariomycete, prefer Sordariomycetes over
@@ -131,7 +137,7 @@ cd <OUTPUT>/busco_prelim
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH \
--i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE>_prelim \
+-i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE>_prelim -sp <SPECIES> \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
 ```
 
