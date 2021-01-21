@@ -123,7 +123,7 @@ Deactivate the container, and create a directory for preliminary BUSCO output:
 mkdir <OUTPUT>/busco_prelim
 ```
 
-Compile the information you have gathered into a plain text `.sh` file. Please include `_prelim` in the output name so that it is obvious. Remember the output name (`<ORGANISM_CODE>_prelim`) and `<LINEAGE>` as we will use them later:
+Create a plain text `.sh` file. Please include `_prelim` in the output name so that it is obvious. Remember the output name (`<ORGANISM_CODE>_prelim`) and `<LINEAGE>` as we will use them later:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -168,19 +168,21 @@ Download/compile necessary data and information:
 
 <br />
 
-Once compiled, create an output directory in your scratch folder to avoid file limits:
+Once compiled, create an output directory:
 ```
-mkdir /fs/scratch/<PAS###>/<USER>/funannotate_<NAME>
+mkdir <ORGANISM_CODENAME>/funannotate
 ```
 
 Now we are ready for gene prediction. Create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC. This command first sources the environment for the container, then tells funannotate to input your masked assembly, a name for the annotation run, transcript evidence, protein evidence, the number of CPU cores you use, the BUSCO species database, and the output folder you made above. It is also important to choose a brief, descriptive codename/name for your species in `<OME>_<RUN#>`:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s “<OME>_<RUN#>” \
+funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s <OME>_<RUN#> \
 --transcript_evidence <YOUR/TRANSCRIPT_EVIDENCE1> <YOUR/TRANSCRIPT_EVIDENCEn> \
---protein_evidence <YOUR/PROTEIN_EVIDENCE1> <YOUR/PROTEIN_EVIDENCEn> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <ORGANISM_CODE>_prelim --optimize_augustus --busco_db <LINEAGE> -o <OUTPUT/FOLDER>
+--protein_evidence <YOUR/PROTEIN_EVIDENCE1> <YOUR/PROTEIN_EVIDENCEn> \
+/fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
+--cpus 8 --busco_seed_species <ORGANISM_CODE>_prelim --optimize_augustus \
+--busco_db <LINEAGE> -o <ORGANISM_CODE>/funannotate
 ```
 
 ( this may have hidden characters at the `--cpus` portion, if you get an error referencing this, retype that portion of the command in a plain text editor )
@@ -195,17 +197,17 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ## OUTPUT
-Funannotate will output many working files and an organized folder of results. The naming scheme of the output directory is intuitive: the gene coordinate file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. Let's just move those to your clean directory.
-```
-mv /fs/scratch/<PAS####>/<USER>/<FUNANNOTATEOUTPUT> <OUTPUT>/<ORGANISM_CODENAME>/funannotate
-mv <OUTPUT>/<ORGANISM_CODENAME>/funannotate/predict_results <OUTPUT>/<ORGANISM_CODENAME>/results
-```
+Funannotate will output many working files and an organized folder of results.
+The naming scheme of the output directory is intuitive: the gene coordinate
+file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. The
+finalized BUSCO results can be found in
+`<FUNANNOTATE>/predict_misc/busco/run_<OME>_<RUN#>/short_summary*.txt`
 
 You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#assembly-annotation-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
 
-If you are happy with your annotation quality, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
+If you are happy with your annotation quality and BUSCO scores, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
-funannotate species -s <GENUS>_<SPECIES>_<STRAIN> -a <OUTPUT>/<ORGANISM_CODENAME>/funannotate/logfiles/<OME>_<RUN#>.parameters.json
+funannotate species -s <ORGANISM>_final -a <OUTPUT>/<ORGANISM_CODENAME>/funannotate/logfiles/<OME>_<RUN#>.parameters.json
 ```
 
 
