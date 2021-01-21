@@ -118,16 +118,12 @@ Ascomycota, etc etc.:
 funannotate database --show-buscos
 ```
 
-Deactivate the container, and create a directory for preliminary BUSCO output:
-```
-mkdir <OUTPUT>/busco_prelim
-```
-
-Create a plain text `.sh` file with the BUSCO command:
+Deactivate the container and create a plain text `.sh` file with the BUSCO
+command (busco will create an output directory for you):
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-cd <OUTPUT>/busco_prelim
+cd <ORGANISM_OUTPUT>
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH \
@@ -145,7 +141,7 @@ Once finished, copy the resulting database to the lab BUSCO database set -
 PLEASE SPECIFY `_prelim` at the end to indicate this is not a finalized BUSCO
 database. Remember what you input for `<ORGANISM>_prelim` for the next step:
 ```
-cp -r <OUTPUT>/run_<ORGANISM_CODE>/busco_prelim/augustus_output/retraining_parameters/ \ 
+cp -r <OUTPUT>/run_<ORGANISM_CODE>/augustus_output/retraining_parameters/ \ 
 /fs/project/PAS1046/software/augustus/config/species/<ORGANISM>_prelim
 ```
 
@@ -223,7 +219,7 @@ Once you have tested the individual steps of Funannotate and are familiar with t
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 # 0. make directories for your outputs
-mkdir -p <OUTPUT>/sort_mask <OUTPUT>/busco_prelim <OUTPUT>/funannotate &&
+mkdir -p <OUTPUT>/sort_mask <OUTPUT>/funannotate &&
 
 
 # 1. sort and remove contigs < 1000 bp
@@ -237,7 +233,7 @@ funannotate mask -i <OUTPUT>/sort_mask/<OME>_sort.fa -m repeatmodeler \
 
 
 # 3a. run BUSCO
-cd <OUTPUT>/busco_prelim &&
+cd <OUTPUT>
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH \
@@ -245,7 +241,7 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 &&
 
 # 3b. add BUSCO to database
-cp -r <OUTPUT>/busco_prelim/run_<ORGANISM>/augustus_output/retraining_parameters \
+cp -r <OUTPUT>/run_<ORGANISM>/augustus_output/retraining_parameters \
 $AUGUSTUS_CONFIG_PATH/species/<ORGANISM>_prelim &&
 funannotate setup -u &&
 
