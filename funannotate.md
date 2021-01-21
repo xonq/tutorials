@@ -108,17 +108,10 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <br /><br />
 
 ### 3. Generate a *preliminary* BUSCO database (~ 1-2 hrs)
-BUSCO is used by Funannotate and the *ab initio* gene prediction software AUGUSTUS to predict introns within your gene models. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step for Funannotate to reference. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species.
+BUSCO is used by Funannotate to train gene prediction software. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step after. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species.
 
-Activate the container and find the most refined BUSCO *lineage dataset* for your organism (this is
-`<LINEAGE>` in step 4). For example, if you are annotating a Basidiomycete, use
-basidiomycota, if you are using a Sordariomycete, prefer Sordariomycetes over
-Ascomycota, etc etc.:
-```
-funannotate database --show-buscos
-```
 
-Deactivate the container and create a plain text `.sh` file with the BUSCO
+`<LINEAGE>` will either be `ascomycota` or `basidiomycota`, depending on your organism. Optionally, you can further refine your Ascomycete lineage dataset by running `funannotate database --show-buscos` and choosing a LINEAGE more closely representative of your organism. Create a plain text `.sh` file with the BUSCO
 command (busco will create an output directory for you):
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
