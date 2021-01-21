@@ -211,23 +211,42 @@ funannotate species -s <GENUS>_<SPECIES>_<STRAIN> -a <OUTPUT>/<ORGANISM_CODENAME
 
 <br /><br />
 
-### All at once (CURRENTLY NOT FUNCTIONAL)
+### All at once
 Once you have tested the individual steps of Funannotate and are familiar with this portion of the pipeline, you can submit all the commands in one `.sh` file to move a genome through all steps at once. Here is the skeleton of such a file:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
-# sort and remove contigs < 1000 bp
-funannotate sort -i <YOUR/ASSEMBLY> --minlen 1000 -o <SORTED/ASSEMBLY>
+# 0. make directories for your outputs
+mkdir -p <OUTPUT>/sort_mask <OUTPUT>/busco_prelim <SCRATCH>/<ORGANISM>_funannotate
 
 
-# soft-mask nucleotides
-funannotate mask -i <SORTED/ASSEMBLY> -m repeatmodeler -l <YOUR/REPEAT-LIBRARY.fa> -o <MASKED/ASSEMBLY>
+# 1. sort and remove contigs < 1000 bp
+funannotate sort -i <YOUR/ASSEMBLY> --minlen 1000 \
+-o <OUTPUT>/sort_mask/<OME>_sort.fa
 
 
-# gene prediction
+# 2. soft-mask nucleotides
+funannotate mask -i <OUTPUT>/sort_mask/<OME>_sort.fa -m repeatmodeler \
+-l <YOUR/REPEAT-LIBRARY.fa> -o <OUTPUT>/sort_mask/<OME>_mask.fa
+
+
+# 3a. run BUSCO
+cd <OUTPUT>/busco_prelim
+
+python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
+--local_augustus $AUGUSTUS_CONFIG_PATH \
+-i <OUTPUT>/sort_mask/<OME>_mask.fa -o <OME>_prelim \
+-l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
+
+# 3b. add BUSCO to database
+cp -r <OUTPUT>/busco_prelim/<OME>_prelim $AUGUSTUS_CONFIG_PATH
+funannotate setup -u
+
+
+# 4. gene prediction
 funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <YOUR/EVIDENCE> \
 --protein_evidence <YOUR/EVIDENCE1> <YOUR/EVIDENCEn> /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <BUSCO_SPECIES> -o <OUTPUT/FOLDER>
+--cpus 8 --busco_seed_species <OME>_prelim -o <OUTPUT/FOLDER>
 ```
 
 Save as an `.sh`, transfer to OSC, and submit the script as previously described (allocate enough resources)
