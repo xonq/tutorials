@@ -129,8 +129,11 @@ Compile the information you have gathered into a plain text `.sh` file. Please i
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
+cd <OUTPUT>/busco_prelim
+
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
--i <YOUR/MASKED/ASSEMBLY.fa> -o <OUTPUT>/busco_prelim/<ORGANISM_CODE>_prelim \
+--local_augustus $AUGUSTUS_CONFIG_PATH \
+-i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE>_prelim \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 -sp <SPECIES>
 ```
 
