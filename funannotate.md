@@ -187,8 +187,8 @@ We are ready for gene prediction. Create a UTF-8 file with the predict command
 and save as an `.sh`. This command first sources the environment for the
 container, then tells funannotate to input your masked assembly, a name for the
 annotation run, transcript evidence, protein evidence, the number of CPU cores
-you use, the BUSCO database name from step 3, and the output folder you made above. It is also important to choose a brief, descriptive codename/name for your species in `<OME>_<RUN#>`:
-```
+you use, the BUSCO database name and lineage from step 3, and the output folder you made above. It is also important to choose a brief, descriptive codename/name for your species in `<OME>_<RUN#>`:
+```bash
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s <OME>_<RUN#> \
@@ -198,8 +198,6 @@ funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s <OME>_<RUN#> \
 --cpus 8 --busco_seed_species <BUSCONAME> --optimize_augustus \
 --busco_db <LINEAGE> -o <ORGANISM_CODE>/funannotate
 ```
-
-( this may have hidden characters at the `--cpus` portion, if you get an error referencing this, retype that portion of the command in a plain text editor )
 
 <br />
 
