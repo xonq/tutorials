@@ -120,9 +120,9 @@ database you are making here for this species.
 
 Create a plain text `.sh` file with the BUSCO
 command (busco will make an output for you).
-<LINEAGE>` is `ascomycota` or `basidiomycota`, depending on your
+`<LINEAGE>` is `ascomycota` or `basidiomycota`, depending on your
 organism. You can further refine an Ascomycete lineage dataset by running
-`funannotate database --show-buscos` and choosing a more refined <LINEAGE>. 
+`funannotate database --show-buscos` and choosing a more refined `<LINEAGE>`. 
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
