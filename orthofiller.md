@@ -35,7 +35,7 @@ Gather at least 10 species' `.gff3` gene coordinate files and their correspondin
 
 remove spaces from all assembly fastas:
 ```
-sed -r "s/>(\S*) .*/>\1/g" <ASSEMBLY>.fa > <ASSEMBLY>.clean.fa
+sed -r "s/>([^ ]+*) .*/>\1/g" <ASSEMBLY>.fa > <ASSEMBLY>.clean.fa
 ```
 
 Activate the container and convert each `.gff3` to a `.gtf` compatible with OrthoFiller.
@@ -47,7 +47,7 @@ gff_to_gtf_safe.py <YOUR/GFF> > <OUTPUT/GTF>
 <br />
 
 #### 2) Prepare reference files
-We will start OrthoFiller from scratch, however you can start/resume OrthoFiller from a completed OrthoFinder run as well. OrthoFiller requires two plain text input files: a reference `.tsv` and a target/input `.tsv` for the annotations that you wish to "fill". Including more organisms than necessary in the target file will roughly double the computation time per organism added.
+We will start OrthoFiller from scratch, however you can start/resume OrthoFiller from a completed OrthoFinder run as well. OrthoFiller requires two plain text input files: a reference `.tsv` and a target/input `.tsv` for the annotations that you wish to "fill". Including more organisms than necessary in the target file will roughly double the computation time per organism added. DO NOT put organisms in the reference file that are already in the target file.
 
 Create a plain text file for both the reference and target input (reference clean assemblies):
 ```
