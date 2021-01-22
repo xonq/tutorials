@@ -227,7 +227,7 @@ funannotate species -s <ORGANISM>_final -a <OUTPUT>/<ORGANISM_CODENAME>/funannot
 
 ### All at once
 Once you have tested the individual steps of Funannotate and are familiar with this portion of the pipeline, you can submit all the commands in one `.sh` file to move a genome through all steps at once. Here is the skeleton of such a file:
-```
+```bash
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 # 0. make directories for your outputs
@@ -248,7 +248,7 @@ funannotate mask -i <OUTPUT>/sort_mask/<OME>_sort.fa -m repeatmodeler \
 cd <OUTPUT>
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
---local_augustus $AUGUSTUS_CONFIG_PATH \
+--local_augustus $AUGUSTUS_CONFIG_PATH --long --tarzip --tmp <YOUR/SCRATCH> \
 -i <OUTPUT>/sort_mask/<OME>_mask.fa -o <OME>_prelim \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 &&
 
