@@ -118,10 +118,11 @@ will create a finalized BUSCO database. Only use this preliminary BUSCO
 database you are making here for this species.
 
 
-`Create a plain text `.sh` file with the BUSCO
+Create a plain text `.sh` file with the BUSCO
 command (busco will make an output for you).
-<LINEAGE>` will either be `ascomycota` or `basidiomycota`, depending on your
-organism. Optionally, you can further refine an Ascomycete lineage dataset by running `funannotate database --show-buscos` and choosing a LINEAGE more closely representative of your organism. 
+<LINEAGE>` is `ascomycota` or `basidiomycota`, depending on your
+organism. You can further refine an Ascomycete lineage dataset by running
+`funannotate database --show-buscos` and choosing a more refined <LINEAGE>. 
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -133,24 +134,24 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
 ```
 
-Execute the command - this may take a few hours:
+Execute the command:
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash
-<YOUR/BUSCO.sh>' | sbatch --time=4:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
+<YOUR/BUSCO.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
 ```
 
+<br />
+
 Once finished, we are going to capture the unique BUSCO tag for your organism
-and print it out (take note of the name for later!). If you don't see a name
-after the `echo` command something went wrong. Don't proceed until you get a
-name like `BUSCO_galpol1_prelim_3302707098`:
+and print it out (take note of the name for later!). This will print a name like
+`BUSCO_galpol1_prelim_3302707098`. Don't proceed until this works. 
 ```
 busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
 echo $busconame
 ```
 
 Now, copy the resulting database to the lab BUSCO
-database set. NOTE: these commands must be run in the same terminal as the
-previous command and in the same session. 
+database set.
 ```
 cp -r <OUTPUT>/run_<ORGANISM_CODE>/augustus_output/retraining_parameters/ \ 
 /fs/project/PAS1046/software/augustus/config/species/$busconame
