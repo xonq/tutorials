@@ -111,35 +111,44 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 <br /><br />
 
-### 3. Generate a *preliminary* BUSCO database (~ 1-2 hrs)
-BUSCO is used by Funannotate to train gene prediction software. We will create a preliminary BUSCO database for your organism here, then call upon it in the predict genes step after. Funannotate will then create a finalized BUSCO database during the predict command that can be referenced in the future. DO NOT reference the preliminary BUSCO database you are making here for other species.
+### 3. Generate a *preliminary* BUSCO database (~ 2-5 hrs)
+BUSCO is used by Funannotate to train gene prediction software. We will create
+a preliminary BUSCO database for your organism here. In step 4, Funannotate
+will create a finalized BUSCO database. Only use this preliminary BUSCO
+database you are making here for this species.
 
 
-`<LINEAGE>` will either be `ascomycota` or `basidiomycota`, depending on your organism. Optionally, you can further refine your Ascomycete lineage dataset by running `funannotate database --show-buscos` and choosing a LINEAGE more closely representative of your organism. Create a plain text `.sh` file with the BUSCO
-command (busco will create an output directory for you):
+`Create a plain text `.sh` file with the BUSCO
+command (busco will make an output for you).
+<LINEAGE>` will either be `ascomycota` or `basidiomycota`, depending on your
+organism. Optionally, you can further refine an Ascomycete lineage dataset by running `funannotate database --show-buscos` and choosing a LINEAGE more closely representative of your organism. 
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 cd <ORGANISM_OUTPUT>
 
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
---local_augustus $AUGUSTUS_CONFIG_PATH \
--i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE> \
+--local_augustus $AUGUSTUS_CONFIG_PATH --long --tarzip \
+-i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE>_prelim --tmp <YOUR/SCRATCH> \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
 ```
 
-Execute the command (will usually take less than an hour):
+Execute the command - this may take a few hours:
 ```
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif bash
 <YOUR/BUSCO.sh>' | sbatch --time=4:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
 ```
 
-Once finished, copy the resulting database to the lab BUSCO database set -
-PLEASE SPECIFY `_prelim` at the end to indicate this is not a finalized BUSCO
-database. Remember what you input for `<ORGANISM>_prelim` for the next step:
+Once finished, we are going to capture the unique BUSCO tag for your organism,
+print it out (take note of the name for later!) and copy the resulting database to the lab BUSCO
+database set. If you don't see a name after the `echo` command something went
+wrong.
 ```
+busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | sed 's/_weightmatrix.txt//')
+echo $busconame
+
 cp -r <OUTPUT>/run_<ORGANISM_CODE>/augustus_output/retraining_parameters/ \ 
-/fs/project/PAS1046/software/augustus/config/species/<ORGANISM>_prelim
+/fs/project/PAS1046/software/augustus/config/species/$busconame
 ```
 
 Finally, source and activate the container and update Funannotate so it can find your BUSCO db:
