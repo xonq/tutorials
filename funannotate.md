@@ -139,14 +139,19 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 <YOUR/BUSCO.sh>' | sbatch --time=4:00:00 --nodes=1 --ntasks-per-node=8 -A PAS<####> --job-name=busco
 ```
 
-Once finished, we are going to capture the unique BUSCO tag for your organism,
-print it out (take note of the name for later!) and copy the resulting database to the lab BUSCO
-database set. If you don't see a name after the `echo` command something went
-wrong.
+Once finished, we are going to capture the unique BUSCO tag for your organism
+and print it out (take note of the name for later!). If you don't see a name
+after the `echo` command something went wrong. Don't proceed until you get a
+name like `BUSCO_galpol1_prelim_3302707098`:
 ```
-busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | sed 's/_weightmatrix.txt//')
+busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
 echo $busconame
+```
 
+Now, copy the resulting database to the lab BUSCO
+database set. NOTE: these commands must be run in the same terminal as the
+previous command and in the same session. 
+```
 cp -r <OUTPUT>/run_<ORGANISM_CODE>/augustus_output/retraining_parameters/ \ 
 /fs/project/PAS1046/software/augustus/config/species/$busconame
 ```
@@ -246,9 +251,12 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 -i <OUTPUT>/sort_mask/<OME>_mask.fa -o <OME>_prelim \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 &&
 
+
 # 3b. add BUSCO to database
+busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
+
 cp -r <OUTPUT>/run_<ORGANISM>/augustus_output/retraining_parameters \
-$AUGUSTUS_CONFIG_PATH/species/<ORGANISM>_prelim &&
+$AUGUSTUS_CONFIG_PATH/species/$busconame &&
 funannotate setup -u &&
 
 
@@ -256,7 +264,7 @@ funannotate setup -u &&
 funannotate predict -i <MASKED/ASSEMBLY> -s "<OME_RUN#>" --transcript_evidence <YOUR/EVIDENCE> \
 --protein_evidence <YOUR/EVIDENCE1> <YOUR/EVIDENCEn> \
 /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <ORGANISM>_prelim -o <OUTPUT>/funannotate \
+--cpus 8 --busco_seed_species $busconame -o <OUTPUT>/funannotate \
 --optimize_augustus --busco_db <LINEAGE>
 ```
 
