@@ -150,18 +150,18 @@ funannotate setup -u
 <br />
 
 ### 4. Predict genes (~ 10-20 hrs)
-This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
+This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
 
 Download/compile necessary data and information:
 
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (separate by spaces in command if > 1)
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
-    * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#installing-scripts), then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#jgidwnldpy-ncbidwnldpy)
+    * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install my scripts](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md#installing-scripts), then follow this [brief use guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
 <br />
 
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
-    * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#dbfilespy)
+    * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#dbfilespy)
 
 <br />
 
@@ -200,7 +200,7 @@ file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. The
 finalized BUSCO results can be found in
 `<FUNANNOTATE>/predict_misc/busco/run_<OME>_<RUN#>/short_summary*.txt`
 
-You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#assembly-annotation-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
+You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#assembly-annotation-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
 
 If you are happy with your annotation quality and BUSCO scores, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
