@@ -146,7 +146,7 @@ Once finished, we are going to capture the unique BUSCO tag for your organism
 and print it out (take note of the name for later!). This will print a name like
 `BUSCO_galpol1_prelim_3302707098`. Don't proceed until this works. 
 ```
-busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
+busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)")
 echo $busconame
 ```
 
