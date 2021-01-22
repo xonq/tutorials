@@ -173,8 +173,6 @@ Download/compile necessary data and information:
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
     * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install my scripts](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/README.md#installing-scripts), then follow this [brief use guide](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
-<br />
-
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
     * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#dbfilespy)
 
@@ -185,7 +183,11 @@ Once compiled, create an output directory:
 mkdir <ORGANISM_CODENAME>/funannotate
 ```
 
-Now we are ready for gene prediction. Create a UTF-8 file with the predict command, save as an `.sh`, and transfer to OSC. This command first sources the environment for the container, then tells funannotate to input your masked assembly, a name for the annotation run, transcript evidence, protein evidence, the number of CPU cores you use, the BUSCO species database, and the output folder you made above. It is also important to choose a brief, descriptive codename/name for your species in `<OME>_<RUN#>`:
+We are ready for gene prediction. Create a UTF-8 file with the predict command
+and save as an `.sh`. This command first sources the environment for the
+container, then tells funannotate to input your masked assembly, a name for the
+annotation run, transcript evidence, protein evidence, the number of CPU cores
+you use, the BUSCO database name from step 3, and the output folder you made above. It is also important to choose a brief, descriptive codename/name for your species in `<OME>_<RUN#>`:
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
@@ -193,7 +195,7 @@ funannotate predict -i <YOUR/MASKED_ASSEMBLY> -s <OME>_<RUN#> \
 --transcript_evidence <YOUR/TRANSCRIPT_EVIDENCE1> <YOUR/TRANSCRIPT_EVIDENCEn> \
 --protein_evidence <YOUR/PROTEIN_EVIDENCE1> <YOUR/PROTEIN_EVIDENCEn> \
 /fs/project/PAS1046/databases/funannotate/uniprot_sprot.fasta \
---cpus 8 --busco_seed_species <ORGANISM_CODE>_prelim --optimize_augustus \
+--cpus 8 --busco_seed_species <BUSCONAME> --optimize_augustus \
 --busco_db <LINEAGE> -o <ORGANISM_CODE>/funannotate
 ```
 
