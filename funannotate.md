@@ -254,7 +254,7 @@ python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotat
 
 
 # 3b. add BUSCO to database
-busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
+busconame=$(find run_<ORGANISM>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
 
 cp -r <OUTPUT>/run_<ORGANISM>/augustus_output/retraining_parameters \
 $AUGUSTUS_CONFIG_PATH/species/$busconame &&
