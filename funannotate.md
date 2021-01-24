@@ -144,7 +144,7 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/funannotate/fu
 
 Once finished, we are going to capture the unique BUSCO tag for your organism
 and print it out (take note of the name for later!). This will print a name like
-`BUSCO_galpol1_prelim_3302707098`. Don't proceed until this works. 
+`BUSCO_galpol1_prelim_3302707098`. If you have trouble, you could also navigate to `<OUTPUT>/run_<ORGANISM_CODE>_prelim/augustus_output/retraining_parameters` and grab the basename similar to the aforementioned name and replace `$busconame` in the following command.
 ```
 busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon_*)")
 echo $busconame
