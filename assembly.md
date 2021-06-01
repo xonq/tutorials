@@ -21,13 +21,13 @@ Proceed to OSC USE and adjust paths and job submission commands as necessary
 
 ## OSC USE
 ### 0. Keep it clean
-Imagine a pile of dishes from that shitty roommate in undergrad... don't let your folder get like that. Prepare a directory where you will make your output. If you think about your directory organization before the analysis you will have an easier time returning and disseminating your data. I personally will create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g. (use whatever folder you like as the `<ROOT_DIR>`, just remember it)
+Imagine a pile of dishes... don't let your analysis folders get like that. Prepare a directory where you will make your output. If you plan a clean directory structure before the analysis you will have an easier time reading and disseminating your data. For this pipeline, perhaps create one directory for the project, one for the organism, then one directory for each step of the pipeline. e.g. (use whatever folder you like as the `<ROOT_DIR>`, just remember it)
 ```
 cd <ROOT_DIR>
 mkdir -p <ORGANISM_CODENAME>/spades
 mkdir <ORGANISM_CODENAME>/trimmomatic
 ```
-The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember the directories to input in the output portion of commands. You can always find the absolute path to your current directory by running `pwd`. It's important to note Unix/Linux is non-forgiving - in other words, if you pipe output to the same file in different commands, it will overwrite the first file and the program likely won't ask you if you are sure you want to delete it. Be cautious with this power.
+The `-p` there tells `mkdir` to make a directory and if the parent directory does not exist then make that too. Whatever you choose to do, just remember the directories to input in the output portion of commands. You can always find the absolute path to your current directory by running `pwd`.
 
 Finally, some commands are dirty and may trash your nice organized output folders. You will just have to use a combination of `mv`, `rm`, `mkdir`, etc to manipulate and move files to create a clean structure. This isn't something you familiarize with overnight, but put your toes in the water and make an effort to keep it clean.
 
