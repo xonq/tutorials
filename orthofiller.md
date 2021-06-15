@@ -38,7 +38,9 @@ remove spaces from all assembly fastas:
 sed -r "s/>([^ ]+*) .*/>\1/g" <ASSEMBLY>.fa > <ASSEMBLY>.clean.fa
 ```
 
-Activate the container and convert each `.gff3` to a `.gtf` compatible with OrthoFiller.
+Activate the container and convert each `.gff3` to a `.gtf` compatible with
+OrthoFiller. NOTE - If you have a python3 environment, such as miniconda,
+active then it may cause errors.
 ```
 singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
 gff_to_gtf_safe.py <YOUR/GFF> > <OUTPUT/GTF>
