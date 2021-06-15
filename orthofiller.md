@@ -44,7 +44,7 @@ active then it may cause errors. You may have to deactivate miniconda and
 restart your shell. 
 ```
 singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
-gff_to_gtf_safe.py <YOUR/GFF> > <OUTPUT/GTF>
+gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
 ```
 
 <br />
