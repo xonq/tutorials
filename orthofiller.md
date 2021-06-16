@@ -49,8 +49,12 @@ gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
 
 <br />
 
-#### 2) Prepare reference files
-We will start OrthoFiller from scratch, however you can start/resume OrthoFiller from a completed OrthoFinder run as well. OrthoFiller requires two plain text input files: a reference `.tsv` and a target/input `.tsv` for the annotations that you wish to "fill". Including more organisms than necessary in the target file will roughly double the computation time per organism added. DO NOT put organisms in the reference file that are already in the target file.
+#### 2) Prepare input coordinate files
+We will start OrthoFiller from scratch, however you can start/resume
+OrthoFiller from a completed OrthoFinder run as well. OrthoFiller a plain text
+input targets `.tsv` of organisms you want to *fill* and optionally a
+reference `.tsv` of organisms you just want to reference and *not* fill. *DO
+NOT INCLUDE REFERENCE ORGANISMS IN THE TARGET FILE*. Including more organisms than necessary in the target file will roughly double the computation time per organism added.
 
 Create a plain text file for both the reference and target input (reference clean assemblies):
 ```
