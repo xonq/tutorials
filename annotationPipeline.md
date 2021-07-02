@@ -1,5 +1,5 @@
 # Slot Lab *de novo* Gene Annotation Pipeline | 2021/06/01
-This pipeline and tutorials are designed for annotating fungal genomes without direct transcript evidence. Please read thoroughly, sometimes rereading to understand - what is not necessary to read will be made clear. Make sure to read the [GETTING STARTED](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) section. If you are having trouble with this pipeline, refer to the [TROUBLESHOOTING](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section.
+This pipeline and tutorials are designed for annotating fungal genomes without direct transcript evidence. Please read thoroughly and read the [GETTING STARTED](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started) section. If you are having trouble with this pipeline, refer to the [TROUBLESHOOTING](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#troubleshooting) section.
 
 
 ![Slot Lab Annotation Pipeline flowchart](https://gitlab.com/xonq/tutorials/-/raw/master/image/annotationPipeline.png "Flowchart")
