@@ -36,7 +36,7 @@ BuildDatabase -name <NAME> -engine ncbi <YOUR/ASSEMBLY>
 ```
 
 #### 2) run repeatmodeler
-Now, deactivate the container, create a plain text (UTF-8) shell file with the following command, save it with a `.sh` extension, and transfer to OSC. This file is for job submission. NOTE - reference the `<NAME>` used after `-name` in the previous command, *no file extensions*
+Now, deactivate the container, create a plain text (UTF-8) shell file with the following command, save it with a `.sh` extension, and transfer to OSC. This file is for job submission. NOTE - reference the `<NAME>` used after `-name` in the previous command, *no file extensions*. So, if in the above command you used 'psicub1' for `<NAME>` you will input `<DATABASE/PATH>/psicub1`.
 
 
 ```
