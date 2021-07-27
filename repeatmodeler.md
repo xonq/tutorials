@@ -19,7 +19,7 @@ singularity pull docker.io://xonq/funannotate_mask:1.8.1
 #### Accessing repeat masking software
 Repeat masking software is *contained* within a software *container*. To access RepeatMasker software you will have to activate the container:
 ```
-singularity run /fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
+/fs/project/PAS1046/software/containers/funannotate/funannotate_mask.sif
 ```
 Press CTRL + D or run `exit` to exit it. Only run the container for repeat masking commands otherwise you will experience unexpected problems.
 

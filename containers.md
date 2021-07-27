@@ -36,7 +36,7 @@ NOTE - `docker://` is necessary when the links are docker containers
 #### Running containers
 ##### - once pulled, activate the container
 ```
-singularity run </YOUR/CONTAINER.sif>
+</YOUR/CONTAINER.sif>
 ```
 NOTE - only use the container for its specific commands; press CTRL + D or run `exit` to exit
 

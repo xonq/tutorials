@@ -48,7 +48,7 @@ HEADCROP:10 CROP:145 SLIDINGWINDOW:50:25 MINLEN:100' | sbatch --time=01:00:00 --
 #### Accessing SPAdes assembler
 When using SPAdes, you have to activate the SPAdes singularity container, which gives you access to SPAdes software. You do not need the container active for the rest of this tutorial, but we will use a special job submission command to invoke the container later on. For now, try running the following to introduce yourself to containers: 
 ```
-singularity run /fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
+/fs/project/PAS1046/software/containers/spades/spades_3.14.1.sif
 spades.py --help
 ```
 

@@ -24,7 +24,7 @@ Proceed to OSC USE and change hard coded paths as necessary.
 To use OrthoFiller software you will have to activate the software container. Press CTRL + D or run `exit` to exit. Only run the container for commands related to OrthoFiller or you may experience unexpected problems. NOTE - you will only have access to your home folder and shared project folders while in a container on OSC.
 
 ```
-singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
+/fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
 source /fs/project/PAS1046/software/containers/orthofiller/source.sh
 ```
 
@@ -43,7 +43,7 @@ OrthoFiller. NOTE - If you have a python3 environment, such as miniconda,
 active then it may cause errors. You may have to deactivate miniconda and
 restart your shell. 
 ```
-singularity run /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
+/fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
 gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
 ```
 
