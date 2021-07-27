@@ -20,7 +20,7 @@ To close, press `CTRL` + `D` or command `exit`.
 
 ## INSTALLING SOFTWARE
  
-There are multiple methods for installing software, but a singularity container is the easiest when available. Quay.io is a website that has prepackaged bioinformatics containers, and there is a solid chance your software of interest is located there. Your first option is to use a search engine, such as Qwant/google, to search for your software of interest and `quay.io`. If the software exists open the quay.io URL, click the tags section, click "fetch tag" on the far right of the latest version, and pull down "Docker Pull (by tag)". Take note of the `quay.io/biocontainers....` URL.
+There are multiple methods for installing software, but a singularity container is the easiest when available. Quay.io is a website that has prepackaged bioinformatics containers, and there is a solid chance your software of interest is located there. Your first option is to use a search engine, such as Qwant/google, to search for your software of interest - just add "quay" to your search. If the software exists open the quay.io URL, click the tags section, click "fetch tag" on the far right of the latest version, and pull down "Docker Pull (by tag)". Take note of the `quay.io/biocontainers....` URL.
 
 Now, on OSC, make a directory in `/fs/project/PAS1046/software/containers/` with your software name (preferably lower case). Navigate into the directory you created and run the following command with the URL you just retrieved then activate it to test:
 
