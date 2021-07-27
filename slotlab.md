@@ -4,7 +4,7 @@ Primary software containers are stored in `/fs/project/PAS1046/software/containe
 
 ```
 #Singularity containers
-export PATH=$PATH:/fs/project/PAS1046/software/containers/.bin
+export PATH=$PATH:/fs/project/PAS1046/software/containers/.sifs
 ```
 
 Then, identify the `.sif` file for the software you want and call it open to access the software:
@@ -14,6 +14,7 @@ Then, identify the `.sif` file for the software you want and call it open to acc
 ```
 
 To close, press `CTRL` + `D` or command `exit`.
+
 
 <br /><br />
 
@@ -31,14 +32,6 @@ singularity pull <URL>
 ./<CONTAINER_NAME>.sif
 ```
 
-<br /><br />
+<br />
 
-## ADDING CONTAINERS TO PATH
-
-You can add all containers to your path manually by adding the following line of code to your `~/.bash_profile`:
-
-```
-export PATH=$PATH:/fs/project/PAS1046/software/containers/.binlinks
-```
-
-New containers will not show up until you run `bash /fs/project/PAS1046/software/containers/.addlinks.sh` or contact Zach to do it.
+If you exported the `.sifs` folder to your path as described above, new containers will not show up until you run `bash /fs/project/PAS1046/software/containers/.addlinks.sh` or contact Zach to do it.
