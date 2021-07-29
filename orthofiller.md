@@ -80,6 +80,6 @@ echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/or
 <br /><br />
 
 ## OUTPUT / CITATION INFO
-OrthoFiller results are located in `<YOUR/OUTPUT>/results` and are fairly self explanatory. These data can be curated into a `.gff3` compatible with most downstream analyses by using the [`annotationCuration.py` script](https://gitlab.com/xonq/scripts).
+OrthoFiller results are located in `<YOUR/OUTPUT>/results` and are fairly self explanatory. These data can be curated into a `.gff3` compatible with most downstream analyses by using the [`annotationCuration.py` script](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#curate-annotation).
 
 This installation of OrthoFiller is derived from an update I made to modernize the software. Please cite the original OrthoFiller publication as well as the link to the updated software (gitlab.com/xonq/OrthoFiller).
