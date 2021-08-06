@@ -39,12 +39,16 @@ sed -r "s/>([^ ]+*) .*/>\1/g" <ASSEMBLY>.fa > <ASSEMBLY>.clean.fa
 ```
 
 Activate the container and convert each `.gff3` to a `.gtf` compatible with
-OrthoFiller. NOTE - If you have a python3 environment, such as miniconda,
-active then it may cause errors. You may have to deactivate miniconda and
-restart your shell. 
+OrthoFiller. 
 ```
 /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif
 gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
+```
+
+NOTE - If you have a python3 environment, such as miniconda,
+active then it may cause errors due to conflicting python versions (`gff_to_gtf_safe.py` uses python2). We can circumnavigate this issue by explicitly referencing python2. Note that the example below works for OSC, but it may not work on other systems.
+```
+/usr/bin/python /xonq/install/OrthoFiller/utils/gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
 ```
 
 <br />
