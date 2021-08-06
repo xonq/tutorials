@@ -46,10 +46,7 @@ gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
 ```
 
 NOTE - If you have a python3 environment, such as miniconda,
-active then it may cause errors due to conflicting python versions (`gff_to_gtf_safe.py` uses python2). We can circumnavigate this issue by explicitly referencing python2. Note that the example below works for OSC, but it may not work on other systems.
-```
-/usr/bin/python /xonq/install/OrthoFiller/utils/gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
-```
+active then it may cause errors due to conflicting python versions (`gff_to_gtf_safe.py` uses python2). We can circumnavigate this issue by hard deactivating miniconda. First, comment out any line in your `.bash_profile` that says `source .bashrc` or `<ANYPATH>/miniconda3/bin` by inserting a `#` at the start of those lines. Then, save the `.bash_profile`, restart your shell, and reattempt the conversion. Once finished, remember to reopen your `.bash_profile` and remove the comment (`#`).
 
 <br />
 
