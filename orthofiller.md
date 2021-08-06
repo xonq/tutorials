@@ -55,10 +55,10 @@ active then it may cause errors due to conflicting python versions (`gff_to_gtf_
 
 #### 2) Prepare input coordinate files
 We will start OrthoFiller from scratch, however you can start/resume
-OrthoFiller from a completed OrthoFinder run as well. OrthoFiller a plain text
-input targets `.tsv` of organisms you want to *fill* and optionally a
+OrthoFiller from a completed OrthoFinder run as well. OrthoFiller inputs a plain text
+"targets" `.tsv` of organisms you want to *fill* and optionally a
 reference `.tsv` of organisms you just want to reference and *not* fill. *DO
-NOT INCLUDE REFERENCE ORGANISMS IN THE TARGET FILE*. Including more organisms than necessary in the target file will roughly double the computation time per organism added.
+NOT INCLUDE REFERENCE ORGANISMS IN THE TARGET FILE*. Including more organisms than necessary in the target file will roughly double the computation time per organism added. Therefore, if you are finishing the annotation of one organism, then that organism should be the only one in the targets file and all others should be in the reference.
 
 Create a plain text file for both the reference and target input (reference clean assemblies):
 ```
