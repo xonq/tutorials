@@ -67,7 +67,7 @@ Create a plain text file for both the reference and target input (reference clea
 <br />
 
 #### 3) Run OrthoFiller
-Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results. Choose a number of CPUs less than or equal to the organisms you inputted. It is tempting to believe that runtime has an inverse linear relationship with the number of parallel processes, but this certainly is not the case, and sometimes more CPUs will have a negative impact on runtime. This is too much to describe here, but essentially parallel processing is solely based on how well it is implemented.
+Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results. Choose a number of CPUs less than or equal to the organisms you inputted. It is tempting to believe that runtime has an inverse linear relationship with the number of parallel processes, but this certainly is not the case, and sometimes more CPUs will have a negative impact on runtime. This is too much to describe here, but essentially parallel processing efficiency is based on how well it is implemented and the limitations of the calculations being performed.
 
 ```
 source /fs/project/PAS1046/software/containers/orthofiller/source.sh
