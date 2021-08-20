@@ -67,14 +67,15 @@ Create a plain text file for both the reference and target input (reference clea
 <br />
 
 #### 3) Run OrthoFiller
-Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results.
+Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results. Choose a number of CPUs less than or equal to the organisms you inputted. It is tempting to believe that runtime has an inverse linear relationship with the number of parallel processes, but this certainly is not the case, and sometimes more CPUs will have a negative impact on runtime. This is too much to describe here, but essentially parallel processing is solely based on how well it is implemented.
+
 ```
 source /fs/project/PAS1046/software/containers/orthofiller/source.sh
-orthofiller.py -r <YOUR/reference.tsv> -i <YOUR/target.tsv> -c 28 --fulloutput -o <SCRATCH/OUTPUT/DIRECTORY>
+orthofiller.py -r <YOUR/reference.tsv> -i <YOUR/target.tsv> -c <CPUS> --fulloutput -o <SCRATCH/OUTPUT/DIRECTORY>
 ```
 Allot 10-20 hours per target genome and invoke the container to execute the `.sh` file as a job:
 ```
-echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif /bin/bash <YOUR/.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=28 -A <PROJECT> --job-name=orthofiller
+echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif /bin/bash <YOUR/.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=<CPUS> -A <PROJECT> --job-name=orthofiller
 ```
 
 <br /><br />
