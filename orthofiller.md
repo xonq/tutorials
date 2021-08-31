@@ -6,7 +6,7 @@
 You will need at least one [annotation](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md#osc-use).
 
 
-<br /><br />
+<br /><br /><br />
 
 ## INSTALLING
  
@@ -17,7 +17,7 @@ singularity pull docker.io://xonq/orthofiller_latest.sif
 
 Proceed to OSC USE and change hard coded paths as necessary.
 
-<br /><br />
+<br /><br /><br />
 
 ## OSC USE
 #### Accessing OrthoFiller software
@@ -28,7 +28,7 @@ To use OrthoFiller software you will have to activate the software container. Pr
 source /fs/project/PAS1046/software/containers/orthofiller/source.sh
 ```
 
-<br />
+<br /><br />
 
 #### 1) Procure raw data
 Gather at least 10 species' `.gff3` gene coordinate files and their corresponding assemblies. These can be downloaded from NCBI, JGI, or any other genome portal or you can grab them using the [database](https://gitlab.com/xonq/mycotools_scripts/-/blob/master/USAGE.md#dbfilespy). NOTE - this conversion works for NCBI, JGI, and Funannotate `.gff`s, but files from other sources, like Maker, may be incompatible. If the following command fails, try running `clean_gff.py <GFF3> > <CLEAN_GFF3>` in the container and reference `<CLEAN_GFF3>` in next command. If both fail, you will have to implement or find a solution.
@@ -37,6 +37,10 @@ remove spaces from all assembly fastas:
 ```
 sed -r "s/>([^ ]+*) .*/>\1/g" <ASSEMBLY>.fa > <ASSEMBLY>.clean.fa
 ```
+
+NOTE - make sure you are using the same assembly that the annotation was made from. E.g. if you used Funannotate, use the masked & sorted assembly.
+
+<br />
 
 Activate the container and convert each `.gff3` to a `.gtf` compatible with
 OrthoFiller. 
@@ -47,7 +51,7 @@ gff_to_gtf_safe.py <YOUR/GFF> <OUTPUT/GTF>
 
 NOTE - If you have a python3 environment, such as miniconda, you will have to deactivate it (`conda deactivate`) *AFTER* activating the container.
 
-<br />
+<br /><br />
 
 #### 2) Prepare input coordinate files
 We will start OrthoFiller from scratch, however you can start/resume
@@ -64,7 +68,7 @@ Create a plain text file for both the reference and target input (reference clea
 <YOUR/GTFn>	<YOUR/ASSEMBLYn>
 ```
 
-<br />
+<br /><br />
 
 #### 3) Run OrthoFiller
 Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results. Choose a number of CPUs less than or equal to the organisms you inputted. It is tempting to believe that runtime has an inverse linear relationship with the number of parallel processes, but this certainly is not the case, and sometimes more CPUs will have a negative impact on runtime. This is too much to describe here, but essentially parallel processing efficiency is based on how well it is implemented and the limitations of the calculations being performed.
@@ -78,9 +82,22 @@ Allot 10-20 hours per target genome and invoke the container to execute the `.sh
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif /bin/bash <YOUR/.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=<CPUS> -A <PROJECT> --job-name=orthofiller
 ```
 
-<br /><br />
+NOTE - see the [common errors](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md#common-errors) section if your job failed
+
+<br /><br /><br />
+
 
 ## OUTPUT / CITATION INFO
 OrthoFiller results are located in `<YOUR/OUTPUT>/results` and are fairly self explanatory. These data can be curated into a `.gff3` compatible with most downstream analyses by using the [`annotationCuration.py` script](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#curate-annotation).
 
 This installation of OrthoFiller is derived from an update I made to modernize the software. Please cite the original OrthoFiller publication as well as the link to the updated software (gitlab.com/xonq/OrthoFiller).
+
+<br /><br /><br />
+
+## COMMON ERRORS
+Errors that are noted above will not be discussed here.
+
+<br />
+
+### KeyError
+If any `gtf` file has "transcript_id = " fields with a ":", these may be translated to '_' and will raise a python key error. The solution here is to substitute the ":" for "_" in the gtf file. There isn't a blanket way of doing this, but I recommend using regular expressions in a plain text editor to edit your unique sequence. 
