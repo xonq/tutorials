@@ -100,4 +100,5 @@ Errors that are noted above will not be discussed here.
 <br />
 
 ### KeyError
-If any `gtf` file has "transcript_id = " fields with a ":", these may be translated to "\_" and will raise a python key error. The solution here is to substitute the ":" for "_" in the gtf file. There isn't a blanket way of doing this, but I recommend using regular expressions in a plain text editor to edit your unique sequence. 
+If any `gtf` file has "transcript_id = " fields with a ":", these may be translated to "\_" and will raise a python key error. The solution here is to substitute the ":" for 
+"\_" in the gtf file. There isn't a blanket way of doing this, but I recommend using regular expressions in a plain text editor to edit your unique sequence. 
