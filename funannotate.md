@@ -150,17 +150,21 @@ busconame=$(find <OUTPUT>/run_<ORGANISM_CODE>_prelim | grep -Po "BUSCO.*(?=_exon
 echo $busconame
 ```
 
-Now, copy the resulting database to the lab BUSCO
+Now, grant permissions and copy the resulting database to the lab BUSCO
 database set.
 ```
-cp -r <OUTPUT>/run_<ORGANISM_CODE>/augustus_output/retraining_parameters/ \ 
-/fs/project/PAS1046/software/augustus/config/species/$busconame
+output=<OUTPUT>/run_<ORGANISM_CODE>/augustus_output/retraining_parameters/
+chmod -R 770 $output
+cp -r $output /fs/project/PAS1046/software/augustus/config/species/$busconame
 ```
 
 Finally, source and activate the container and update Funannotate so it can find your BUSCO db:
 ```
-funannotate setup -u
+funannotate setup -u -w
 ```
+
+
+
 
 <br />
 
