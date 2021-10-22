@@ -44,6 +44,13 @@ devtools::install_github('AckerDWM/gg3D')
 #### trendlines w/confidence intervals
 `+	geom_smooth( method = lm, se = TRUE, fullrange = TRUE )`
 
+### plotly
+`plot_ly(x = data$V6, y = data$V5, text=data$V1,
+marker=list(opacity=0.2), type='scatter', mode='marker')`
+
+remove the marker options to not have opacity. This opacity setting makes
+overlapping points darker
+
 <br/><br/>
 ## BAR PLOTS
 Bar plots often have to use a "melted" dataset. This requires `reshape2` package installed and loaded.
