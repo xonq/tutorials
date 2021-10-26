@@ -219,7 +219,7 @@ file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. The
 finalized BUSCO results can be found in
 `<FUNANNOTATE>/predict_misc/busco/run_<OME>_<RUN#>/short_summary*.txt`
 
-You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#assembly-annotation-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
+You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#sequence-data-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
 
 If you are happy with your annotation quality and BUSCO scores, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
