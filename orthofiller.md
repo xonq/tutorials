@@ -55,17 +55,17 @@ NOTE - If you have a python3 environment, such as miniconda, you will have to de
 
 #### 2) Prepare input coordinate files
 We will start OrthoFiller from scratch, however you can start/resume
-OrthoFiller from a completed OrthoFinder run as well. OrthoFiller inputs a plain text
+OrthoFiller from a completed OrthoFinder run as well. OrthoFiller inputs a plain text *tab delimited*
 "targets" `.tsv` of organisms you want to *fill* and optionally a
 reference `.tsv` of organisms you just want to reference and *not* fill. *DO
 NOT INCLUDE REFERENCE ORGANISMS IN THE TARGET FILE*. Including more organisms than necessary in the target file will roughly double the computation time per organism added. Therefore, if you are finishing the annotation of one organism, then that organism should be the only one in the targets file and all others should be in the reference.
 
-Create a plain text file for both the reference and target input (reference clean assemblies):
+Create a plain text file for both the reference and target input and separate the entries with a `tab`:
 ```
 #gtf	genome
-<YOUR/GTF1>	<YOUR/ASSEMBLY1>
-<YOUR/GTF2>	<YOUR/ASSEMBLY2>
-<YOUR/GTFn>	<YOUR/ASSEMBLYn>
+<YOUR/GTF1>	<YOUR/CLEAN_ASSEMBLY1>
+<YOUR/GTF2>	<YOUR/CLEAN_ASSEMBLY2>
+<YOUR/GTFn>	<YOUR/CLEAN_ASSEMBLYn>
 ```
 
 <br /><br />
