@@ -110,3 +110,5 @@ If any `gtf` file has "transcript_id = " fields with a ":", these may be transla
 OrthoFinder output contains one or more names that do not corrrespond to the inputted fasta names.
  Please ensure all protein fasta names are unique.
 ```
+
+This is because the `transcript_id = ` field from multiple files have the same names... e.g. typically `mRNA_####`; as above, you will have to change all the names using a search and replace/regular expression approach to something unique. I recommend finding and replacing `mRNA_` to the genome code name.
