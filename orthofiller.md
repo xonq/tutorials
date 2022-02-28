@@ -102,3 +102,11 @@ Errors that are noted above will not be discussed here.
 ### KeyError
 If any `gtf` file has "transcript_id = " fields with a ":", these may be translated to "\_" and will raise a python key error. The solution here is to substitute the ":" for 
 "\_" in the gtf file. There isn't a blanket way of doing this, but I recommend using regular expressions in a plain text editor to edit your unique sequence. 
+
+<br />
+
+### Same name error 
+```
+OrthoFinder output contains one or more names that do not corrrespond to the inputted fasta names.
+ Please ensure all protein fasta names are unique.
+```
