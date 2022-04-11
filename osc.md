@@ -65,3 +65,8 @@ squeue --start --jobs=<JOB_ID>
 ```
 scancel <JOB_ID>
 ```
+
+#### job history
+```
+sacct -u <USERNAME>
+```
