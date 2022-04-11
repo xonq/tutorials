@@ -85,9 +85,3 @@ SPAdes will output many files, but ultimately the `scaffolds.fa` is what you wan
 mkdir <ORGANISM_CODENAME>/results
 mv <SPADES/OUTPUT>/scaffolds.fa <ORGANISM_CODENAME>/results/<ORGANISM_CODENAME>.scaffolds.fa
 ```
-
-To obtain the statistics for your assembly
-[install](https://gitlab.com/xonq/mycotools/mycotools/-/blob/master/README.md)
-and use
-[mycotools](https://gitlab.com/xonq/mycotools/mycotools/-/blob/master/USAGE.md#assembly-statistics).
-Alternatively, Quast is an established package.
