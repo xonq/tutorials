@@ -70,3 +70,8 @@ scancel <JOB_ID>
 ```
 sacct -u <USERNAME>
 ```
+
+#### review finished job information (CPU & RAM usage)
+```
+seff <JOB_ID>
+```
