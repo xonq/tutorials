@@ -129,6 +129,7 @@ data.scores$INDEX = metabolicCounts$INDEX
 ```
 mds.fit = envfit(nmds3, com, permutations = 9999, na.rm = TRUE)
 mds_coords = as.data.frame(scores(mds.fit, 'vectors') * ordiArrowMul(mds.fit))
+```
 
 <br/>
 
