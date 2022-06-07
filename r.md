@@ -123,9 +123,33 @@ data.scores = as.data.frame(scores(nmds3))
 data.scores$INDEX = metabolicCounts$INDEX
 ```
 
+<br />
+
+##### optional: prepping the fit
+```
+mds.fit = envfit(nmds3, com, permutations = 9999, na.rm = TRUE)
+mds_coords = as.data.frame(scores(mds.fit, 'vectors') * ordiArrowMul(mds.fit))
+
 <br/>
 
-#### plotting (3D - fit not available yet)
+#### plotting (3D)
 ```
-plot_ly( x = data.scores$NMDS1, y = data.scores$NMDS2, z = data.scores$NMDS3, color = data.scores$sphy, colors = colors )
+plot <- plot_ly( x = data.scores$NMDS1, y = data.scores$NMDS2, z = data.scores$NMDS3, color = data.scores$sphy, colors = colors )
+```
+
+<br />
+
+#### with the fit (3D)
+```
+for ( row in 1:nrow(mds_coords) ) {
+    t_row <- mds_coords[row,]
+    t_row[2,] <- 0
+    plot <- plot %>% add_trace(
+        t_row, x = t_row$NMDS1, y = t_row$NMDS2, z = t_row$NMDS3,
+        opacity = 1, type = 'scatter3d', mode = 'lines', line = list(
+            width = 3, color = 'black'
+            ),
+        showlegend = FALSE
+    )
+}
 ```
