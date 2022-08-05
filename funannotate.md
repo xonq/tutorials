@@ -88,7 +88,7 @@ mkdir <OUTPUT>/<ORGANISM_CODENAME>/funannotate_prep
 ### 1. Sort assembly (~ 1 min)
 Sort your assembly: this renames contigs to `scaffold`, removes contigs below a minimum length (1 kb), and sorts from largest to smallest. Remember to [activate and source](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#activating-funannotate-container) the container to have access to Funannotate. This command can be run without submitting a job. If you followed the previous tutorial, your assembly will be in `<ORGANISM_CODENAME>/results`:
 ```
-funannotate sort -i <YOUR/ASSEMBLY> -o <ORGANISM_CODENAME>/funannotate_prep/ASSEMBLY.sort.fa> --minlen 1000
+funannotate sort -i <YOUR/ASSEMBLY> -o <ORGANISM_CODENAME>/funannotate_prep/<ASSEMBLY.sort.fa> --minlen 1000
 ```
 
 <br /><br />
