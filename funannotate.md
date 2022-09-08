@@ -296,7 +296,10 @@ well:
 zcat <SET1_READ_1>.fq.gz <SETn_READ_1>.fq.gz | gzip > <OME>_1.fq.gz
 ```
 
-Then, to update your annotation with the paired end transcript reads (use the standard singularity submission scripts to submit as a job):
+Repeat this for the other sets of reads and input the results (`<OME>_n.fq.gz`)
+into `-l/-r` in the command below.
+
+To update your annotation with the paired end transcript reads (use the standard singularity submission scripts to submit as a job):
 
 ```
 funannotate update -f <SORTED_MASKED>.fa \
@@ -307,8 +310,6 @@ funannotate update -f <SORTED_MASKED>.fa \
 
 For other types of transcript reads refer to `funannotate update -h`. 
 
-Repeat this for the other sets of reads and input the results (`<OME>_n.fq.gz`)
-into `-l/-r` in the above command.
 
 <br /><br />
 
