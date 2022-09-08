@@ -5,7 +5,11 @@
 
 [Funannotate](https://funannotate.readthedocs.io/en/latest/install.html) is an all-in-one genome annotation software that wraps and curates output from multiple *ab initio* gene prediction software.
 
-Only two external inputs are necessary: [a *de novo* assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a *de novo* Repeat library fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If you want to incorporate RNA-seq data, complete this tutorial, then follow the steps [here](https://funannotate.readthedocs.io/en/latest/tutorials.html). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) once you have read the [pipeline introduction](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
+Only two external inputs are necessary: [a *de novo*
+assembly](https://gitlab.com/xonq/tutorials/-/blob/master/assembly.md) and [a
+*de novo* Repeat library
+fasta](https://gitlab.com/xonq/tutorials/-/blob/master/repeatmodeler.md). If
+you want to incorporate RNA-seq data, update your [Funannotate gff3](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#adding-transcript-reads). If you are using the Ohio Super Computer (OSC) and have access to PAS1046, skip installation to [OSC USE](https://gitlab.com/xonq/tutorials/-/blob/master/funannotate.md#osc-use) once you have read the [pipeline introduction](https://gitlab.com/xonq/tutorials/-/blob/master/annotationPipeline.md#getting-started).
 
 ---
 
@@ -278,6 +282,30 @@ described (allocate enough resources). If you encounter an error or failure
 while running all at once then you will have to pinpoint which step failed,
 then comment (add `#`) the out/delete the lines before the failure to begin at
 the failure step.
+
+<br /><br />
+
+## ADDING TRANSCRIPT READS
+Funannotate makes it extremely easy to update a de novo annotation with direct
+transcript reads - no additional steps necessary. Simply run the following for
+paired end transcript reads:
+
+```
+funannotate update -f <SORTED_MASKED>.fa \
+-g <FUNANNOTATE_OUTPUT>/predict_results/<OUTPUT>.gff3 \
+--species "<GENUS> <SPECIES>" --jaccard_clip --cpus <NUM> \
+-l <PAIRED_END_1>.fq.gz -r <PAIRED_END_2>.fq.gz
+```
+
+For other types of transcript reads refer to `funannotate update -h`. If you
+have multiple transcript samples, concatenate the same numbered samples:
+
+```
+zcat <SET1_READ_1>.fq.gz <SETn_READ_1>.fq.gz | gzip > <OME>_1.fq.gz
+```
+
+Repeat this for the other sets of reads and input the results (`<OME>_n.fq.gz`)
+into `-l/-r` in the above command.
 
 <br /><br />
 
