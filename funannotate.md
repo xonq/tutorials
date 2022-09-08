@@ -287,9 +287,16 @@ the failure step.
 
 ## ADDING TRANSCRIPT READS
 Funannotate makes it extremely easy to update a de novo annotation with direct
-transcript reads - no additional steps necessary. Simply run the following for
-paired end transcript reads (use the standard singularity submission scripts to
-submit as a job):
+transcript reads - no additional steps necessary. If you
+have multiple transcript samples, concatenate the same numbered read sets for
+each set of paired-end sequences; for other sequencing types, concatenate as
+well:
+
+```
+zcat <SET1_READ_1>.fq.gz <SETn_READ_1>.fq.gz | gzip > <OME>_1.fq.gz
+```
+
+Then, to update your annotation with the paired end transcript reads (use the standard singularity submission scripts to submit as a job):
 
 ```
 funannotate update -f <SORTED_MASKED>.fa \
@@ -298,12 +305,7 @@ funannotate update -f <SORTED_MASKED>.fa \
 -l <PAIRED_END_1>.fq.gz -r <PAIRED_END_2>.fq.gz
 ```
 
-For other types of transcript reads refer to `funannotate update -h`. If you
-have multiple transcript samples, concatenate the same numbered samples:
-
-```
-zcat <SET1_READ_1>.fq.gz <SETn_READ_1>.fq.gz | gzip > <OME>_1.fq.gz
-```
+For other types of transcript reads refer to `funannotate update -h`. 
 
 Repeat this for the other sets of reads and input the results (`<OME>_n.fq.gz`)
 into `-l/-r` in the above command.
