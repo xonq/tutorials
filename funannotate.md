@@ -288,7 +288,8 @@ the failure step.
 ## ADDING TRANSCRIPT READS
 Funannotate makes it extremely easy to update a de novo annotation with direct
 transcript reads - no additional steps necessary. Simply run the following for
-paired end transcript reads:
+paired end transcript reads (use the standard singularity submission scripts to
+submit as a job):
 
 ```
 funannotate update -f <SORTED_MASKED>.fa \
