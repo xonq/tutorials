@@ -308,7 +308,10 @@ funannotate update -f <SORTED_MASKED>.fa \
 -l <PAIRED_END_1>.fq.gz -r <PAIRED_END_2>.fq.gz
 ```
 
-For other types of transcript reads refer to `funannotate update -h`. 
+For other types of transcript reads refer to `funannotate update -h`. If you
+would like to set your own output directory with `-o`, just make sure you use
+the full absolute path or else you may encounter a PASA `no such file or
+directory` error.
 
 
 <br /><br />
