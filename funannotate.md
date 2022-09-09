@@ -105,7 +105,8 @@ We are now going to submit a job that invokes the singularity container, so we n
 ```
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 funannotate mask -i <YOUR/SORTED_ASSEMBLY> -m repeatmodeler \
--l <YOUR/REPEAT_LIBRARY>-o <ORGANISM_CODENAME/funannotate_prep/ASSEMBLY.masked.fa --cpus 6
+-l <YOUR/REPEAT_LIBRARY> \
+-o <ORGANISM_CODENAME/funannotate_prep/ASSEMBLY.masked.fa --cpus 6
 ```
 
 If you make the `.sh` file on your local computer, you'll have to upload it to the supercomputer. Then submit to the job node by invoking singularity to reference your `.sh` file like so:
