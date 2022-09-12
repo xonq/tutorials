@@ -166,8 +166,12 @@ cp -r $output /fs/project/PAS1046/software/augustus/config/species/$busconame
 Finally, source and activate the container and update Funannotate so it can find your BUSCO db:
 ```
 funannotate setup -u -w
+chmod -R 774 $FUNANNOTATE_DB/outgroups/
 ```
 
+NOTE: If you do not run the second part of the above command, then others will
+encounter a `PermissionError` while running Funannotate. Please make sure to
+execute these two commands together *everytime* you run `funannotate setup -u`
 
 
 
@@ -183,7 +187,7 @@ Download/compile necessary data and information:
     * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install my scripts](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md#installing-scripts), then follow this [brief use guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
 - protein evidence from at least 10 closely related organisms (separate by spaces in command)
-    * These can be acquired from the lab mycodb via [dbFiles.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#dbfilespy)
+    * These can be acquired from the lab mycodb via [db2files.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#db2filespy)
 
 <br />
 
@@ -237,20 +241,21 @@ funannotate species -s <ORGANISM>_final -a <OUTPUT>/<ORGANISM_CODENAME>/funannot
 ### All at once
 Once you have tested the individual steps of Funannotate and are familiar with this portion of the pipeline, you can submit all the commands in one `.sh` file to move a genome through all steps at once. Here is the skeleton of such a file:
 ```bash
+set -e
 source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 # 0. make directories for your outputs
-mkdir -p <OUTPUT>/sort_mask <OUTPUT>/funannotate &&
+mkdir -p <OUTPUT>/sort_mask <OUTPUT>/funannotate
 
 
 # 1. sort and remove contigs < 1000 bp
 funannotate sort -i <YOUR/ASSEMBLY> --minlen 1000 \
--o <OUTPUT>/sort_mask/<OME>_sort.fa &&
+-o <OUTPUT>/sort_mask/<OME>_sort.fa
 
 
 # 2. soft-mask nucleotides
 funannotate mask -i <OUTPUT>/sort_mask/<OME>_sort.fa -m repeatmodeler \
--l <YOUR/REPEAT-LIBRARY.fa> -o <OUTPUT>/sort_mask/<OME>_mask.fa &&
+-l <YOUR/REPEAT-LIBRARY.fa> -o <OUTPUT>/sort_mask/<OME>_mask.fa
 
 
 # 3a. run BUSCO
@@ -259,15 +264,16 @@ cd <OUTPUT>
 python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH --long --tarzip --tmp <YOUR/SCRATCH> \
 -i <OUTPUT>/sort_mask/<OME>_mask.fa -o <OME>_prelim \
--l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8 &&
+-l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
 
 
 # 3b. add BUSCO to database
 busconame=$(find run_<ORGANISM>_prelim | grep -Po "BUSCO.*(?=_exon_*)"
 
 cp -r <OUTPUT>/run_<ORGANISM>/augustus_output/retraining_parameters \
-$AUGUSTUS_CONFIG_PATH/species/$busconame &&
-funannotate setup -u &&
+$AUGUSTUS_CONFIG_PATH/species/$busconame
+funannotate setup -u -w
+chmod -R 774 $FUNANNOTATE_DB/outgroups
 
 
 # 4. gene prediction
