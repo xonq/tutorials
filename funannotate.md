@@ -186,8 +186,12 @@ Download/compile necessary data and information:
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
     * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install my scripts](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md#installing-scripts), then follow this [brief use guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
-- protein evidence from at least 10 closely related organisms (separate by spaces in command)
-    * These can be acquired from the lab mycodb via [db2files.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#db2filespy)
+- protein evidence from 10-100 closely related organisms (separate by spaces in command)
+    * These can be acquired from the lab mycodb via 
+[db2files.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#db2filespy).
+If acquired this way, the output will be a folder called `faa`; instead of
+inputting the files one-by-one in the following command, simply specify
+`<DB2FILESOUTPUT>/faa/*faa`.
 
 <br />
 
