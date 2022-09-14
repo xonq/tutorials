@@ -29,14 +29,13 @@ Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md)
 singularity pull docker://xonq/funannotate_mask:1.8.1
 ```
 
-Install databases and exit the container
-```
-<CONTAINER.sif>
-funannotate setup -d <DATABASE/DIRECTORY>
-exit
-```
+Create a UTF-8 text file with the following information, fill it in, and save
+it in the folder with the container `.img` as `source.sh`. Everytime you wish
+to use the container, you must run `source <PATH/TO>/source.sh` to point
+Funannotate to the binaries. NOTE: if you do not have Augustus installed,
+run `mkdir -p <INSTALL_LOC>/augustus/config/species` and set
+`export AUGUSTUS_CONFIG_PATH=<INSTALL_LOC>/augustus/`
 
-Create a UTF-8 text file with the following information, fill it in, and save it in the folder with the container `.img` as `source.sh`. Everytime you wish to use the container, you must run `source <PATH/TO>/source.sh` to point Funannotate to the binaries.
 ```
 # activate funannotate software
 . /opt/conda/etc/profile.d/conda.sh
@@ -47,6 +46,15 @@ export FUNANNOTATE_DB=		# path to funannotate database
 export GENEMARK_PATH=		# path to genemark program directory
 #export AUGUSTUS_CONFIG_PATH=	# path to augustus species configuration (only specify if using a non-default one)
 export PATH=$PATH:		# path to genemark program directory
+```
+
+
+
+Install databases and exit the container
+```
+<CONTAINER.sif>
+funannotate setup -d <DATABASE/DIRECTORY>
+exit
 ```
 
 <br />
