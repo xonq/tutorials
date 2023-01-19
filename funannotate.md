@@ -250,6 +250,8 @@ If you are happy with your annotation quality and BUSCO scores, contribute to th
 funannotate species -s <ORGANISM>_final -a <OUTPUT>/<ORGANISM_CODENAME>/funannotate/logfiles/<OME>_<RUN#>.parameters.json
 ```
 
+If you are not running OrthoFiller, you can add your genome to the lab database via [predb2db.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#predb2dbpy).
+
 
 <br /><br />
 
