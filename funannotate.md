@@ -189,13 +189,13 @@ indicates that someone did not run `chmod`. -_- Contact Zach or your container a
 <br />
 
 ### 4. Predict genes (~ 10-20 hrs)
-This is the first prominent plug I'm going to make for installing [Mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md). With Mycotools and the MycotoolsDB, curated genomic data needed for annotation can easily be copied for your analysis instead of downloading.
+This is the first prominent plug I'm going to make for installing [Mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md). With Mycotools and the MycotoolsDB, curated genomic data needed for annotation can easily be copied or automatically downloaded.
 
 Download/compile necessary data and information:
 
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (separate by spaces in command if > 1)
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
-    * My scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install my scripts](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md#installing-scripts), then follow this [brief use guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
+    * The Mycotools scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/mycotools/README.md), then follow the [usage guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
 - protein evidence from 10-100 closely related organisms (separate by spaces in command)
     * These can be acquired from the lab mycodb via 
