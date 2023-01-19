@@ -195,7 +195,7 @@ Download/compile necessary data and information:
 
 - transcript/EST evidence from the most closely related available organism(s) in the same genus (separate by spaces in command if > 1)
     * If using JGI, acquire the expressed sequence tags (EST) or refined transcripts (NOT allTranscripts)
-    * The Mycotools scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/mycotools/README.md), then follow the [usage guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
+    * The Mycotools scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md), then follow the [usage guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
 - protein evidence from 10-100 closely related organisms (separate by spaces in command)
     * These can be acquired from the lab mycodb via 
