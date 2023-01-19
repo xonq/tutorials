@@ -189,7 +189,7 @@ indicates that someone did not run `chmod`. -_- Contact Zach or your container a
 <br />
 
 ### 4. Predict genes (~ 10-20 hrs)
-This is the first prominent plug I'm going to make for installing [my scripts](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md). They are not necessary, but because I repeat many of these processes I've automated a good portion of downstream analyses. Furthermore, I created a database, "mycodb", of all NCBI and JGI protein and genomic sequence data and these data can easily be copied for your analysis instead of downloading.
+This is the first prominent plug I'm going to make for installing [Mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md). With Mycotools and the MycotoolsDB, curated genomic data needed for annotation can easily be copied for your analysis instead of downloading.
 
 Download/compile necessary data and information:
 
