@@ -181,6 +181,9 @@ NOTE: If you do not run the second part of the above command, then others will
 encounter a `PermissionError` while running Funannotate. Please make sure to
 execute these two commands together *everytime* you run `funannotate setup -u`
 
+If you are getting a `PermissionError` while running `funannotate setup -u`, then it
+indicates that someone did not run `chmod`. -_- Contact Zach or your container administrator.
+
 
 
 <br />
