@@ -198,7 +198,7 @@ Download/compile necessary data and information:
     * The Mycotools scripts, `jgiDwnld.py`/`ncbiDwnld.py` can download these for you. Create an account at [MycoCosm](https://mycocosm.jgi.doe.gov/mycocosm/home) and/or [NCBI](https://www.ncbi.nlm.nih.gov/), [install mycotools](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/README.md), then follow the [usage guide](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#jgidwnldpy-ncbidwnldpy)
     
 - protein evidence from 10-100 closely related organisms (separate by spaces in command)
-    * These can be acquired from the lab mycodb via 
+    * These can be acquired from the lab MycotoolsDB via 
 [db2files.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#db2filespy).
 If acquired this way, the output will be a folder called `faa`; instead of
 inputting the files one-by-one in the following command, simply specify
@@ -243,7 +243,7 @@ file is the `gff3`, the protein fasta is `proteins.aa.fasta`, etc etc. The
 finalized BUSCO results can be found in
 `<FUNANNOTATE>/predict_misc/busco/run_<OME>_<RUN#>/short_summary*.txt`
 
-You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#sequence-data-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the [database](https://gitlab.com/xonq/mycodb).
+You can obtain a summary of your annotation statistics using the [annotationStats.py](https://gitlab.com/xonq/mycotools/-/blob/master/mycotools/USAGE.md#sequence-data-statistics): There really is not an objective metric to evaluate annotation quality, but a good check is to compare the the summary statistics, including % of the assembly covered by the total length of the annotation, to similar species. You can use `annotationStats.py` on related species' gffs in the MycotoolsDB.
 
 If you are happy with your annotation quality and BUSCO scores, contribute to the lab and add it to our AUGUSTUS configuration files. Activate and source the container, then:
 ```
