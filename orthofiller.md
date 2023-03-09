@@ -79,7 +79,9 @@ Create a plain text file for both the reference and target input and separate th
 <br /><br />
 
 #### 3) Run OrthoFiller
-Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results. Choose a number of CPUs less than or equal to the organisms you inputted. It is tempting to believe that runtime has an inverse linear relationship with the number of parallel processes, but this certainly is not the case, and sometimes more CPUs will have a negative impact on runtime. This is too much to describe here, but essentially parallel processing efficiency is based on how well it is implemented and the limitations of the calculations being performed. If you have more than 20 genomes overall, I recommend requesting the huge memory node by raising the `--ntasks-per-node` to at least 24 and specify `--partition=hugemem`. If you have too many genomes to complete in normal time, append the `-m` flag to decrease the sensitivity of the search.
+Create a plain text `.sh` file to execute OrthoFiller with the following information. The source command is necessary for Augustus, otherwise OrthoFiller will run to completion and not output results. Choose a number of CPUs less than or equal to the organisms you inputted, up to 20 max. 
+
+If you are using OSC, use the Pitzer node - it is ~25% faster. If you have more than 20 genomes overall, I recommend requesting the huge memory node by raising the `--ntasks-per-node` to at least 24 and specify `--partition=hugemem`. If you have too many genomes to complete in normal time, append the `-m` flag to decrease the sensitivity of the search.
 
 ```
 source /fs/project/PAS1046/software/containers/orthofiller/source.sh
@@ -90,7 +92,7 @@ Allot 10-20 hours per target genome and invoke the container to execute the `.sh
 echo -e 'singularity exec /fs/project/PAS1046/software/containers/orthofiller/orthofiller_latest.sif /bin/bash <YOUR/.sh>' | sbatch --time=20:00:00 --nodes=1 --ntasks-per-node=<CPUS> -A <PROJECT> --job-name=orthofiller
 ```
 
-NOTE - see the [common errors](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md#common-errors) section if your job failed. If 
+NOTE - see the [common errors](https://gitlab.com/xonq/tutorials/-/blob/master/orthofiller.md#common-errors) section if your job failed.
 
 <br /><br /><br />
 
