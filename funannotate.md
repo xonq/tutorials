@@ -141,7 +141,7 @@ source /fs/project/PAS1046/software/containers/funannotate/source.sh
 
 cd <ORGANISM_OUTPUT>
 
-python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
+python /venv/lib/python3.8/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH --long --tarzip \
 -i <YOUR/MASKED/ASSEMBLY.fa> -o <ORGANISM_CODE>_prelim --tmp <YOUR/SCRATCH> \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
@@ -278,7 +278,7 @@ funannotate mask -i <OUTPUT>/sort_mask/<OME>_sort.fa -m repeatmodeler \
 # 3a. run BUSCO
 cd <OUTPUT>
 
-python /opt/conda/lib/python3.7/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
+python /venv/lib/python3.8/site-packages/funannotate/aux_scripts/funannotate-BUSCO2.py \
 --local_augustus $AUGUSTUS_CONFIG_PATH --long --tarzip --tmp <YOUR/SCRATCH> \
 -i <OUTPUT>/sort_mask/<OME>_mask.fa -o <OME>_prelim \
 -l /fs/project/PAS1046/databases/funannotate/<LINEAGE> -m genome -c 8
