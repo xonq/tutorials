@@ -24,9 +24,15 @@ Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/lic
 
 #### Pull the Funannotate Container
  
-Use [Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md) (or Docker) to pull the prebuilt Funannotate container
+Use
+[Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md)
+(or Docker) to pull the prebuilt Funannotate container. NOTE: The
+`funannoate_mask` container referenced in the RepeatModeler step 
+is NOT the same as the container pulled here. A future update will resolve
+this. 
+
 ```
-singularity pull docker://xonq/funannotate_mask:1.8.1
+singularity pull docker://xonq/funannotate:latest
 ```
 
 Create a UTF-8 text file with the following information, fill it in, and save
