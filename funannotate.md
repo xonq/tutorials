@@ -25,7 +25,7 @@ Accept the license for [GeneMark-ES/ET/EP](https://topaz.gatech.edu/GeneMark/lic
 #### Pull the Funannotate Container
  
 Use
-[Singularity](https://gitlab.com/xonq/tutorials/-/blog/master/containers.md)
+[Singularity](https://gitlab.com/xonq/tutorials/-/blob/master/containers.md)
 (or Docker) to pull the prebuilt Funannotate container. NOTE: The
 `funannoate_mask` container referenced in the RepeatModeler step 
 is NOT the same as the container pulled here. A future update will resolve
@@ -338,7 +338,8 @@ funannotate update -f <SORTED_MASKED>.fa \
 -l <PAIRED_END_1>.fq.gz -r <PAIRED_END_2>.fq.gz
 ```
 
-For other types of transcript reads refer to `funannotate update -h`. If you
+For other types of transcript reads and stranded RNA library preparations, refer to 
+`funannotate update -h`. If you
 would like to set your own output directory with `-o`, just make sure you use
 the full absolute path or else you may encounter a PASA `no such file or
 directory` error.
