@@ -71,8 +71,9 @@ notes to consider:
 - If your genome is a metagenoome, then append `--meta`
 
 ```
-bakta --db /fs/ess/PAS1568/databases/bakta/ --genus <GENUS> --species <SPECIES>
---strain <STRAIN> -t 8 -o <YOUR/OUTPUT/DIRECTORY> <YOUR/ASSEMBLY/PATH>
+bakta --db /fs/ess/PAS1568/databases/bakta/ --genus <GENUS> \
+--species <SPECIES> --gram <+/-/?> --strain <STRAIN> -t 8 \
+-o <YOUR/OUTPUT/DIRECTORY> <YOUR/ASSEMBLY/PATH>
 ```
 
 Once complete, save your script as a `.sh` file, such as `bakta.sh`, then
