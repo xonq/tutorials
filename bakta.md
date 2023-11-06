@@ -48,6 +48,8 @@ personally prefer to create a directory for every genome annotation, e.g.:
 mkdir <OUTPUT_DIR>/<GENOME_CODENAME>/bakta
 ```
 
+<br />
+
 #### Preparing Bakta commands
 
 For high performance computing environments, such as OSC, it is necessary to
@@ -100,6 +102,8 @@ singularity exec /fs/ess/PAS1568/software/bakta/bakta.sif /bin/bash <YOUR/BAKTA_
 
 Once complete, save your script as a `.sh` file, such as `bakta_execution.sh`,
 then transfer it to a folder in OSC. 
+
+<br />
 
 #### Executing Bakta command
 
