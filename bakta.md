@@ -1,4 +1,4 @@
-# Funannotate *de novo* annotation software setup and use
+# Bakta prokaryote annotation software setup and use
 
 ## GETTING STARTED
 [Bakta](https://bakta.readthedocs.io/en/latest/) is a genome
